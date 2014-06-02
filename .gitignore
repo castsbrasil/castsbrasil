@@ -15,6 +15,7 @@ config/secrets.yml
 config/database.yml
 .idea/
 .DS_Store
+bower_components/
 
 ## Environment normalisation:
 /.bundle

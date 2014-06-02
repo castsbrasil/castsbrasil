@@ -1,0 +1,21 @@
+{
+  "name": "RailsCastsBrasil",
+  "version": "0.1.0",
+  "install": {
+    "path": {
+      "css": "vendor/assets/stylesheets",
+      "js": "vendor/assets/javascripts",
+      "png": "vendor/assets/images",
+      "jpg": "vendor/assets/images",
+      "gif": "vendor/assets/images",
+      "eot": "vendor/assets/fonts",
+      "svg": "vendor/assets/fonts",
+      "ttf": "vendor/assets/fonts",
+      "woff": "vendor/assets/fonts"
+    }
+  },
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "jquery-ujs": "*"
+  }
+}
