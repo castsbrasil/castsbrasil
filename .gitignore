@@ -12,6 +12,10 @@ rerun.txt
 pickle-email-*.html
 config/initializers/secret_token.rb
 config/secrets.yml
+config/database.yml
+.idea/
+.DS_Store
+bower_components/
 
 ## Environment normalisation:
 /.bundle
