@@ -77,6 +77,9 @@ GEM
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-linkedin-oauth2 (0.1.5)
+      omniauth (~> 1.0)
+      omniauth-oauth2
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -170,6 +173,7 @@ DEPENDENCIES
   devise
   omniauth-facebook
   omniauth-github
+  omniauth-linkedin-oauth2
   omniauth-twitter
   rails (= 4.1.1)
   rspec-rails (~> 3.0.0)

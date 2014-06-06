@@ -10,6 +10,8 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-twitter'
 
+gem 'omniauth-linkedin-oauth2'
+
 gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.3'
