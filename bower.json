@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "jquery": "~1.11.0",
-    "jquery-ujs": "*"
+    "jquery-ujs": "*",
+    "bootstrap": "~3.1.1"
   }
 }
