@@ -8,7 +8,6 @@ module Users
         sign_in_and_redirect(user, event: :authentication)
         set_flash_message(:notice, :success, kind: params[:action].to_s.capitalize)
       else
-        session["devise.user_data"] = request.env["omniauth.auth"]
         redirect_to new_user_registration_url
       end
     end
