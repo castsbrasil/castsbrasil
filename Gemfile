@@ -24,10 +24,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :development do
   gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'capybara'
 end
 
 group :development, :test do
