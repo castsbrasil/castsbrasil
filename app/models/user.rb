@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  SOCIALS = [:facebook, :github, :twitter]
+  SOCIALS = [:facebook, :github, :twitter, :linkedin]
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
