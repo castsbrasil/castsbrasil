@@ -12,6 +12,8 @@ gem 'omniauth-twitter'
 
 gem 'omniauth-linkedin-oauth2'
 
+gem 'responders'
+
 gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.3'

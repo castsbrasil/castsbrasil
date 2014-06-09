@@ -122,6 +122,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     ref (1.0.5)
+    responders (1.1.0)
+      railties (>= 3.2, < 5)
     rspec-core (3.0.0)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.0)
@@ -190,6 +192,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-twitter
   rails (= 4.1.1)
+  responders
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   shoulda-matchers
