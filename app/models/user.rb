@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :authorizations, dependent: :destroy
 
+  rolify
+
   def values
     @values ||= Attributes.new(self)
   end

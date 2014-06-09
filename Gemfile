@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
+gem 'cancancan'
+
 gem 'devise'
 
 gem 'omniauth-github'
@@ -11,6 +13,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
 gem 'omniauth-linkedin-oauth2'
+
+gem 'rolify'
 
 gem 'sqlite3'
 

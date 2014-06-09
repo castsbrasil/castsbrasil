@@ -6,6 +6,14 @@ describe User do
 
   it { expect(subject).to have_many(:authorizations).dependent(:destroy) }
 
+  it 'SOCIALS should return a list of social networks' do
+    expect(User::SOCIALS).to be == [:facebook, :github, :twitter, :linkedin]
+  end
+
+  it 'should have many roles' do
+    expect(user).to respond_to(:has_role?, :add_role)
+  end
+
   describe '#values' do
     it 'should return an instance of attributes' do
       expect(user.values).to be_an_instance_of(User::Attributes)
