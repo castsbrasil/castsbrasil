@@ -21,4 +21,11 @@ feature 'Visitor should be able to signs up' do
 
     expect(page).to have_content('Autorizado com sucesso de uma conta de Github.')
   end
+
+  scenario 'with linkedin' do
+    visit(new_user_session_path)
+    click_link('Sign in with Linkedin')
+
+    expect(page).to have_content('Autorizado com sucesso de uma conta de Linkedin.')
+  end
 end
