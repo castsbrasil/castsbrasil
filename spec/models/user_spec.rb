@@ -4,14 +4,24 @@ describe User do
   let(:user) { User.new }
   let(:attributes) { User::Attributes.new(user) }
 
-  it { expect(subject).to have_many(:authorizations).dependent(:destroy) }
-
   it 'SOCIALS should return a list of social networks' do
     expect(User::SOCIALS).to be == [:facebook, :github, :twitter, :linkedin]
   end
 
   it 'should have many roles' do
     expect(user).to respond_to(:has_role?, :add_role)
+  end
+
+  it { expect(subject).to have_many(:authorizations).dependent(:destroy) }
+
+  context 'before validation' do
+    before :each do
+      user.valid?
+    end
+
+    it 'should associate a free role' do
+      expect(user.roles).to be == [Role.find_by_name('free')]
+    end
   end
 
   describe '#values' do

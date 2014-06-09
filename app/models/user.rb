@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :authorizations, dependent: :destroy
 
+  before_validation :add_free_role
+
   rolify
 
   def values
@@ -20,5 +22,11 @@ class User < ActiveRecord::Base
 
   def self.new_from_oauth(oauth)
     new.set_attributes_from_oauth(oauth)
+  end
+
+  private
+
+  def add_free_role
+    self.add_role :free
   end
 end
