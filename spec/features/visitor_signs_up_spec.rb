@@ -5,27 +5,38 @@ feature 'Visitor should be able to signs up' do
     visit(new_user_session_path)
     click_link('Entrar com Facebook')
 
-    expect(page).to have_content('Autorizado com sucesso de uma conta de Facebook.')
+    expect(page).to have_content('Autorizado com sucesso de uma conta do Facebook.')
   end
 
   scenario 'with twitter' do
     visit(new_user_session_path)
     click_link('Entrar com Twitter')
 
-    expect(page).to have_content('Autorizado com sucesso de uma conta de Twitter.')
+    expect(page).to have_content('Autorizado com sucesso de uma conta do Twitter.')
   end
 
   scenario 'with github' do
     visit(new_user_session_path)
     click_link('Entrar com Github')
 
-    expect(page).to have_content('Autorizado com sucesso de uma conta de Github.')
+    expect(page).to have_content('Autorizado com sucesso de uma conta do Github.')
   end
 
   scenario 'with linkedin' do
     visit(new_user_session_path)
     click_link('Entrar com Linkedin')
 
-    expect(page).to have_content('Autorizado com sucesso de uma conta de Linkedin.')
+    expect(page).to have_content('Autorizado com sucesso de uma conta do Linkedin.')
+  end
+end
+
+feature "Visitor shouldn't be able to sign up" do
+  scenario 'without give permission' do
+    OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+    visit(new_user_session_path)
+    click_link('Sign in with Facebook')
+
+    current_path.should == new_user_session_path
+    expect(page).to have_content('Não foi possível autorizar de uma conta do Facebook porque "Invalid credentials".')
   end
 end

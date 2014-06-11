@@ -1,0 +1,23 @@
+br:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} foi criado com sucesso.'
+        # alert: '%{resource_name} não pode ser criado.'
+      update:
+        notice: '%{resource_name} foi atualizado com sucesso.'
+        # alert: '%{resource_name} não pode ser atualizado.'
+      destroy:
+        notice: '%{resource_name} foi apagado com sucesso.'
+        alert: '%{resource_name} não pode ser apagado.'
+    users:
+      omniauth_callbacks:
+        facebook:
+          notice: 'Autorizado com sucesso de uma conta do Facebook.'
+          alert: ''
+        github:
+          notice: 'Autorizado com sucesso de uma conta do Github.'
+        twitter:
+          notice: 'Autorizado com sucesso de uma conta do Twitter.'
+        linkedin:
+          notice: 'Autorizado com sucesso de uma conta do Linkedin.'
