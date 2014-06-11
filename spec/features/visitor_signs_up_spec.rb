@@ -34,9 +34,9 @@ feature "Visitor shouldn't be able to sign up" do
   scenario 'without give permission' do
     OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
     visit(new_user_session_path)
-    click_link('Sign in with Facebook')
+    click_link('Entrar com Facebook')
 
-    current_path.should == new_user_session_path
+    expect(current_path).to be == new_user_session_path
     expect(page).to have_content('Não foi possível autorizar de uma conta do Facebook porque "Invalid credentials".')
   end
 end
