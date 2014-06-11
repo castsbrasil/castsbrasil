@@ -16,9 +16,9 @@ gem 'omniauth-linkedin-oauth2'
 
 gem 'responders'
 
-gem 'sqlite3'
-
 gem 'rolify'
+
+gem 'simple_form', '>= 3.1.0.rc1'
 
 gem 'sqlite3'
 
