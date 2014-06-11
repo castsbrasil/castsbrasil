@@ -11,4 +11,8 @@
 // about supported directives.
 //
 //= require vendor
-//= require_tree .
+//= require_tree ./modules
+
+$(window).bind("load", function() {
+    Module.run('Application');
+});
