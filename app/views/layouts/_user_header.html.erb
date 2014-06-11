@@ -1,9 +1,9 @@
 <ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
-      <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to t('devise.registrations.edit.update'), edit_user_registration_path %></li>
+      <li><%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, :method => :delete %></li>
   <% else %>
-      <li><%= link_to "Sign in", new_user_session_path %></li>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to t('devise.sessions.new.sign_in'), new_user_session_path %></li>
+      <li><%= link_to t('devise.registrations.new.signed_up'), new_user_registration_path %></li>
   <% end %>
 </ul>

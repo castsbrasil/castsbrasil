@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsCastsBrasil</title>
+  <title><%= t('.title') %></title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
@@ -9,8 +9,8 @@
 <div class="container-fluid">
   <div class="header">
     <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to "RailsCastBr", root_path %></h3>
-    <h5 class="muted">RailsCasts Brasileiro e mais atualizado com conteúdo semanal</h5>
+    <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
+    <h5 class="muted"><%= t('.sub_title')  %></h5>
   </div>
   <hr />
   <% if notice %>

@@ -1,0 +1,5 @@
+br:
+  layouts:
+    application:
+      title: 'RailsCastsBrasil'
+      sub_title: 'RailsCasts Brasileiro e mais atualizado com conteúdo semanal'
