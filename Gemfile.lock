@@ -30,19 +30,13 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     builder (3.2.2)
+    cancancan (1.8.2)
     capybara (2.3.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coffee-rails (4.0.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.7.0)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -122,8 +116,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     ref (1.0.5)
+<<<<<<< HEAD
     responders (1.1.0)
       railties (>= 3.2, < 5)
+=======
+    rolify (3.4.0)
+>>>>>>> c0071ccc1e5516b0ee592006dbb4d7190e738b42
     rspec-core (3.0.0)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.0)
@@ -140,12 +138,6 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.0)
-    sass (3.2.19)
-    sass-rails (4.0.3)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
     spring (1.1.3)
@@ -184,17 +176,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancancan
   capybara
-  coffee-rails (~> 4.0.0)
   devise
   omniauth-facebook
   omniauth-github
   omniauth-linkedin-oauth2
   omniauth-twitter
   rails (= 4.1.1)
+<<<<<<< HEAD
   responders
+=======
+  rolify
+>>>>>>> c0071ccc1e5516b0ee592006dbb4d7190e738b42
   rspec-rails (~> 3.0.0)
-  sass-rails (~> 4.0.3)
   shoulda-matchers
   spring
   spring-commands-rspec
