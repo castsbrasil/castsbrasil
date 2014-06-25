@@ -7,12 +7,6 @@
 </head>
 <body controller_name="<%= params[:controller].gsub('/', ' ').titleize.gsub(' ', '.') %>" action_name="<%= action_name.capitalize %>">
 <div class="container-fluid">
-  <div class="header">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
-    <h5 class="muted"><%= t('.sub_title')  %></h5>
-  </div>
-  <hr />
   <% if notice %>
       <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert">&times;</button>

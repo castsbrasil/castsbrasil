@@ -1,12 +1,14 @@
-<h2><%= t('.resend_unlock_instructions', :default => "Resend unlock instructions") %></h2>
+<div class="col-sm-6 col-md-offset-3">
+  <div class="page-header">
+    <h2><%= t('.resend_unlock_instructions', :default => "Resend unlock instructions") %></h2>
+  </div>
 
-<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), method: :post) do |f| %>
+      <%= f.input :email %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+      <%= f.button :submit, t('.resend_unlock_instructions', :default => "Resend unlock instructions"), class: 'btn-primary pull-right' %>
+  <% end %>
+  <br class="clearfix" />
 
-  <div><%= f.submit t('.resend_unlock_instructions', :default => "Resend unlock instructions") %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

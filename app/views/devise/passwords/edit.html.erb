@@ -1,16 +1,16 @@
-<h2><%= t('.change_your_password', :default => 'Change your password') %></h2>
+<div class="col-sm-6 col-md-offset-3">
+  <div class="page-header">
+    <h2><%= t('.change_your_password', :default => 'Change your password') %></h2>
+  </div>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), method: :put) do |f| %>
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.input :password %> <%= t('.new_password', :default => 'New password') %>
+      <%= f.input :password_confirmation %> <%= t('.confirm_new_password', :default => 'Confirm new password') %>
 
-  <div><%= f.label :password, t('.new_password', :default => 'New password') %><br />
-  <%= f.password_field :password %></div>
+      <%= f.button :submit, t('.change_my_password', :default => "Change my password"), class: 'btn-primary pull-right' %>
+  <% end %>
+  <br class="clearfix" />
 
-  <div><%= f.label :password_confirmation, t('.confirm_new_password', :default => 'Confirm new password') %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit t('.change_my_password', :default => 'Change my password') %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

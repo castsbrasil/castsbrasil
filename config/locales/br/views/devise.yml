@@ -29,15 +29,17 @@ br:
     registrations:
       edit:
         are_you_sure: Você tem certeza?
-        cancel_my_account: Cancelar minha conta
+        cancel_my_account: Cancelar conta
         leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
         title: Editar %{resource}
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+        update: Atualizar Perfil
       new:
         sign_up: Inscrever-se
     sessions:
       new:
         sign_in: Login
+        sign_out: Deslogar
     shared:
       links:
         didn_t_receive_confirmation_instructions: Não recebeu instruções de confirmação?

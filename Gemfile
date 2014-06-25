@@ -14,13 +14,11 @@ gem 'omniauth-twitter'
 
 gem 'omniauth-linkedin-oauth2'
 
-<<<<<<< HEAD
 gem 'responders'
 
-gem 'sqlite3'
-=======
 gem 'rolify'
->>>>>>> c0071ccc1e5516b0ee592006dbb4d7190e738b42
+
+gem 'simple_form', '>= 3.1.0.rc1'
 
 gem 'sqlite3'
 

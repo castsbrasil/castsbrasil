@@ -1,18 +1,16 @@
-<h2><%= t('.sign_up', :default => "Sign up") %></h2>
+<div class="col-sm-6 col-md-offset-3">
+  <div class="page-header">
+    <h2><%= t('.sign_up', :default => "Sign up") %></h2>
+  </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+      <%= f.button :submit, t('.sign_up', :default => "Sign up"), class: 'btn-primary pull-right' %>
+  <% end %>
+  <br class="clearfix" />
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit t('.sign_up', :default => "Sign up") %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

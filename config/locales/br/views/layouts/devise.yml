@@ -1,0 +1,4 @@
+br:
+  layouts:
+    devise:
+      title: 'RailsCastsBrasil'

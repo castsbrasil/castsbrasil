@@ -116,12 +116,9 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     ref (1.0.5)
-<<<<<<< HEAD
     responders (1.1.0)
       railties (>= 3.2, < 5)
-=======
     rolify (3.4.0)
->>>>>>> c0071ccc1e5516b0ee592006dbb4d7190e738b42
     rspec-core (3.0.0)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.0)
@@ -140,6 +137,9 @@ GEM
     rspec-support (3.0.0)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
+    simple_form (3.1.0.rc1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     spring (1.1.3)
     spring-commands-rspec (1.0.2)
       spring (>= 0.9.1)
@@ -184,13 +184,11 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-twitter
   rails (= 4.1.1)
-<<<<<<< HEAD
   responders
-=======
   rolify
->>>>>>> c0071ccc1e5516b0ee592006dbb4d7190e738b42
   rspec-rails (~> 3.0.0)
   shoulda-matchers
+  simple_form (>= 3.1.0.rc1)
   spring
   spring-commands-rspec
   sqlite3
