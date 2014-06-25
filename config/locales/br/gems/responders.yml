@@ -14,7 +14,6 @@ br:
       omniauth_callbacks:
         facebook:
           notice: 'Autorizado com sucesso de uma conta do Facebook.'
-          alert: ''
         github:
           notice: 'Autorizado com sucesso de uma conta do Github.'
         twitter:
