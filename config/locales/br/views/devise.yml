@@ -34,6 +34,7 @@ br:
         title: Editar %{resource}
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
         update: Atualizar Perfil
+        social_networks: Redes Sociais
       new:
         sign_up: Inscrever-se
     sessions:
