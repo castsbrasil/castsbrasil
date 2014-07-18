@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Authorization::Associate do
   let(:authorization) { Authorization.new }
