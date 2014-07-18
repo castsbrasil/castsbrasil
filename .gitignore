@@ -25,3 +25,7 @@ bower_components/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# Ignorando schema.rb para evitar conflitos com uso de outros databases.
+
+/db/schema.rb
