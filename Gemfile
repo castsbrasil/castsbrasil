@@ -20,8 +20,6 @@ gem 'rolify'
 
 gem 'simple_form', '>= 3.1.0.rc1'
 
-gem 'sqlite3'
-
 gem 'therubyracer'
 
 gem 'uglifier', '>= 1.3.0'
@@ -37,5 +35,11 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
