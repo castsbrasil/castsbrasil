@@ -5,6 +5,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
+require 'shoulda/matchers'
 
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
