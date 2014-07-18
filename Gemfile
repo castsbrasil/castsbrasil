@@ -36,6 +36,7 @@ group :test do
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'simplecov', :require => false
 end
 
 group :development, :test do
