@@ -31,17 +31,19 @@ end
 group :test do
 	gem 'shoulda-matchers', require: false
 	gem 'capybara'
+  gem 'nyan-cat-formatter'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'spring-commands-rspec'
+  gem 'database_cleaner'
+  gem 'email_spec'
 end
 
 group :development, :test do
 	gem 'sqlite3'
 	gem 'pg'
-	gem 'rspec-rails', '~> 3.0.0'
 	gem 'guard-rspec'
-	gem 'spring-commands-rspec'
 	gem 'forgery', '0.6.0'
 	gem 'factory_girl_rails'
-	gem 'database_cleaner'
 end
 
 group :production do
