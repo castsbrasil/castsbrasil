@@ -16,8 +16,13 @@
 
 <div class="col-sm-6 col-md-offset-3">
   <div class="page-header">
-    <h3><%= t('.cancel_my_account', :default => 'Cancel my account') %></h3>
+    <h3><%= t('.social_networks', :default => 'Social Networks') %></h3>
   </div>
 
-  <%= link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>
+  <% resource.authorizations.each do |authorization| %>
+      <p>
+          <%= authorization.provider %>:
+          <%= link_to authorization.nick_name, authorization.profile_page %>
+      </p>
+  <% end %>
 </div>
