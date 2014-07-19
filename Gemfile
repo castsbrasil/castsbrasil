@@ -24,30 +24,24 @@ gem 'therubyracer'
 
 gem 'uglifier', '>= 1.3.0'
 
-group :development do
-	gem 'spring'
-end
-
 group :test do
-	gem 'shoulda-matchers', require: false
-	gem 'capybara'
+  gem 'shoulda-matchers', require: false
+  gem 'capybara'
   gem 'nyan-cat-formatter'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
-  gem 'email_spec'
-  gem 'simplecov', :require => false
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
-	gem 'sqlite3'
-	gem 'pg'
-	gem 'guard-rspec'
-	gem 'forgery', '0.6.0'
-	gem 'factory_girl_rails'
+  gem 'sqlite3'
+  gem 'guard-rspec'
+  gem 'forgery', '0.6.0'
+  gem 'factory_girl_rails'
 end
 
 group :production do
-	gem 'pg'
-	gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
