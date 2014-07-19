@@ -64,7 +64,7 @@
     var module = Module.fetch(namespace);
 
     if (typeof module === 'function') {
-      return module.apply(null, args);
+      return module.apply(null, args || []);
     }
   };
 
