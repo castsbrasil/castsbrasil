@@ -2,12 +2,12 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.is_free?
-      if user.is_premium?
+    if user.has_role?(:free)
+      if user.has_role?(:premium)
       end
     end
-    if user.is_publisher?
-      if user.is_admin?
+    if user.has_role?(:publisher)
+      if user.has_role?(:admin)
         can :manage, :all
       end
     end
