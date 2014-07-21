@@ -60,4 +60,4 @@ que trabalha em cima das issues do github, e disponibiliza um painel para um con
 ## Discussões [![Gitter chat](https://badges.gitter.im/RubyCastsBrasil/RubyCastsBrasil.png)](https://gitter.im/RubyCastsBrasil/RubyCastsBrasil)
 
 Para discussões relacionadas ao projeto, é utilizado o [gitter](https://gitter.im) que disponibiliza
-um chat em tempo real. Para discussões a longo prazo (assíncronas) é utilizado o google groups.
+um chat em tempo real. Para discussões a longo prazo (assíncronas) é utilizado o [google groups](https://groups.google.com/forum/#!forum/rubycastsbrasil).
