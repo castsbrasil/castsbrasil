@@ -24,6 +24,8 @@ gem 'therubyracer'
 
 gem 'uglifier', '>= 1.3.0'
 
+gem "letter_opener", :group => :development
+
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'capybara'
@@ -39,7 +41,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'forgery', '0.6.0'
   gem 'factory_girl_rails'
-  gem 'mailcatcher'
 end
 
 group :production do
