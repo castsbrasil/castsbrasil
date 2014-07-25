@@ -39,6 +39,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'forgery', '0.6.0'
   gem 'factory_girl_rails'
+  gem 'mailcatcher'
 end
 
 group :production do
