@@ -24,6 +24,8 @@ gem 'therubyracer'
 
 gem 'uglifier', '>= 1.3.0'
 
+gem "letter_opener", :group => :development
+
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'capybara'
