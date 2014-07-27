@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "#{File.new('.ruby-version').gets}"
+
 gem 'rails', '4.1.4'
 
 gem 'cancancan'
@@ -24,8 +26,6 @@ gem 'therubyracer'
 
 gem 'uglifier', '>= 1.3.0'
 
-gem "letter_opener", :group => :development
-
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'capybara'
@@ -34,6 +34,10 @@ group :test do
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
   gem 'coveralls', require: false
+end
+
+group :development do
+  gem 'letter_opener'
 end
 
 group :development, :test do
