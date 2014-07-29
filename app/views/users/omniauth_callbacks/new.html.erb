@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-md-offset-3">
+  <div class="page-header">
+    <h2><%= t('devise.registrations.new.sign_up', :default => "Sign up") %></h2>
+  </div>
+
+  <%= simple_form_for(@user, as: resource_name, url: user_omniauth_callback_path(action_name)) do |f| %>
+    <%= f.input :email %>
+
+    <%= f.button :submit, t('devise.registrations.new.sign_up', :default => "Sign up"), class: 'btn-primary pull-right' %>
+  <% end %>
+  <br class="clearfix" />
+</div>

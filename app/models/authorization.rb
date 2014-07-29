@@ -25,7 +25,7 @@ class Authorization < ActiveRecord::Base
     self
   end
 
-  def self.find_or_create_by_oauth(auth, user)
-    Oauth.find_or_create_by(auth, user)
+  def self.find_or_initialize_by_oauth(auth, user)
+    Oauth.find_or_initialize_by(auth, user)
   end
 end

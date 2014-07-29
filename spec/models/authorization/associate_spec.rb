@@ -53,10 +53,15 @@ describe Authorization::Associate do
       context 'with a new user from oauth' do
         before :each do
           allow(User).to receive(:new_from_oauth).and_return(@oauth_user)
+          @authorization = associate.user_from(@oauth, nil)
         end
 
-        it 'should associate it!' do
-          expect(associate.user_from(@oauth, nil).user).to be == @oauth_user
+        it 'should associate it to the authorization!' do
+          expect(@authorization.user).to be == @oauth_user
+        end
+
+        it 'should associate the authorization to it!' do
+          expect(@authorization.user.authorizations).to be == [ @authorization ]
         end
       end
     end

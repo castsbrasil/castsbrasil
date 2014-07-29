@@ -4,6 +4,10 @@ class OauthResponder < ApplicationResponder
   end
 
   def navigation_behavior(error)
-    redirect_to navigation_location
+    if has_errors?
+      render 'users/omniauth_callbacks/new'
+    else
+      redirect_to navigation_location
+    end
   end
 end

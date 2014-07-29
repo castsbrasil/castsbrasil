@@ -8,9 +8,7 @@ class User
 
     def set_from_oauth(oauth)
       user.skip_confirmation!
-      user.password = Devise.friendly_token[0, 20]
-      user.email    = oauth.info.email                     # Others
-      user.email  ||= "#{SecureRandom.hex(5)}@change.me"   # Twitter
+      user.email    = oauth.info.email
       user
     end
   end

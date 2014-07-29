@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   rolify
 
+  def self.find_or_initialize_by_oauth(auth, user)
+    Authorization.find_or_initialize_by_oauth(auth, user).user
+  end
+
   def values
     @values ||= Attributes.new(self)
   end
@@ -22,6 +26,10 @@ class User < ActiveRecord::Base
 
   def self.new_from_oauth(oauth)
     new.set_attributes_from_oauth(oauth)
+  end
+
+  def password_required?
+    (authorizations.empty? || !password.blank?) && super
   end
 
   private

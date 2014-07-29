@@ -14,7 +14,9 @@ class Authorization
         when User.where(email: oauth['info']['email']).blank?
           @authorization.user = User.where(email: oauth['info']['email']).first
         else
-          @authorization.user = User.new_from_oauth(oauth)
+          @user = User.new_from_oauth(oauth)
+          @user.authorizations = [ @authorization ]
+          @authorization.user = @user
       end
       @authorization
     end

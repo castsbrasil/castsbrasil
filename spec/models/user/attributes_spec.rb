@@ -21,27 +21,12 @@ describe User::Attributes do
       expect(attributes.set_from_oauth(@oauth).confirmed_at).to_not be_nil
     end
 
-    it 'should set the password' do
-      expect(attributes.set_from_oauth(@oauth).password).to be == 'akhsbfdajwr'
-    end
-
     it 'should set the email' do
       expect(attributes.set_from_oauth(@oauth).email).to be == 'email@example.com'
     end
 
     it 'should return the user' do
       expect(attributes.set_from_oauth(@oauth)).to be == user
-    end
-
-    context 'from twitter' do
-      before :each do
-        allow(@oauth).to receive_message_chain(:info, :email)
-        allow(SecureRandom).to receive(:hex).and_return('dkq37f3aku')
-      end
-
-      it 'should generate a custom email' do
-        expect(attributes.set_from_oauth(@oauth).email).to be == 'dkq37f3aku@change.me'
-      end
     end
   end
 end

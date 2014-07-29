@@ -24,6 +24,16 @@ describe User do
     end
   end
 
+  describe '.find_or_initialize_by_oauth' do
+    before :each do
+      allow(Authorization).to receive_message_chain(:find_or_initialize_by_oauth, :user).and_return(user)
+    end
+
+    it 'should return a user' do
+      expect(User.find_or_initialize_by_oauth({}, nil)).to be == user
+    end
+  end
+
   describe '#values' do
     it 'should return an instance of attributes' do
       expect(user.values).to be_an_instance_of(User::Attributes)
@@ -59,6 +69,75 @@ describe User do
 
     it 'should initialize an user from oauth and return it' do
       expect(User.new_from_oauth(@oauth)).to be == user
+    end
+  end
+
+  describe '#password_required?' do
+    context 'without authorizations' do
+      context 'on a new user' do
+        it 'should return true' do
+          expect(user.password_required?).to be == true
+        end
+      end
+
+      context 'on a persisted user' do
+        context 'with nil password' do
+          before :each do
+            allow(user).to receive(:persisted?).and_return(true)
+            user.password = nil
+            user.password_confirmation = 'password'
+          end
+
+          it 'should return true' do
+            expect(user.password_required?).to be == true
+          end
+        end
+
+        context 'with nil confirmation_password' do
+          before :each do
+            allow(user).to receive(:persisted?).and_return(true)
+            user.password = 'password'
+            user.password_confirmation = nil
+          end
+
+          it 'should return true' do
+            expect(user.password_required?).to be == true
+          end
+        end
+      end
+    end
+
+    context 'with authorizations and a blank password' do
+      before :each do
+        allow(user).to receive_message_chain(:authorizations, :empty?).and_return(false)
+        user.password = ''
+      end
+
+      it 'should return false' do
+        expect(user.password_required?).to be == false
+      end
+    end
+
+    context 'with authorizations and a nil password' do
+      before :each do
+        allow(user).to receive_message_chain(:authorizations, :empty?).and_return(false)
+        user.password = nil
+      end
+
+      it 'should return false' do
+        expect(user.password_required?).to be == false
+      end
+    end
+
+    context 'with authorizations and a password' do
+      before :each do
+        allow(user).to receive_message_chain(:authorizations, :empty?).and_return(false)
+        user.password = 'password'
+      end
+
+      it 'should return true' do
+        expect(user.password_required?).to be == true
+      end
     end
   end
 end

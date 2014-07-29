@@ -1,3 +1,20 @@
+GIT
+  remote: git://github.com/nixme/jazz_hands.git
+  revision: 5e4b48f145883ecb14b55bf04eacc28ac9662676
+  branch: bring-your-own-debugger
+  specs:
+    jazz_hands (0.5.2)
+      awesome_print (~> 1.2)
+      coolline (>= 0.4.2)
+      hirb (~> 0.7.1)
+      pry (~> 0.9.12)
+      pry-doc (~> 0.4.6)
+      pry-git (~> 0.2.3)
+      pry-rails (~> 0.3.2)
+      pry-remote (>= 0.1.7)
+      pry-stack_explorer (~> 0.4.9)
+      railties (>= 3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,8 +46,14 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    awesome_print (1.2.0)
     bcrypt (3.1.7)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    byebug (2.7.0)
+      columnize (~> 0.3)
+      debugger-linecache (~> 1.2)
     cancancan (1.9.1)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -40,7 +63,10 @@ GEM
       xpath (~> 2.0)
     celluloid (0.15.2)
       timers (~> 1.1.0)
+    cliver (0.3.2)
     coderay (1.1.0)
+    columnize (0.8.9)
+    coolline (0.4.4)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
@@ -48,6 +74,8 @@ GEM
       term-ansicolor
       thor
     database_cleaner (1.3.0)
+    debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -55,6 +83,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    diffy (3.0.6)
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.2.1)
@@ -66,8 +95,11 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
-    forgery (0.6.0)
     formatador (0.2.5)
+    grit (2.5.0)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
+      posix-spawn (~> 0.3.6)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -79,6 +111,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     hashie (3.2.0)
     hike (1.2.3)
+    hirb (0.7.2)
     i18n (0.6.11)
     json (1.8.1)
     jwt (1.0.0)
@@ -138,11 +171,35 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    poltergeist (1.5.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     polyglot (0.3.5)
-    pry (0.10.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
+    posix-spawn (0.3.8)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
       slop (~> 3.4)
+    pry-byebug (1.3.2)
+      byebug (~> 2.7)
+      pry (~> 0.9.12)
+    pry-doc (0.4.6)
+      pry (>= 0.9)
+      yard (>= 0.8)
+    pry-git (0.2.3)
+      diffy
+      grit
+      pry (>= 0.9.8)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    pry-stack_explorer (0.4.9.1)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -241,8 +298,10 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket-driver (0.3.4)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yard (0.8.7.4)
 
 PLATFORMS
   ruby
@@ -254,8 +313,8 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
-  forgery (= 0.6.0)
   guard-rspec
+  jazz_hands!
   letter_opener
   nyan-cat-formatter
   omniauth-facebook
@@ -263,6 +322,8 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-twitter
   pg
+  poltergeist
+  pry-byebug
   rails (= 4.1.4)
   rails_12factor
   responders
