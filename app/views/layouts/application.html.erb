@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body controller_name="<%= params[:controller].gsub('/', ' ').titleize.gsub(' ', '.') %>" action_name="<%= action_name.capitalize %>">
+<body class="<%= _controller_name + ' ' + _action_name %>">
 <div class="container-fluid">
   <div class="header">
     <%= render 'layouts/user_header' %>
