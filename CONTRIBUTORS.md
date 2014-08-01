@@ -3,3 +3,4 @@
 * Matheus Mósso <msmosso@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
+* Thiago Ramos <thiagoramos.al@gmail.com>
