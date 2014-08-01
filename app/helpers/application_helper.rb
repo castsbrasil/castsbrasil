@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def _action_name
-    action_name.capitalize
+    action_name.capitalize.to_s
   end
 end
