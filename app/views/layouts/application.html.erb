@@ -6,27 +6,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= _controller_name + ' ' + _action_name %>">
-<div class="container-fluid">
-  <div class="header">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
-    <h5 class="muted"><%= t('.sub_title')  %></h5>
+
+  <div class="container-fluid">
+    <div class="header">
+      <%= render 'layouts/user_header' %>
+      <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
+      <h5 class="muted"><%= t('.sub_title')  %></h5>
+    </div>
+    <hr />
   </div>
-  <hr />
-  <% if notice %>
-      <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= notice %>
-      </div>
-  <% end %>
-  <% if alert %>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= alert %>
-      </div>
-  <% end %>
+
+  <%= flash_messages %>
   <%= yield %>
-</div>
-<%= javascript_include_tag 'application' %>
+
+  <%= javascript_include_tag 'application' %>
+  
 </body>
 </html>

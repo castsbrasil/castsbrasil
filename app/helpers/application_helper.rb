@@ -6,4 +6,10 @@ module ApplicationHelper
   def _action_name
     action_name.capitalize.to_s
   end
+
+  def flash_messages
+    flash.each do |key, value|
+      content_tag(:div, value, class: "flash #{key}")
+    end
+  end
 end
