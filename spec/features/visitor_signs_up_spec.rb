@@ -12,6 +12,11 @@ feature 'Visitor should be able to signs up' do
     visit(new_user_session_path)
     click_link('Entrar com Twitter')
 
+    fill_in('Email', with: 'user@test.com')
+    within('#new_user') do
+      click_button('Inscrever-se')
+    end
+
     expect(page).to have_content('Autorizado com sucesso de uma conta do Twitter.')
   end
 

@@ -60,15 +60,15 @@ describe Authorization do
     end
   end
 
-  describe '.find_or_create_by_oauth' do
+  describe '.find_or_initialize_by_oauth' do
     before :each do
       @oauth = double
       @user = double
-      allow(Authorization::Oauth).to receive(:find_or_create_by).and_return(authorization)
+      allow(Authorization::Oauth).to receive(:find_or_initialize_by).and_return(authorization)
     end
 
     it 'should find or initialize an authorization from oauth and return it' do
-      expect(Authorization.find_or_create_by_oauth(@oauth, @user)).to be == authorization
+      expect(Authorization.find_or_initialize_by_oauth(@oauth, @user)).to be == authorization
     end
   end
 end

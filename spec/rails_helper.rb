@@ -5,7 +5,10 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
+require 'capybara/poltergeist'
 require 'shoulda/matchers'
+
+Capybara.javascript_driver = :poltergeist
 
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'

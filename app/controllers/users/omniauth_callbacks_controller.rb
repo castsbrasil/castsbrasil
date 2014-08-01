@@ -4,9 +4,16 @@ module Users
     self.responder = OauthResponder
 
     def create
-      @authorization = Authorization.find_or_create_by_oauth(env["omniauth.auth"], current_user)
-      sign_in(@authorization.user) if @authorization.persisted?
-      respond_with(@authorization.user)
+      omniauth_data = env["omniauth.auth"] || OmniAuth::AuthHash.new(session[:omniauth])
+      @user = User.find_or_initialize_by_oauth(omniauth_data, current_user)
+      @user.email = params[:user][:email] if params[:user]
+      if @user.save
+        session[:omniauth] = nil
+        sign_in(@user)
+      else
+        session[:omniauth] = env["omniauth.auth"].except('extra')
+      end
+      respond_with(@user)
     end
 
     User::SOCIALS.each do |social|
