@@ -44,4 +44,15 @@ feature "Visitor shouldn't be able to sign up" do
     expect(current_path).to be == new_user_session_path
     expect(page).to have_content('Não foi possível autorizar de uma conta do Facebook porque "Invalid credentials".')
   end
+
+  scenario 'with twitter without fill the email field' do
+    visit(new_user_session_path)
+    click_link('Entrar com Twitter')
+
+    within('#new_user') do
+      click_button('Inscrever-se')
+    end
+
+    expect(page).to have_content('não pode ficar em branco')
+  end
 end

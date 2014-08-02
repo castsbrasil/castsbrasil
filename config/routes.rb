@@ -9,6 +9,12 @@ Rails.application.routes.draw do
              as: :user_registration
   end
 
+  namespace :users do
+    namespace :auth do
+      resource :confirm, only: :create, controller: :confirm
+    end
+  end
+
   get '/' => 'root#index', as: :users
   root to: 'root#index'
 end

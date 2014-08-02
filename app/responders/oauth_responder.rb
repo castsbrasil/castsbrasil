@@ -5,7 +5,7 @@ class OauthResponder < ApplicationResponder
 
   def navigation_behavior(error)
     if has_errors?
-      render 'users/omniauth_callbacks/new'
+      render 'users/auth/confirm/new'
     else
       redirect_to navigation_location
     end
