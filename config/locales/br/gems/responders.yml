@@ -20,3 +20,7 @@ br:
           notice: 'Autorizado com sucesso de uma conta do Twitter.'
         linkedin:
           notice: 'Autorizado com sucesso de uma conta do Linkedin.'
+      auth:
+        confirm:
+          create:
+            notice: 'Autorizado com sucesso de uma conta do Twitter.'
