@@ -1,6 +1,8 @@
-** Idealizador:
+* Idealizador:
 * Osvaldo Carlos <ocsjwolf@gmail.com>
-** Colaboradores gerais:
+* 
+* Colaboradores gerais:
+*
 * Ivan Santos <pragmaticivan@gmail.com>
 * Paulo Henrique Lopes Ribeiro <plribeiro3000@gmail.com>
 * Matheus Mósso <msmosso@gmail.com>
