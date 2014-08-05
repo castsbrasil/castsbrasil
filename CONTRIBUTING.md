@@ -1,6 +1,6 @@
 # Contribuindo
 
-Novos contribuidores são sempre bem vindos. Existem duas formas de contribuir com o projeto:
+Novos contribuintes são sempre bem vindos. Existem duas formas de contribuir com o projeto:
 
 ## Codificando
 
