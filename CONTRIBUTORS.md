@@ -1,6 +1,7 @@
 * Idealizador:
 * Osvaldo Carlos <ocsjwolf@gmail.com>
 *
+*
 * Colaboradores gerais:
 * 
 * Ivan Santos <pragmaticivan@gmail.com>
