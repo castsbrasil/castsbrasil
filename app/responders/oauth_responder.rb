@@ -4,10 +4,6 @@ class OauthResponder < ApplicationResponder
   end
 
   def navigation_behavior(error)
-    if has_errors?
-      render 'users/auth/confirm/new'
-    else
       redirect_to navigation_location
-    end
   end
 end

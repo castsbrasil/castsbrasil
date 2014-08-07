@@ -10,3 +10,4 @@
 * Paulo Henrique Lopes Ribeiro <plribeiro3000@gmail.com>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
+* Matheus Mina <mfbmina@gmail.com>

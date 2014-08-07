@@ -5,11 +5,7 @@ module Users
 
     def create
       @user = User.find_or_initialize_by_oauth(env["omniauth.auth"], current_user)
-      if @user.save
-        sign_in(@user)
-      else
-        session[:omniauth] = env["omniauth.auth"].except('extra')
-      end
+      sign_in(@user) if @user.save
       respond_with(@user)
     end
 
