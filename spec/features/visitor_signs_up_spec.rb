@@ -1,58 +1,21 @@
 require 'oauth_helper'
 
 feature 'Visitor should be able to signs up' do
-  scenario 'with facebook' do
-    visit(new_user_session_path)
-    click_link('Entrar com Facebook')
-
-    expect(page).to have_content('Autorizado com sucesso de uma conta do Facebook.')
-  end
-
-  scenario 'with twitter' do
-    visit(new_user_session_path)
-    click_link('Entrar com Twitter')
-
-    fill_in('Email', with: 'user@test.com')
-    within('#new_user') do
-      click_button('Inscrever-se')
-    end
-
-    expect(page).to have_content('Autorizado com sucesso de uma conta do Twitter.')
-  end
-
   scenario 'with github' do
     visit(new_user_session_path)
     click_link('Entrar com Github')
 
     expect(page).to have_content('Autorizado com sucesso de uma conta do Github.')
   end
-
-  scenario 'with linkedin' do
-    visit(new_user_session_path)
-    click_link('Entrar com Linkedin')
-
-    expect(page).to have_content('Autorizado com sucesso de uma conta do Linkedin.')
-  end
 end
 
 feature "Visitor shouldn't be able to sign up" do
   scenario 'without give permission' do
-    OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+    OmniAuth.config.mock_auth[:github] = :invalid_credentials
     visit(new_user_session_path)
-    click_link('Entrar com Facebook')
+    click_link('Entrar com Github')
 
     expect(current_path).to be == new_user_session_path
-    expect(page).to have_content('Não foi possível autorizar de uma conta do Facebook porque "Invalid credentials".')
-  end
-
-  scenario 'with twitter without fill the email field' do
-    visit(new_user_session_path)
-    click_link('Entrar com Twitter')
-
-    within('#new_user') do
-      click_button('Inscrever-se')
-    end
-
-    expect(page).to have_content('não pode ficar em branco')
+    expect(page).to have_content('Não foi possível autorizar de uma conta do GitHub porque "Invalid credentials".')
   end
 end

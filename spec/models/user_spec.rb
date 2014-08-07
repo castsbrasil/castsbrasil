@@ -5,7 +5,7 @@ describe User do
   let(:attributes) { User::Attributes.new(user) }
 
   it 'SOCIALS should return a list of social networks' do
-    expect(User::SOCIALS).to be == [:facebook, :github, :twitter, :linkedin]
+    expect(User::SOCIALS).to be == [:github]
   end
 
   it 'should have many roles' do

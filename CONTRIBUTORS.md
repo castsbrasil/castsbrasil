@@ -4,3 +4,4 @@
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
+* Matheus Mina <mfbmina@gmail.com>

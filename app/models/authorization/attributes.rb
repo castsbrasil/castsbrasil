@@ -8,8 +8,7 @@ class Authorization
 
     def set_from_oauth(oauth)
       authorization.profile_page ||= oauth.info.urls.first.last
-      authorization.nick_name    ||= oauth.info.name             # Facebook
-      authorization.nick_name    ||= oauth.info.nickname         # Others
+      authorization.nick_name    ||= oauth.info.nickname
       authorization
     end
   end
