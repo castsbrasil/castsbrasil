@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   SOCIALS = [:github]
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: SOCIALS
 
