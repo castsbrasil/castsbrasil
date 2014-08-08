@@ -17,10 +17,6 @@ describe User::Attributes do
       allow(@oauth).to receive_message_chain(:info, :email).and_return('email@example.com')
     end
 
-    it 'should confirm the user' do
-      expect(attributes.set_from_oauth(@oauth).confirmed_at).to_not be_nil
-    end
-
     it 'should set the email' do
       expect(attributes.set_from_oauth(@oauth).email).to be == 'email@example.com'
     end
