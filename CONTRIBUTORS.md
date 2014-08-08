@@ -1,7 +1,7 @@
 # Idealizador:
 
 * Osvaldo Carlos <ocsjwolf@gmail.com>
- 
+
 # Colaboradores:
 
 * Carlos Ribeiro <mail@carlosribeiro.me>
@@ -10,3 +10,4 @@
 * Paulo Henrique Lopes Ribeiro <plribeiro3000@gmail.com>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
+* Victor Campos <victor.campos@visagio.com>
