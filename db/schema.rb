@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609022713) do
+ActiveRecord::Schema.define(version: 20140810130832) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -35,6 +35,24 @@ ActiveRecord::Schema.define(version: 20140609022713) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "tag_relationships", force: true do |t|
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tag_relationships", ["tag_id"], name: "index_tag_relationships_on_tag_id"
+  add_index "tag_relationships", ["taggable_id", "taggable_type"], name: "index_tag_relationships_on_taggable_id_and_taggable_type"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.integer  "taggables_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
