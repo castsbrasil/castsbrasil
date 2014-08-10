@@ -28,7 +28,8 @@ end
 
 group :development do
   gem 'letter_opener'
-  gem 'brakeman', :require => false
+  gem 'brakeman', require: false
+  gem "bullet"  , require: false
 end
 
 group :development, :test do
