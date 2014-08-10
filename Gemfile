@@ -29,7 +29,7 @@ end
 group :development do
   gem 'letter_opener'
   gem 'brakeman', require: false
-  gem "bullet"  , require: false
+  gem 'bullet'
 end
 
 group :development, :test do
