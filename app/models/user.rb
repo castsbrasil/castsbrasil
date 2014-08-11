@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: SOCIALS
 
   has_many :authorizations, dependent: :destroy
+  has_many :casts, dependent: :destroy
 
   before_validation :add_free_role
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810130832) do
+ActiveRecord::Schema.define(version: 20140810140327) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20140810130832) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "casts", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "casts", ["user_id"], name: "index_casts_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"

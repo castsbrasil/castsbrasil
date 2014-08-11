@@ -13,6 +13,7 @@ describe User do
   end
 
   it { expect(subject).to have_many(:authorizations).dependent(:destroy) }
+  it { expect(subject).to have_many(:casts).dependent(:destroy) }
 
   context 'before validation' do
     before :each do
