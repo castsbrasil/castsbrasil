@@ -78,7 +78,7 @@ describe CastsController do
         end
 
         it "saves the cast" do
-          expect{post :create, cast: attributes_for(:cast)}.to change(Cast, :count).by(1)
+          expect { post :create, cast: attributes_for(:cast) }.to change(Cast, :count).by(1)
         end
 
         it "associates cast with current user" do
