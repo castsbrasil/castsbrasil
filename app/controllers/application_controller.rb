@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < Zertico::Controller
   self.responder = ApplicationResponder
   respond_to :html
 
