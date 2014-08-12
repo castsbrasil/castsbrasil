@@ -4,6 +4,7 @@
 
 # Colaboradores:
 
+* Abilio Bittencourt Junior <abilioxd@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Ivan Santos <pragmaticivan@gmail.com>
 * Matheus Mina <mfbmina@gmail.com>
