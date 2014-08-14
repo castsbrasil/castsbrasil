@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-offset-3">
   <div class="page-header">
-    <h2><%= t('.title', :resource => resource_class.model_name.human , :default => 'Edit #{resource_name.to_s.humanize}') %></h2>
+    <h2><%= t('.title', resource: resource_class.model_name.human , default: 'Edit #{resource_name.to_s.humanize}') %></h2>
   </div>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put) do |f| %>
@@ -16,7 +16,32 @@
 
 <div class="col-sm-6 col-md-offset-3">
   <div class="page-header">
-    <h3><%= t('.social_networks', :default => 'Social Networks') %></h3>
+    <h3><%= t('.my_profile', default: 'My profile') %></h3>
+  </div>
+
+  <%= simple_form_for(resource.profile, url: profiles_path, method: :put) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+
+      <div class="page-header">
+        <h4><%= t('.links', default: 'My links') %></h3>
+      </div>
+
+      <div id='links'>
+        <%= f.simple_fields_for :links do |fl| %>
+          <%= render 'link_fields', f: fl %>
+        <% end %>
+        <%= link_to_add_association 'add links', f, :links %>
+      </div>
+
+      <%= f.button :submit, t('.update', default: "Update"), class: 'btn-primary pull-right' %>
+  <% end %>
+</div>
+<br class="clearfix" />
+
+<div class="col-sm-6 col-md-offset-3">
+  <div class="page-header">
+    <h3><%= t('.social_networks', default: 'Social Networks') %></h3>
   </div>
 
   <% resource.authorizations.each do |authorization| %>
