@@ -4,8 +4,8 @@ describe Link do
   it { expect(subject).to belong_to(:profile) }
 
   context 'validation' do
-    it {expect(subject).to validate_presence_of(:name)}
-    it {expect(subject).to validate_presence_of(:url)}
+    it { expect(subject).to validate_presence_of(:name) }
+    it { expect(subject).to validate_presence_of(:url) }
 
     describe 'format' do
       it 'should accept links with http' do

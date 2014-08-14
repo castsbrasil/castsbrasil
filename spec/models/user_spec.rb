@@ -18,7 +18,7 @@ describe User do
 
   context 'after create' do
     it 'should create a profile' do
-      expect {create(:user)}.to change(Profile, :count).by(1)
+      expect { create(:user) }.to change(Profile, :count).by(1)
     end
   end
 

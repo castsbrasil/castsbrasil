@@ -1,7 +1,5 @@
-class ProfilesController < ApplicationController
-  before_action :authenticate_user!
+class ProfilesController < AuthorizedController
   helper_method :resource, :resource_class, :resource_name
-
 
   def update
     if current_user.profile.update_attributes(valid_params(params))
@@ -26,6 +24,6 @@ class ProfilesController < ApplicationController
   end
 
   def valid_params(params)
-    params.require(:profile).permit(:first_name, :last_name, links_attributes: [:id, :name, :url, :_destroy])
+    params.require(:profile).permit(:first_name, :last_name, links_attributes: %i(id name url _destroy))
   end
 end
