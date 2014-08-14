@@ -78,6 +78,7 @@ GEM
     celluloid (0.15.2)
       timers (~> 1.1.0)
     cliver (0.3.2)
+    cocoon (1.2.6)
     coderay (1.1.0)
     columnize (0.8.9)
     coolline (0.4.4)
@@ -330,6 +331,7 @@ DEPENDENCIES
   bullet
   cancancan
   capybara
+  cocoon
   coveralls
   database_cleaner
   devise
