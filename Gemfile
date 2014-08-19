@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "#{File.new('.ruby-version').gets}"
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.5'
 
 gem 'cancancan'
 gem 'devise'
