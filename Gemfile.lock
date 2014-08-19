@@ -322,6 +322,8 @@ GEM
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.8.7.4)
+    zertico (1.3.0)
+      rails (>= 3.1.0)
 
 PLATFORMS
   ruby
@@ -355,3 +357,4 @@ DEPENDENCIES
   sqlite3
   therubyracer
   uglifier (>= 1.3.0)
+  zertico

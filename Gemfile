@@ -13,6 +13,7 @@ gem 'simple_form', '>= 3.1.0.rc1'
 gem "cocoon"
 gem 'therubyracer'
 gem 'uglifier', '>= 1.3.0'
+gem 'zertico'
 
 group :test do
   gem 'capybara'
