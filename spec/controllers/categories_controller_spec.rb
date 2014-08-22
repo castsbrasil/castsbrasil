@@ -172,35 +172,30 @@ describe CategoriesController do
 
   describe "DELETE destroy" do
     context "unlogged user" do
+      let(:category) { create(:category) }
+
       it "redirects to login page" do
-        category = create(:category)
         sign_in nil
-        put :update, id: category, category: attributes_for(:category)
+        delete :destroy, id: category
         expect(response).to redirect_to(new_user_session_path)
       end
     end
 
     context "logged user" do
+      let(:category) { build(:category) }
 
       before(:each) do
         sign_in create(:user)
+        category.save!
       end
 
-      context "can delete category" do
-        let(:category) { build(:category) }
+      it "deletes the category" do
+        expect{ delete :destroy, id: category }.to change(Category, :count).by(-1 )
+      end
 
-        before :each do
-          category.save!
-        end
-
-        it "deletes the category" do
-          expect{ delete :destroy, id: category }.to change(Category, :count).by(-1 )
-        end
-
-        it "redirects to index" do
-          delete :destroy, id: category
-          expect(response).to redirect_to(categories_path)
-        end
+      it "redirects to index" do
+        delete :destroy, id: category
+        expect(response).to redirect_to(categories_path)
       end
 
     end
