@@ -37,6 +37,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :production do
