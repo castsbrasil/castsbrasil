@@ -10,15 +10,15 @@ class CategoriesController < ApplicationController
   end
 
   def new
-  	@category = Category.new
+    @category = Category.new
   end
 
   def edit
   end
  
   def create
-  	@category = Category.create(category_params)
-  	respond_with @category
+    @category = Category.create(category_params)
+    respond_with @category
   end
 
   def update
@@ -29,10 +29,10 @@ class CategoriesController < ApplicationController
   private 
 
   def category_params
-  	params.require(:category).permit(:name)
+    params.require(:category).permit(:name)
   end
 
   def set_category
-  	@category = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 end
