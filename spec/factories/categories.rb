@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :category do
-     name "Advanced"
+    name "Advanced"
   end
 end

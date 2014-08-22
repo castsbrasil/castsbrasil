@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-	before_action :authenticate_user!, except: %i(index show)
-	before_action :set_category, only: %i(show edit update)
+  before_action :authenticate_user!, except: %i(index show)
+  before_action :set_category, only: %i(show edit update destroy)
 
   def index
     @categories = Category.all
@@ -10,15 +10,15 @@ class CategoriesController < ApplicationController
   end
 
   def new
-  	@category = Category.new
+    @category = Category.new
   end
 
   def edit
   end
- 
+
   def create
-  	@category = Category.create(category_params)
-  	respond_with @category
+    @category = Category.create(category_params)
+    respond_with @category
   end
 
   def update
@@ -26,13 +26,18 @@ class CategoriesController < ApplicationController
     respond_with @category
   end
 
-  private 
+  def destroy
+    @category.destroy
+    redirect_to categories_path
+  end
+
+  private
 
   def category_params
-  	params.require(:category).permit(:name)
+    params.require(:category).permit(:name)
   end
 
   def set_category
-  	@category = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 end
