@@ -2,10 +2,11 @@ require 'rails_helper'
 
 describe Category do
   context "validations" do
-    let(:validation_errors) {
+    let(:validation_errors) { subject.errors }
+
+    before :each do
       subject.valid?
-      subject.errors
-    }
+    end
 
     [:name].each do |attr|
       it "validates presence of #{attr}" do

@@ -190,7 +190,7 @@ describe CategoriesController do
       end
 
       it "deletes the category" do
-        expect{ delete :destroy, id: category }.to change(Category, :count).by(-1 )
+        expect { delete :destroy, id: category }.to change(Category, :count).by(-1)
       end
 
       it "redirects to index" do
