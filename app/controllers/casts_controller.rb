@@ -14,8 +14,16 @@ class CastsController < ApplicationController
   end
 
   def create
-    @cast = current_user.casts.create!(valid_params(params))
-    redirect_to cast_path(@cast)
+    @cast = current_user.casts.new(valid_params(params))
+    respond_to do |format|
+      if @cast.save
+        format.html { redirect_to @cast, notice: 'Cast was successfully created.' }
+        format.json { render :show, status: :created, location: @cast }
+      else
+        format.html { render :new }
+        format.json { render json: @cast.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
@@ -24,8 +32,16 @@ class CastsController < ApplicationController
 
   def update
     @cast = current_user.casts.find_by_param(params[:id])
-    @cast.update!(valid_params(params))
-    redirect_to cast_path(@cast)
+    
+    respond_to do |format|
+      if @cast.update!(valid_params(params))
+        format.html { redirect_to @cast, notice: t('.messages.success') }
+        format.json { render :show, status: :updated, location: @cast }
+      else
+        format.html { render :new }
+        format.json { render json: @cast.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   protected

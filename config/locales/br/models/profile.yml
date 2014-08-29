@@ -1,0 +1,9 @@
+br:
+  activerecord:
+    models:
+      profile: 'Perfil'
+      profiles: 'Perfis'
+    attributes:
+      profile:
+        first_name: 'Nome'
+        last_name: 'Sobrenome'
