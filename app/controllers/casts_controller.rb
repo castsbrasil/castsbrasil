@@ -32,7 +32,6 @@ class CastsController < ApplicationController
 
   def update
     @cast = current_user.casts.find_by_param(params[:id])
-    
     respond_to do |format|
       if @cast.update!(valid_params(params))
         format.html { redirect_to @cast, notice: t('.messages.success') }
