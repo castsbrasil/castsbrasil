@@ -161,7 +161,7 @@ describe CastsController do
 
       context "cast with invalid parameters" do
         it "casts contains an invalid parameter" do
-          expect { put :update, id: cast, cast: attributes_for(:cast, name: nil)}.to raise_error
+          expect { put :update, id: cast, cast: attributes_for(:cast, name: nil) }.to raise_error
         end
       end
     end
