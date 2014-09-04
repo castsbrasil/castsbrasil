@@ -1,5 +1,7 @@
 class CastsController < ApplicationController
   before_action :authenticate_user!, except: %i(index show)
+  responders :location, :flash
+  respond_to :html
 
   def index
     @casts = Cast.all
@@ -15,15 +17,8 @@ class CastsController < ApplicationController
 
   def create
     @cast = current_user.casts.new(valid_params(params))
-    respond_to do |format|
-      if @cast.save
-        format.html { redirect_to @cast, notice: 'Cast was successfully created.' }
-        format.json { render :show, status: :created, location: @cast }
-      else
-        format.html { render :new }
-        format.json { render json: @cast.errors, status: :unprocessable_entity }
-      end
-    end
+    @cast.save
+    respond_with @cast, location: -> { cast_path(@cast) }
   end
 
   def edit
@@ -32,15 +27,8 @@ class CastsController < ApplicationController
 
   def update
     @cast = current_user.casts.find_by_param(params[:id])
-    respond_to do |format|
-      if @cast.update!(valid_params(params))
-        format.html { redirect_to @cast, notice: t('.messages.success') }
-        format.json { render :show, status: :updated, location: @cast }
-      else
-        format.html { render :new }
-        format.json { render json: @cast.errors, status: :unprocessable_entity }
-      end
-    end
+    @cast.update(valid_params(params))
+    respond_with @cast, location: -> { cast_path(@cast) }
   end
 
   protected

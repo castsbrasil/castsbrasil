@@ -11,9 +11,3 @@ br:
     edit:
       title: 'Editar Cast'
       update: 'Atualizar'
-    create:
-      messages:
-         success: 'Cast cadastrado com sucesso.'
-    update:
-       messages:
-          success: 'Cast atualizado com sucesso.'

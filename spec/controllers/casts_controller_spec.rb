@@ -86,12 +86,6 @@ describe CastsController do
           expect(assigns(:cast).user).to eq(subject.current_user)
         end
       end
-
-      context "cast with invalid parameters" do
-        it "casts contains an invalid parameter" do
-          expect { post :create, Cast.new }.to raise_error
-        end
-      end
     end
   end
 
@@ -156,12 +150,6 @@ describe CastsController do
         it "updates the cast" do
           expect{put :update, id: cast, cast: attributes_for(:cast, name: 'new name')}.to change(Cast, :count).by(0)
           expect(assigns(:cast).name).to eq('new name')
-        end
-      end
-
-      context "cast with invalid parameters" do
-        it "casts contains an invalid parameter" do
-          expect { put :update, id: cast, cast: attributes_for(:cast, name: nil) }.to raise_error
         end
       end
     end
