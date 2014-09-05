@@ -6,6 +6,7 @@
 
 * Abilio Bittencourt Junior <abilioxd@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
+* Gustavo Araújo <gu.araujo25@gmail.com>
 * Ivan Santos <pragmaticivan@gmail.com>
 * Matheus Mina <mfbmina@gmail.com>
 * Matheus Mósso <msmosso@gmail.com>

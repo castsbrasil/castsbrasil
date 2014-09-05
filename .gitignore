@@ -16,6 +16,7 @@ config/database.yml
 .DS_Store
 bower_components/
 .coveralls.yml
+.env
 
 ## Environment normalisation:
 /.bundle

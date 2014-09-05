@@ -2,6 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    if user.has_any_role?
+      can :update, Profile
+    end
+
     if user.has_role?(:free)
       if user.has_role?(:premium)
       end

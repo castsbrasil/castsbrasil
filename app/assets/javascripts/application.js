@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require vendor
+//= require cocoon
 //= require_tree ./modules
 
 $(window).bind("load", function() {
