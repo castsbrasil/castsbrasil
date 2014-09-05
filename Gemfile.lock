@@ -213,6 +213,7 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
+<<<<<<< HEAD
     rails (4.1.6.rc1)
       actionmailer (= 4.1.6.rc1)
       actionpack (= 4.1.6.rc1)
@@ -222,15 +223,32 @@ GEM
       activesupport (= 4.1.6.rc1)
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.6.rc1)
+=======
+    rails (4.1.5)
+      actionmailer (= 4.1.5)
+      actionpack (= 4.1.5)
+      actionview (= 4.1.5)
+      activemodel (= 4.1.5)
+      activerecord (= 4.1.5)
+      activesupport (= 4.1.5)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.1.5)
+>>>>>>> 9b10c729ec020cac893d58892c65908ed22959ff
       sprockets-rails (~> 2.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
+<<<<<<< HEAD
     railties (4.1.6.rc1)
       actionpack (= 4.1.6.rc1)
       activesupport (= 4.1.6.rc1)
+=======
+    railties (4.1.5)
+      actionpack (= 4.1.5)
+      activesupport (= 4.1.5)
+>>>>>>> 9b10c729ec020cac893d58892c65908ed22959ff
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
@@ -309,7 +327,14 @@ GEM
     thread_safe (0.3.4)
     tilt (1.4.1)
     timers (1.1.0)
+<<<<<<< HEAD
     tins (1.3.2)
+=======
+    tins (1.3.0)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
+>>>>>>> 9b10c729ec020cac893d58892c65908ed22959ff
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -345,7 +370,11 @@ DEPENDENCIES
   pg
   poltergeist
   pry-byebug
+<<<<<<< HEAD
   rails (= 4.1.6.rc1)
+=======
+  rails (= 4.1.5)
+>>>>>>> 9b10c729ec020cac893d58892c65908ed22959ff
   rails_12factor
   responders
   rolify
