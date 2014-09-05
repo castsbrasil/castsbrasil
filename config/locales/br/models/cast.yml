@@ -1,0 +1,10 @@
+br:
+  activerecord:
+    models:
+      cast: 'Cast'
+      casts: 'Casts'
+    attributes:
+      cast:
+        name: 'Nome'
+        url: 'Url'
+        description: 'Descrição'

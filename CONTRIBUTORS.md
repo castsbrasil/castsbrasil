@@ -14,3 +14,4 @@
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
 * Victor Campos <victor.campos@visagio.com>
+* Wender Freese <wender.jean@gmail.com>
