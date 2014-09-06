@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609022713) do
+ActiveRecord::Schema.define(version: 20140820230329) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -25,6 +25,43 @@ ActiveRecord::Schema.define(version: 20140609022713) do
     t.datetime "updated_at"
   end
 
+  create_table "casts", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "casts", ["user_id"], name: "index_casts_on_user_id"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "profile_id"
+  end
+
+  add_index "links", ["profile_id"], name: "index_links_on_profile_id"
+
+  create_table "profiles", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -35,6 +72,24 @@ ActiveRecord::Schema.define(version: 20140609022713) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "tag_relationships", force: true do |t|
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tag_relationships", ["tag_id"], name: "index_tag_relationships_on_tag_id"
+  add_index "tag_relationships", ["taggable_id", "taggable_type"], name: "index_tag_relationships_on_taggable_id_and_taggable_type"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.integer  "taggables_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

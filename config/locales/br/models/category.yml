@@ -1,0 +1,8 @@
+br:
+  activerecord:
+    models:
+      category: 'Categoria'
+      categories: 'Categorias'
+    attributes:
+      category:
+        name: "Nome"

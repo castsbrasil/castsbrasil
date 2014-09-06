@@ -1,0 +1,25 @@
+<h1>Casts#index</h1>
+
+<div class="table-responsive">
+  <table class="table">
+  	<thead>
+      <tr>
+        <th>Nome</th>
+        <th>Url</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @casts.each do |cast| %>
+		<tr>
+			<td><%= cast.name %></td>
+			<td><%= cast.url %></td>
+      <td>
+        <%= link_to t('.edit'), edit_cast_path(cast) %>
+      </td>
+		</tr>
+	<% end %>
+	</tbody>
+  </table>
+</div>
+
