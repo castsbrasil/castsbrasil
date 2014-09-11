@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('.title') %></title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= _controller_name + ' ' + _action_name %>">
+
+  <div class="container-fluid">
+    <div class="header">
+      <%= render 'layouts/user_header' %>
+      <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
+      <h5 class="muted"><%= t('.sub_title')  %></h5>
+    </div>
+    <hr />
+  </div>
+
+  <%= flash_messages %>
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+  
+</body>
+</html>
