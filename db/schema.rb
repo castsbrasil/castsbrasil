@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810140327) do
+ActiveRecord::Schema.define(version: 20140908221903) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +36,44 @@ ActiveRecord::Schema.define(version: 20140810140327) do
 
   add_index "casts", ["user_id"], name: "index_casts_on_user_id"
 
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.integer  "required_score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "role_id"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "profile_id"
+  end
+
+  add_index "links", ["profile_id"], name: "index_links_on_profile_id"
+
+  create_table "points", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "value",       null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
+
+  create_table "profiles", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -46,6 +84,16 @@ ActiveRecord::Schema.define(version: 20140810140327) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "scores", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "value",       null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "tag_relationships", force: true do |t|
     t.integer  "taggable_id"
@@ -82,6 +130,7 @@ ActiveRecord::Schema.define(version: 20140810140327) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "level_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

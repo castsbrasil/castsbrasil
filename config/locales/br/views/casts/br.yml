@@ -1,0 +1,13 @@
+br:
+  casts:
+    index:
+      edit: 'Editar Cast'
+    show:
+      edit: 'Editar Cast'
+      back: 'Voltar'
+    new:
+      title: 'Novo Cast'
+      create: 'Cadastrar'
+    edit:
+      title: 'Editar Cast'
+      update: 'Atualizar'

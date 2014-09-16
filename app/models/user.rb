@@ -1,14 +1,19 @@
 class User < ActiveRecord::Base
-  SOCIALS = [:github]
+  include Gamefication
+
+  SOCIALS = %i(github)
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: SOCIALS
 
+  has_one :profile, dependent: :destroy
+
   has_many :authorizations, dependent: :destroy
   has_many :casts, dependent: :destroy
 
   before_validation :add_free_role
+  after_create :create_profile
 
   rolify
 

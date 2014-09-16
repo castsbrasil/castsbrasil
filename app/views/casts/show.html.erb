@@ -1,2 +1,11 @@
-<h1>Casts#show</h1>
-<p>Find me in app/views/casts/show.html.erb</p>
+<p>
+  <%= @cast.name %>
+</p>
+<p>
+  <%= @cast.url %>
+</p>
+<p>
+  <%= @cast.description %>
+</p>
+<%= link_to t('.edit'), edit_cast_path(@cast) %> |
+<%= link_to t('.back'), casts_path %>
