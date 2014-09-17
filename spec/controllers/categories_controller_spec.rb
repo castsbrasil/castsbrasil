@@ -154,7 +154,7 @@ describe CategoriesController do
         end
 
         it "updates the category" do
-          expect{ put_update_category_with_name_easy }.to change(Category, :count).by(0)
+          expect { put_update_category_with_name_easy }.to change(Category, :count).by(0)
         end
 
         it "changes attribute name" do
