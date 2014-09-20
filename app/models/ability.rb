@@ -5,7 +5,7 @@ class Ability
     if user.has_role?(:admin)
       can :manage, :all
     else
-      if user.level != Level.find(1)
+      if user.has_role(:visitor)
       end
     end
   end

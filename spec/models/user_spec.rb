@@ -18,7 +18,6 @@ describe User do
   it { expect(subject).to have_many(:scores).dependent(:destroy) }
   it { expect(subject).to belong_to(:level) }
 
-
   context 'after create' do
     it 'should create a profile' do
       expect { create(:user) }.to change(Profile, :count).by(1)
