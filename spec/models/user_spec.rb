@@ -15,6 +15,8 @@ describe User do
   it { expect(subject).to have_many(:authorizations).dependent(:destroy) }
   it { expect(subject).to have_many(:casts).dependent(:destroy) }
   it { expect(subject).to have_one(:profile).dependent(:destroy) }
+  it { expect(subject).to have_many(:scores).dependent(:destroy) }
+  it { expect(subject).to belong_to(:level) }
 
   context 'after create' do
     it 'should create a profile' do

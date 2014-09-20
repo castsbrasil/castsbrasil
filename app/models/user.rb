@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  SOCIALS = [:github]
+  include Gamefication
+
+  SOCIALS = %i(github)
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
