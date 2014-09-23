@@ -70,8 +70,4 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.after(:suite) do
-    DatabaseCleaner[:active_record, {:connection => :colovore_test}].clean_with(:truncation)
-    DatabaseCleaner[:active_record, {:connection => :colovore_test}].clean
-  end
 end
