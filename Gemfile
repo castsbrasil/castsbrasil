@@ -5,6 +5,7 @@ ruby "#{File.new('.ruby-version').gets}"
 
 gem 'rails', '4.1.6.rc1'
 
+
 gem 'cancancan'
 gem 'devise'
 gem 'omniauth-github'

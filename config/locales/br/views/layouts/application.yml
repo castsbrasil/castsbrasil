@@ -3,3 +3,7 @@ br:
     application:
       title: 'RubyCastsBrasil'
       sub_title: 'RubyCasts Brasileiro e totalmente de graça'
+      menu:
+        contributing: 'Colabore'
+        about: 'Sobre o projeto'
+        screencasts: 'Screencasts'

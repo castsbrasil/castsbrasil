@@ -11,7 +11,9 @@ Rails.application.routes.draw do
              controller: 'devise/registrations',
              as: :user_registration
   end
-
-  get '/' => 'root#index', as: :users
-  root to: 'root#index'
+  get '/' => 'home#index', as: :users  # TODO: lol users_url ? Oo
+  get '/colabore' => 'home#contributing', as: :contributing
+  get '/sobre' => 'home#about', as: :about
+  get '/screencasts' => 'home#screencasts', as: :screencasts
+  root to: 'home#index'
 end

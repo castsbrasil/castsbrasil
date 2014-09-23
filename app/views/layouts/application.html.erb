@@ -2,17 +2,13 @@
 <html>
 <head>
   <title><%= t('.title') %></title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body controller_name="<%= params[:controller].gsub('/', ' ').titleize.gsub(' ', '.') %>" action_name="<%= action_name.capitalize %>">
-<div class="container-fluid">
-  <div class="header">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to t('.title'), root_path %></h3>
-    <h5 class="muted"><%= t('.sub_title')  %></h5>
-  </div>
-  <hr />
+
+<div class="alerts">
   <% if notice %>
       <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -25,8 +21,73 @@
         <%= alert %>
       </div>
   <% end %>
-  <%= yield %>
 </div>
+
+
+<div class="general-wrapper">
+  <!-- Header -->
+  <header class="header">
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+        <div class="content_logo">
+          <%= link_to root_url, class: "logo" do %>
+            <%= image_tag "logo-rubycasts.png" %>
+          <% end %>
+        </div>
+
+        <div>
+        <% if true %>
+          <nav class="menu">
+            <ul>
+              <li><%= link_to t('layouts.application.menu.screencasts'), screencasts_url  %></li>
+              <li><%= link_to t('layouts.application.menu.about'), "javascript:void(0)"  %></li>
+              <li><%= link_to t('layouts.application.menu.contributing'), "javascript:void(0)"  %></li>
+            </ul>
+          </nav>
+        <% end %>
+        </div>
+
+        <%= render 'shared/user_header' %>
+
+
+        <!--</div>-->
+      <!--</div>-->
+
+  </header>
+  <!-- / Header -->
+
+  <%= yield %>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dedication">
+            <%= image_tag 'logo-rubycasts-small.png' %>
+            <span class="rubycasts-with-love">
+              Ruby Casts Brasil | Feito com <3
+            </span>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <nav class="footer-menu">
+            <ul>
+              <li><%= link_to t('layouts.application.menu.screencasts'), screencasts_url  %></li>
+              <li><%= link_to t('layouts.application.menu.about'), "javascript:void(0)"  %></li>
+              <li><%= link_to t('layouts.application.menu.contributing'), "javascript:void(0)"  %></li>
+              <li><a href="https://www.facebook.com/pages/Ruby-Casts-Brasil/324913441002225">No facebook</a></li>
+              <li><a href="https://twitter.com/rubycastsbrasil">No twitter</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- /Footer -->
+
+</div>
+
 <%= javascript_include_tag 'application' %>
 </body>
 </html>
