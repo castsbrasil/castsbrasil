@@ -1,0 +1,127 @@
+<!-- Section Register -->
+<section class="register-home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Screencasts de Ruby criados por brasileiros para brasileiros. huehue</h2>
+        <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="content-buttons">
+      <% if user_signed_in? %>
+        <%= link_to "Screencasts",screencasts_url, class: "bt-screencasts-list" %>
+      <% else %>
+        <%= link_to "Entrar com GitHub",user_omniauth_authorize_path("github"), class: "bt-github" %>
+        <%= link_to "Criar uma nova conta", new_user_registration_path, class: 'bt-register' %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Section Register -->
+
+
+<!-- Section Latest -->
+<section class="featured latest-home">
+  <div class="container">
+    <div class="row">
+      <h2>Últimos screencasts publicados</h2>
+    </div>
+    <ul class="row video-items">
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+    </div>
+  </ul>
+</section>
+<!-- /Section Latest -->
+
+<!-- Section Latest -->
+<section class="featured most-watched-home">
+  <div class="container">
+    <div class="row">
+      <h2>Screencasts mais visualizados</h2>
+    </div>
+    <ul class="row video-items">
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+      <li class="col-md-6 video-item">
+        <div class="image-box">
+          <div class="image-hover"></div>
+          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        </div>
+        <a href="#" class="video-description">
+          <h3>Título do Vídeo</h3>
+          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+        </a>
+      </li>
+    </div>
+  </ul>
+</section>
+<!-- /Section Latest -->

@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 20140916222939) do
     t.datetime "updated_at"
   end
 
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.integer  "required_score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "role_id"
+  end
+
   create_table "links", force: true do |t|
     t.string   "url"
     t.string   "name"
@@ -51,6 +59,16 @@ ActiveRecord::Schema.define(version: 20140916222939) do
   end
 
   add_index "links", ["profile_id"], name: "index_links_on_profile_id"
+
+  create_table "points", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "value",       null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -72,6 +90,16 @@ ActiveRecord::Schema.define(version: 20140916222939) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "scores", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "value",       null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "tag_relationships", force: true do |t|
     t.integer  "taggable_id"
@@ -108,6 +136,7 @@ ActiveRecord::Schema.define(version: 20140916222939) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "level_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

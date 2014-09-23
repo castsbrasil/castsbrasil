@@ -9,7 +9,6 @@ describe Ability do
       user.add_role :admin
       @ability = Ability.new(user)
     end
-
     it { expect(@ability).to be_able_to(:manage, :all) }
   end
 end
