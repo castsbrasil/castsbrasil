@@ -29,7 +29,7 @@ Esse projeto utiliza o [bundler](http://bundler.io) para controle de dependênci
 [bower](http://bower.io) para controle de dependências `js` e `css`.
 O bower é utilizado em conjunto com o [bower-installer](https://github.com/blittle/bower-installer)
 para ter um controle maior dos arquivos que entram no controle de versão.
-Ambos são monitorados pelo [gemnasium](https://gemnasium.com)
+Ambos são monitorados pelo [gemnasium](https://gemnasium.com).
 
 ## Controle da Qualidade [![Coverage Status](https://img.shields.io/coveralls/RubyCastsBrasil/RubyCastsBrasil.svg)](https://coveralls.io/r/RubyCastsBrasil/RubyCastsBrasil)
 
