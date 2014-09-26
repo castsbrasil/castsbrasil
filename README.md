@@ -53,7 +53,7 @@ Para monitoramento da documentação é utilizado o [inch-ci](http://inch-ci.org
 ## Gerenciamento de Projeto [![Stories in Ready](https://badge.waffle.io/RubyCastsBrasil/RubyCastsBrasil.png?label=ready&title=Ready)](https://waffle.io/RubyCastsBrasil/RubyCastsBrasil)
 
 Para controle das funcionalidades, bugs, revisão de código e afins é utilizado o [waffle](http://waffle.io)
-que trabalha em cima das issues do github, e disponibiliza um painel para um controle maior 
+que trabalha em cima das issues do github, e disponibiliza um painel para um controle maior.
 
 ## Discussões [![Gitter chat](https://badges.gitter.im/RubyCastsBrasil/RubyCastsBrasil.png)](https://gitter.im/RubyCastsBrasil/RubyCastsBrasil)
 
