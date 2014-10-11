@@ -5,6 +5,7 @@
 # Colaboradores:
 
 * Abilio Bittencourt Junior <abilioxd@gmail.com>
+* Carlos Alexandro Becker <caarlos0@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Gabriel Caires <gabrielcairesmar@gmail.com>
 * Gustavo Araújo <gu.araujo25@gmail.com>
