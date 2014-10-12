@@ -1,4 +1,3 @@
-
 source 'http://rubygems.org'
 
 ruby "#{File.new('.ruby-version').gets}"
@@ -16,6 +15,7 @@ gem 'sass-rails', '5.0.0.beta1'
 gem 'simple_form', '>= 3.1.0.rc1'
 gem 'therubyracer'
 gem 'uglifier', '>= 1.3.0'
+gem 'statesman', '~> 0.8.3'
 
 group :test do
   gem 'capybara'
