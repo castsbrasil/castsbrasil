@@ -11,4 +11,12 @@ describe Ability do
     end
     it { expect(@ability).to be_able_to(:manage, :all) }
   end
+  context 'on visitor' do
+    before :each do
+      user = User.new
+      user.add_role :visitor
+      @ability = Ability.new(user)
+    end
+    it { expect(@ability).to_not be_able_to(:manage, :all) }
+  end
 end

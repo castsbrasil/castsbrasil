@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916222939) do
+ActiveRecord::Schema.define(version: 20140923001253) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20140916222939) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "cast_transitions", force: true do |t|
+    t.string   "to_state"
+    t.text     "metadata",   default: "{}"
+    t.integer  "sort_key"
+    t.integer  "cast_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cast_transitions", ["cast_id"], name: "index_cast_transitions_on_cast_id"
+  add_index "cast_transitions", ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true
 
   create_table "casts", force: true do |t|
     t.string   "name"
