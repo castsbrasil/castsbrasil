@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby "#{File.new('.ruby-version').gets}"
+ruby "2.1.2"
 
 gem 'rails', '4.1.6'
 
