@@ -196,7 +196,7 @@ body {
 		text-decoration: none;
 	}
 	background: $color-light-grey url(image_path('github-icon.png')) no-repeat center left;
-	background-position: 40px 20px;
+	background-position: 40px 28px;
 	color: $color-white;
 	display: inline-block;
 	width: 520px;
@@ -207,6 +207,7 @@ body {
 	border-radius: 10px;
 	font-weight: 800;
 	margin-right: 40px;
+	box-shadow: #7f7f7f 0px 5px 4px, #8a8a8a 0px 10px 1px;
 
 }
 
@@ -216,7 +217,7 @@ body {
     text-decoration: none;
   }
   background: $color-light-grey url(image_path('movies-icon.png')) no-repeat center left;
-  background-position: 40px 20px;
+  background-position: 40px 28px;
   color: $color-white;
   display: inline-block;
   width: 520px;
@@ -235,8 +236,8 @@ body {
 		color: $color-white;
 		text-decoration: none;
 	}
-	background: $color-green url(image_path('plus-icon.png')) no-repeat center left;
-	background-position: 40px 20px;
+	background: $color-green url(image_path('baby-icon.png')) no-repeat center left;
+	background-position: 40px 28px;
 	color: $color-white;
 	display: inline-block;
 	width: 520px;
@@ -246,6 +247,7 @@ body {
 	@include font-size(50, 220);
 	border-radius: 10px;
 	font-weight: 800;
+	box-shadow: #00954a 0px 5px 4px, #00a250 0px 10px 1px;
 }
 
 
