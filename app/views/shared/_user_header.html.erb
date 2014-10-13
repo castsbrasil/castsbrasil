@@ -1,4 +1,4 @@
-<ul class="nav nav-pills pull-right">
+<ul class="nav nav-pills pull-right sign-in-box-header">
   <% if user_signed_in? %>
       <div class="content-profile-login-box">
         <%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, method: :delete, class: 'bt-logout' %>
@@ -9,7 +9,7 @@
   <% else %>
       <div class="content-profile-login-box">
         <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: 'bt-default' %>
-        <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path, class: 'bt-default' %>
+        <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path, class: 'bt-default bt-signup ' %>
       </div>
   <% end %>
 </ul>

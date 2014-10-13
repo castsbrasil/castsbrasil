@@ -61,24 +61,34 @@ body {
 }
 
 .menu {
-    float: left;
+    float: right;
     padding-left: 30px;
+    height: 100px;
+    margin-right: 60px;
 	ul {
 		list-style: none;
-		line-height: 100px;
+		// height: 100%;
 		padding: 0; margin: 0;
 		float: right;
 		li {
 			display: inline-block;
-			padding: 0 26px;
+			// height: 100%;
 			a {
 				color: $color-red;
 				@include font-size(22, 14);
-				font-weight: bold;
+				display: block;
+				padding: 0 26px;
+				height: 100%;
+				line-height: 100px;
 				&:hover {
 					color: $color-dark-red;
 					text-decoration: none;
 				}
+			}
+			a:hover {
+				background: $color-light-red;
+
+				color: $color-white;
 			}
 		}
 	}
@@ -88,13 +98,18 @@ body {
   float: left;
   padding-left: 30px;
 }
+
+.sign-in-box-header {
+	float: right;
+	// background: red;
+}
 /*********************************************************************
 *  Profile Bar
 *********************************************************************/
 
 .content-profile-login-box {
-	padding-top: 40px;
-    padding-right: 30px;
+	padding-top: 37px;
+    padding-right: 160px;
 	img {
 		float: right;
 		border-radius: 4px;
@@ -117,11 +132,17 @@ body {
 	}
     .bt-default {
       font-size: 12px;
-      color: #602728;
+      color: $color-white;
       float: right;
-      padding-top: 4px;
-      padding-right: 10px;
+      padding: 6px 18px;
       line-height: 14px;
+      background: $color-light-grey;
+      border-radius: 6px;
+      margin-right: 6px;
+      text-decoration: none;
+    }
+    .bt-signup {
+    	background: $color-green;
     }
 	.user-profile-name {
 		font-size: 12px;
