@@ -259,11 +259,11 @@ body {
 
 
 .featured {
-	padding: 20px 0 25px 0;
+	padding: 30px 0 75px 0;
 	h2 {
 		padding-left: 38px;
 		margin-left: 30px;
-		margin-bottom: 30px;
+		margin-bottom: 80px;
 		font-weight: 300;
 		font-size: 45px;
 		color: $color-dark-red;
@@ -271,12 +271,14 @@ body {
 }
 
 .latest-home {
+	background: url(image_path('cronometer-bg.png')) no-repeat left bottom;
 	h2 {
 		background: url(image_path('clock-icon.png')) no-repeat center left;
 	}
 }
 .most-watched-home {
-	border-top: #ccc solid 1px;
+	background: #e5e3d3 url(image_path('most-watched-bg.png')) no-repeat right center;
+
 	h2 {
 		background: url(image_path('clock-icon.png')) no-repeat center left;
 	}
@@ -314,13 +316,15 @@ body {
 		text-decoration: none;
 	}
 	h3 {
-		margin: 0 0 10px 0;
+		margin: 0 0 8px 0;
 		font-weight: bold;
 		color: $color-dark-red;
 		font-size: 22px;
 	}
 	p {
-		@include font-size(16, 22);
+		font-size: 14px;
+		line-height: 17px;
+		color: #000000;
 	}
 }
 
@@ -346,11 +350,12 @@ body {
 		line-height: 62px;
 		.rubycasts-with-love {
 			padding-left: 10px;
-			color: $color-dark-red;
+			color: #602728;
+			font-size: 14px;
 		}
 	}
 
-	background: $color-white;
+	background: #efeddf;
 }
 
 
@@ -361,14 +366,31 @@ body {
 		list-style: none;
 		li {
 			display: inline-block;
-			padding: 0 20px;
+			overflow: hidden;
 			a {
-				color: $color-dark-red;
-				@include font-size(17, 20);
+				color: #602728;
+				font-size: 14px;
+				padding: 0 20px;
+			}
+			a.social-bt {
+				// width: 29px;
+				padding: 0;
+				height: 29px;
+				display: inline-block;
+				margin: 0 4px;
 			}
 		}
 	}
 }
+
+
+
+
+// social-facebook-icon.png
+
+
+
+
 
 
 
@@ -394,7 +416,7 @@ body {
 	background-position: 10px 12px;
 	padding-left: 50px;
 	margin-top: 36px;
-	display: inline-block;
+	display: block;
 	span {
 		color: $color-red;
 	}
