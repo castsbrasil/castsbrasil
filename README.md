@@ -17,11 +17,11 @@ cp config/database.example.yml config/database.yml
 - Execute o comando `RAILS_ENV=test rake db:migrate` para criar todas as tabelas no seu banco de dados de teste.
 - Execute o comando `rails s` para subir o servidor [rails](https://github.com/rails/rails)
 
-## Testes [![Build Status](https://travis-ci.org/RubyCastsBrasil/RubyCastsBrasil.svg?branch=master)](https://travis-ci.org/RubyCastsBrasil/RubyCastsBrasil)
+## Testes [![Build Status](https://semaphoreapp.com/api/v1/projects/c89e95d8-895c-4956-be17-c29a01b7c281/271048/badge.png)](https://semaphoreapp.com/rubycastsbrasil/rubycastsbrasil)
 
 Esse projeto utiliza o [rspec](http://rspec.info/) como framework de testes principal.
 Todas as expectations estão de acordo com a nova forma da versão 3.0 do rspec.
-A suíte de testes é monitarada pelo [travis-ci](https://travis-ci.org)
+A suíte de testes é monitarada pelo [semaphore app](https://semaphoreapp.com/rubycastsbrasil/rubycastsbrasil).
  
 ## Dependências [![Dependency Status](https://gemnasium.com/RubyCastsBrasil/RubyCastsBrasil.svg)](https://gemnasium.com/RubyCastsBrasil/RubyCastsBrasil)
 
