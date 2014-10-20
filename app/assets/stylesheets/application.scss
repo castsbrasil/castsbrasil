@@ -39,9 +39,17 @@ body {
 	position: absolute;
 	color: black;
 	z-index: 99999;
-	width: 100%;
+	width: 500px;
+	left: 50%;
+	margin-left: -250px;
 }
-
+.alert {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	.close {
+		top: -5px;
+	}
+}
 
 
 /*********************************************************************
@@ -67,12 +75,10 @@ body {
 		margin-right: 60px;
 	ul {
 		list-style: none;
-		// height: 100%;
 		padding: 0; margin: 0;
 		float: right;
 		li {
 			display: inline-block;
-			// height: 100%;
 			a {
 				color: $color-red;
 				@include font-size(22, 14);
