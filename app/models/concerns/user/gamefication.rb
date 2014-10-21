@@ -1,5 +1,6 @@
 module User::Gamefication
   extend ActiveSupport::Concern
+
   included do
     has_many :scores, dependent: :destroy, after_add: :update_level
     belongs_to :level
