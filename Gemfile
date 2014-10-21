@@ -4,7 +4,6 @@ ruby "2.1.2"
 
 gem 'rails', '4.1.6'
 
-
 gem 'cancancan'
 gem 'cocoon'
 gem 'devise'
