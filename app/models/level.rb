@@ -4,7 +4,5 @@ class Level < ActiveRecord::Base
 
   validates :required_score, numericality: { only_integer: true }, allow_nill: false
 
-  def self.by_score(score)
-    Level.order(required_score: :desc).where("required_score <= ?", score).first
-  end
+  scope :by_score, ->(score) { where("required_score <= ?", score).order(required_score: :desc) }
 end

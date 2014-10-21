@@ -12,11 +12,11 @@ module User::Gamefication
   end
 
   def assing_level
-    update_attributes!(level: Level.by_score(total_score))
+    update_attributes!(level: Level.by_score(total_score).first)
   end
 
   def update_level(*)
-    new_level = Level.by_score(total_score)
+    new_level = Level.by_score(total_score).first
     if level_id != new_level.id
       assing_level
       if new_level.role
