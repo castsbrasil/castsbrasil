@@ -5,6 +5,7 @@
 # Colaboradores:
 
 * Abilio Bittencourt Junior <abilioxd@gmail.com>
+* Brunno dos Santos <rubycastsbrasil@brunno.me>
 * Carlos Alexandro Becker <caarlos0@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Gabriel Caires <gabrielcairesmar@gmail.com>
