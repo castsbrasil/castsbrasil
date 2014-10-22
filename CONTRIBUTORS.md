@@ -10,6 +10,7 @@
 * Carlos Ribeiro <mail@carlosribeiro.me>
 * Gabriel Caires <gabrielcairesmar@gmail.com>
 * Gustavo Araújo <gu.araujo25@gmail.com>
+* Hugo Dias <hugooodias@gmail.com>
 * Ivan Santos <pragmaticivan@gmail.com>
 * Jean Matheus Souto <jeanmatheussouto@gmail.com>
 * Matheus Mina <mfbmina@gmail.com>
