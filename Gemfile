@@ -4,7 +4,6 @@ ruby "2.1.2"
 
 gem 'rails', '4.1.6'
 
-
 gem 'cancancan'
 gem 'cocoon'
 gem 'devise'
@@ -33,6 +32,7 @@ group :development do
   gem 'letter_opener'
   gem 'brakeman', require: false
   gem 'bullet'
+  gem 'better_errors'
 end
 
 group :development, :test do
