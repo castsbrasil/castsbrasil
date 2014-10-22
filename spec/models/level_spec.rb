@@ -11,7 +11,30 @@ describe Level do
     before { create(:level) }
 
     it 'should find level by pontution' do
-      expect(Level.by_score(100).first.id).to eq(Level.first.id)
+      expect(Level.first_by_score(100).id).to eq(Level.first.id)
+    end
+  end
+
+  describe '.order_by_required' do
+    before do
+      create(:level)
+      create(:level, required_score: 30)
+    end
+
+    it 'should find level by order' do
+      expect(Level.order_by_required.first.id).to eq(Level.first.id)
+    end
+  end
+
+  describe '.first_by_score' do
+    let!(:level) { create(:level, required_score: 70) }
+    before do
+      create(:level)
+      create(:level, required_score: 71)
+    end
+
+    it 'should find level by first score' do
+      expect(Level.first_by_score(70)).to eq(level)
     end
   end
 
