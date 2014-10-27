@@ -9,6 +9,7 @@ class Authorization
     def set_from_oauth(oauth)
       authorization.profile_page ||= oauth.info.urls.first.last
       authorization.nick_name    ||= oauth.info.nickname
+      authorization.avatar_url   ||= oauth.info.image
       authorization
     end
   end
