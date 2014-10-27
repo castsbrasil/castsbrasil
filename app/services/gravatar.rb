@@ -3,8 +3,8 @@ class Gravatar
     @gravatar_id = build_gravatar_id(email.downcase)
   end
 
-  def image_url
-    URI.parse("http://gravatar.com/avatar/#{@gravatar_id}.png?size=26")
+  def url
+    URI.parse("http://gravatar.com/avatar/#{@gravatar_id}.png")
   end
 
   def exists?
