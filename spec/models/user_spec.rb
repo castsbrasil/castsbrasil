@@ -3,6 +3,7 @@ require 'rails_helper'
 describe User do
   let(:user) { User.new }
   let(:attributes) { User::Attributes.new(user) }
+  let(:profile) { Profile.new }
 
   it 'SOCIALS should return a list of social networks' do
     expect(User::SOCIALS).to be == [:github]
@@ -74,11 +75,16 @@ describe User do
     before :each do
       allow(User).to receive(:new).and_return(user)
       allow(user).to receive(:set_attributes_from_oauth).and_return(user)
+      allow(Profile).to receive(:new_from_oauth).and_return(profile)
       @oauth = double
     end
 
     it 'should initialize an user from oauth and return it' do
       expect(User.new_from_oauth(@oauth)).to be == user
+    end
+
+    it 'should initialize an profile from oauth and set it to the user' do
+      expect(User.new_from_oauth(@oauth).profile).to be == profile
     end
   end
 
