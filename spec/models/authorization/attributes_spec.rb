@@ -15,6 +15,7 @@ describe Authorization::Attributes do
       @oauth = double
       allow(@oauth).to receive_message_chain(:info, :urls, :first, :last).and_return('example.com/profile')
       allow(@oauth).to receive_message_chain(:info, :nickname).and_return('Name')
+      allow(@oauth).to receive_message_chain(:info, :image).and_return('http://lorempixel.com/26/26')
     end
 
     it 'should set the user profile' do
