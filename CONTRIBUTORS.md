@@ -20,3 +20,4 @@
 * Thiago Ramos <thiagoramos.al@gmail.com>
 * Victor Campos <victor.campos@visagio.com>
 * Wender Freese <wender.jean@gmail.com>
+* Luiz Cezer <lccezinha@gmail.com>
