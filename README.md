@@ -59,3 +59,7 @@ que trabalha em cima das issues do github, e disponibiliza um painel para um con
 
 Para discussões relacionadas ao projeto, é utilizado o [gitter](https://gitter.im) que disponibiliza
 um chat em tempo real. Para discussões a longo prazo (assíncronas) é utilizado o [google groups](https://groups.google.com/forum/#!forum/rubycastsbrasil).
+
+## Triagem de tarefas
+
+Você pode acompanhar o projeto utilizando [Codetriage](http://www.codetriage.com/rubycastsbrasil/rubycastsbrasil). Ao efetuar o cadastro na plataforma, todos os dias você poderá receber um newsletter com algumas tarefas que precisam de ajuda para serem solucionadas.
