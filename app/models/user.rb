@@ -46,4 +46,10 @@ class User < ActiveRecord::Base
   def add_free_role
     self.add_role :free
   end
+
+  def self.new_with_session(params, _session)
+    user = new(params)
+    user.profile = Profile.new(params[:profile_attributes] || {})
+    user
+  end
 end

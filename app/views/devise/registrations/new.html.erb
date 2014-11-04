@@ -3,8 +3,6 @@
     <h2><%= t('.sign_up', :default => "Sign up") %></h2>
   </div>
 
-  <% resource.create_profile %>
-
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.input :email %>
     <%= f.input :password %>
