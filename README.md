@@ -50,7 +50,8 @@ demasiada complicada.
 Para documentação é utilzado o [yardoc](http://yardoc.org/) que disponibiliza uma api flexível.
 Para monitoramento da documentação é utilizado o [inch-ci](http://inch-ci.org/).
 
-## Gerenciamento de Projeto [![Stories in Ready](https://badge.waffle.io/RubyCastsBrasil/RubyCastsBrasil.png?label=ready&title=Ready)](https://waffle.io/RubyCastsBrasil/RubyCastsBrasil)
+## Gerenciamento de Projeto [![Stories in Ready](https://badge.waffle.io/RubyCastsBrasil/RubyCastsBrasil.png?label=ready&title=Ready)](https://waffle.io/RubyCastsBrasil/RubyCastsBrasil) 
+[![Throughput Graph](https://graphs.waffle.io/rubycastsbrasil/rubycastsbrasil/throughput.svg)](https://waffle.io/rubycastsbrasil/rubycastsbrasil/metrics)
 
 Para controle das funcionalidades, bugs, revisão de código e afins é utilizado o [waffle](http://waffle.io)
 que trabalha em cima das issues do github, e disponibiliza um painel para um controle maior.
