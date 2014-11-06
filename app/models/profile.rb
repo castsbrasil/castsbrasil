@@ -13,6 +13,16 @@ class Profile < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def avatar
+    avatar = if user.authorizations.github.present?
+      user.authorizations.github.avatar_url
+    else
+      gravatar = Gravatar.new(user.email)
+      gravatar.url if gravatar.exists?
+    end
+    avatar
+  end
+
   def set_attributes_from_oauth(oauth)
     values.set_from_oauth(oauth)
     self

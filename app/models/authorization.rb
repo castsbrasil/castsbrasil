@@ -7,6 +7,8 @@ class Authorization < ActiveRecord::Base
           :secret => oauth.credentials.secret)
   end
 
+  scope :github, -> { find_by(provider: 'github') }
+
   def values
     @values ||= Attributes.new(self)
   end
