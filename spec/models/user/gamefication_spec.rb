@@ -27,7 +27,7 @@ describe User do
 
     it 'should increment the level' do
       user.scores.create(value:100)
-      expect(user.level).to eq(Level.by_score(user.total_score))
+      expect(user.level).to eq(Level.first_by_score(user.total_score))
     end
 
     context 'should have a level with rule' do
@@ -50,7 +50,7 @@ describe User do
       end
 
       it 'should be have the first level' do
-        expect(user.level).to eq(Level.by_score(0))
+        expect(user.level).to eq(Level.first_by_score(0))
       end
     end
   end

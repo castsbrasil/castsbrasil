@@ -8,84 +8,16 @@
 </head>
 <body controller_name="<%= params[:controller].gsub('/', ' ').titleize.gsub(' ', '.') %>" action_name="<%= action_name.capitalize %>">
 
-<div class="alerts">
-  <% if notice %>
-      <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= notice %>
-      </div>
-  <% end %>
-  <% if alert %>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= alert %>
-      </div>
-  <% end %>
-</div>
+<a href="https://github.com/RubyCastsBrasil/RubyCastsBrasil"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:800" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
+<%= render 'shared/alerts' %>
 
 <div class="general-wrapper">
-  <!-- Header -->
-  <header class="header">
-    <!--<div class="container">-->
-      <!--<div class="row">-->
-        <div class="content_logo">
-          <%= link_to root_url, class: "logo" do %>
-            <%= image_tag "logo-rubycasts.png" %>
-          <% end %>
-        </div>
-
-        <div>
-        <% if true %>
-          <nav class="menu">
-            <ul>
-              <li><%= link_to t('layouts.application.menu.screencasts'), screencasts_url  %></li>
-              <li><%= link_to t('layouts.application.menu.about'), "javascript:void(0)"  %></li>
-              <li><%= link_to t('layouts.application.menu.contributing'), "javascript:void(0)"  %></li>
-            </ul>
-          </nav>
-        <% end %>
-        </div>
-
-        <%= render 'shared/user_header' %>
-
-
-        <!--</div>-->
-      <!--</div>-->
-
-  </header>
-  <!-- / Header -->
+  <%= render 'shared/header' %>
 
   <%= yield %>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="dedication">
-            <%= image_tag 'logo-rubycasts-small.png' %>
-            <span class="rubycasts-with-love">
-              Ruby Casts Brasil | Feito com <3
-            </span>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <nav class="footer-menu">
-            <ul>
-              <li><%= link_to t('layouts.application.menu.screencasts'), screencasts_url  %></li>
-              <li><%= link_to t('layouts.application.menu.about'), "javascript:void(0)"  %></li>
-              <li><%= link_to t('layouts.application.menu.contributing'), "javascript:void(0)"  %></li>
-              <li><a href="https://www.facebook.com/pages/Ruby-Casts-Brasil/324913441002225">No facebook</a></li>
-              <li><a href="https://twitter.com/rubycastsbrasil">No twitter</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- /Footer -->
-
+  <%= render 'shared/footer' %>
 </div>
 
 <%= javascript_include_tag 'application' %>

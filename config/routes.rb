@@ -12,8 +12,8 @@ Rails.application.routes.draw do
              as: :user_registration
   end
   get '/' => 'home#index', as: :users  # TODO: lol users_url ? Oo
-  get '/colabore' => 'home#contributing', as: :contributing
-  get '/sobre' => 'home#about', as: :about
+  get '/colabore', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki/Contribuindo'), as: :contributing
+  get '/sobre', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki'), as: :about
   get '/screencasts' => 'home#screencasts', as: :screencasts
   root to: 'home#index'
 end

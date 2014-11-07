@@ -36,12 +36,20 @@ body {
 }
 
 .alerts {
-  position: absolute;
-  color: black;
-  z-index: 99999;
-  width: 100%;
+	position: absolute;
+	color: black;
+	z-index: 99999;
+	width: 500px;
+	left: 50%;
+	margin-left: -250px;
 }
-
+.alert {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	.close {
+		top: -5px;
+	}
+}
 
 
 /*********************************************************************
@@ -61,40 +69,53 @@ body {
 }
 
 .menu {
-    float: left;
-    padding-left: 30px;
+		float: right;
+		padding-left: 30px;
+		height: 100px;
+		margin-right: 60px;
 	ul {
 		list-style: none;
-		line-height: 100px;
 		padding: 0; margin: 0;
 		float: right;
 		li {
 			display: inline-block;
-			padding: 0 26px;
 			a {
 				color: $color-red;
 				@include font-size(22, 14);
-				font-weight: bold;
+				display: block;
+				padding: 0 26px;
+				height: 100%;
+				line-height: 100px;
 				&:hover {
 					color: $color-dark-red;
 					text-decoration: none;
 				}
+			}
+			a:hover {
+				background: $color-light-red;
+
+				color: $color-white;
 			}
 		}
 	}
 }
 
 .content_logo {
-  float: left;
-  padding-left: 30px;
+	float: left;
+	padding-left: 30px;
+}
+
+.sign-in-box-header {
+	float: right;
+	// background: red;
 }
 /*********************************************************************
 *  Profile Bar
 *********************************************************************/
 
 .content-profile-login-box {
-	padding-top: 40px;
-    padding-right: 30px;
+	padding-top: 37px;
+		padding-right: 160px;
 	img {
 		float: right;
 		border-radius: 4px;
@@ -115,14 +136,20 @@ body {
 		float: right;
 		text-indent: -9999px;
 	}
-    .bt-default {
-      font-size: 12px;
-      color: #602728;
-      float: right;
-      padding-top: 4px;
-      padding-right: 10px;
-      line-height: 14px;
-    }
+		.bt-default {
+			font-size: 12px;
+			color: $color-white;
+			float: right;
+			padding: 6px 18px;
+			line-height: 14px;
+			background: $color-light-grey;
+			border-radius: 6px;
+			margin-right: 6px;
+			text-decoration: none;
+		}
+		.bt-signup {
+			background: $color-green;
+		}
 	.user-profile-name {
 		font-size: 12px;
 		color: #602728;
@@ -131,9 +158,12 @@ body {
 		padding-right: 10px;
 		line-height: 14px;
 	}
+
+    .avatar {
+        width: 26px;
+        height: 26px;
+    }
 }
-
-
 
 /*********************************************************************
 *  Register Section
@@ -169,44 +199,47 @@ body {
 	padding-top: 80px;
 }
 
+@mixin btn-home {
+	display: inline-block;
+	width: 520px;
+	height: 118px;
+	text-align: right;
+	font-size: 30px;
+	line-height: 118px;
+	border-radius: 10px;
+	font-weight: 800;
+	&:hover {
+		opacity: 0.97;
+	}
+}
+
 .bt-github {
 	&:hover {
 		color: $color-white;
 		text-decoration: none;
 	}
 	background: $color-light-grey url(image_path('github-icon.png')) no-repeat center left;
-	background-position: 40px 20px;
+	background-position: 40px 22px;
 	color: $color-white;
-	display: inline-block;
-	width: 520px;
-	padding-right: 40px;
-	height: 138px;
-	text-align: right;
-	@include font-size(50, 220);
-	border-radius: 10px;
-	font-weight: 800;
-	margin-right: 40px;
+	box-shadow: #7f7f7f 0px 5px 4px, #8a8a8a 0px 10px 1px;
+	margin-right: 90px;
+	padding-right: 60px;
+	float: left;
+	@include btn-home;
 
 }
 
 .bt-screencasts-list {
-  &:hover {
-    color: $color-white;
-    text-decoration: none;
-  }
-  background: $color-light-grey url(image_path('movies-icon.png')) no-repeat center left;
-  background-position: 40px 20px;
-  color: $color-white;
-  display: inline-block;
-  width: 520px;
-  padding-right: 140px;
-  height: 138px;
-  text-align: right;
-  @include font-size(50, 220);
-  border-radius: 10px;
-  font-weight: 800;
-  margin-right: 40px;
-
+	&:hover {
+		color: $color-white;
+		text-decoration: none;
+	}
+	background: $color-light-grey url(image_path('movies-icon.png')) no-repeat center left;
+	background-position: 40px 12px;
+	color: $color-white;
+	padding-right: 140px;
+	box-shadow: #7f7f7f 0px 5px 4px, #8a8a8a 0px 10px 1px;
+	@include btn-home;
 }
 
 .bt-register {
@@ -214,21 +247,14 @@ body {
 		color: $color-white;
 		text-decoration: none;
 	}
-	background: $color-green url(image_path('plus-icon.png')) no-repeat center left;
-	background-position: 40px 20px;
+	background: $color-green url(image_path('baby-icon.png')) no-repeat center left;
+	background-position: 40px 22px;
 	color: $color-white;
-	display: inline-block;
-	width: 520px;
-	padding-right: 30px;
-	height: 138px;
-	text-align: right;
-	@include font-size(50, 220);
-	border-radius: 10px;
-	font-weight: 800;
+	padding-right: 40px;
+	box-shadow: #00954a 0px 5px 4px, #00a250 0px 10px 1px;
+	float: left;
+	@include btn-home;
 }
-
-
-
 
 /*********************************************************************
 *  Latests
@@ -236,11 +262,11 @@ body {
 
 
 .featured {
-	padding: 20px 0 25px 0;
+	padding: 30px 0 75px 0;
 	h2 {
 		padding-left: 38px;
 		margin-left: 30px;
-		margin-bottom: 30px;
+		margin-bottom: 80px;
 		font-weight: 300;
 		font-size: 45px;
 		color: $color-dark-red;
@@ -248,12 +274,14 @@ body {
 }
 
 .latest-home {
+	background: url(image_path('cronometer-bg.png')) no-repeat left bottom;
 	h2 {
 		background: url(image_path('clock-icon.png')) no-repeat center left;
 	}
 }
 .most-watched-home {
-	border-top: #ccc solid 1px;
+	background: #e5e3d3 url(image_path('most-watched-bg.png')) no-repeat right center;
+
 	h2 {
 		background: url(image_path('clock-icon.png')) no-repeat center left;
 	}
@@ -291,13 +319,15 @@ body {
 		text-decoration: none;
 	}
 	h3 {
-		margin: 0 0 10px 0;
+		margin: 0 0 8px 0;
 		font-weight: bold;
 		color: $color-dark-red;
 		font-size: 22px;
 	}
 	p {
-		@include font-size(16, 22);
+		font-size: 14px;
+		line-height: 17px;
+		color: #000000;
 	}
 }
 
@@ -323,11 +353,12 @@ body {
 		line-height: 62px;
 		.rubycasts-with-love {
 			padding-left: 10px;
-			color: $color-dark-red;
+			color: #602728;
+			font-size: 14px;
 		}
 	}
 
-	background: $color-white;
+	background: #efeddf;
 }
 
 
@@ -338,19 +369,22 @@ body {
 		list-style: none;
 		li {
 			display: inline-block;
-			padding: 0 20px;
+			overflow: hidden;
 			a {
-				color: $color-dark-red;
-				@include font-size(17, 20);
+				color: #602728;
+				font-size: 14px;
+				padding: 0 20px;
+			}
+			a.social-bt {
+				// width: 29px;
+				padding: 0;
+				height: 29px;
+				display: inline-block;
+				margin: 0 4px;
 			}
 		}
 	}
 }
-
-
-
-
-
 
 // Screencast List
 
@@ -371,7 +405,7 @@ body {
 	background-position: 10px 12px;
 	padding-left: 50px;
 	margin-top: 36px;
-	display: inline-block;
+	display: block;
 	span {
 		color: $color-red;
 	}
@@ -425,3 +459,6 @@ body {
 		font-weight: bold;
 	}
 }
+
+
+

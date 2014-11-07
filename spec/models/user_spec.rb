@@ -3,6 +3,7 @@ require 'rails_helper'
 describe User do
   let(:user) { User.new }
   let(:attributes) { User::Attributes.new(user) }
+  let(:profile) { Profile.new }
 
   it 'SOCIALS should return a list of social networks' do
     expect(User::SOCIALS).to be == [:github]
@@ -74,11 +75,48 @@ describe User do
     before :each do
       allow(User).to receive(:new).and_return(user)
       allow(user).to receive(:set_attributes_from_oauth).and_return(user)
+      allow(Profile).to receive(:new_from_oauth).and_return(profile)
       @oauth = double
     end
 
     it 'should initialize an user from oauth and return it' do
       expect(User.new_from_oauth(@oauth)).to be == user
+    end
+
+    it 'should initialize an profile from oauth and set it to the user' do
+      expect(User.new_from_oauth(@oauth).profile).to be == profile
+    end
+  end
+
+  describe '.new_with_session' do
+    before :each do
+      @hash = { email: 'email@example.com', profile_attributes: { first_name: 'Firstname', last_name: 'Lastname' } }
+      @user = User.new(@hash)
+      @profile = Profile.new(@hash[:profile_attributes])
+
+      allow(User).to receive(:new).with({}).and_return(user)
+      allow(Profile).to receive(:new).with({}).and_return(profile)
+      allow(User).to receive(:new).with(@hash).and_return(@user)
+      allow(Profile).to receive(:new).with(@hash[:profile_attributes]).and_return(@profile)
+    end
+
+    it 'should initialize an user from session and return it' do
+      expect(User.new_with_session({}, nil)).to be == user
+    end
+
+    it 'should initialize an profile and set it to the user' do
+      expect(User.new_with_session({}, nil).profile).to be == profile
+    end
+
+    it 'should create an user from hash and return it' do
+      expect(User.new_with_session(@hash, nil)).to be == @user
+      expect(User.new_with_session(@hash, nil).email).to be == @hash[:email]
+    end
+
+    it 'should create an profile from hash and set it to the user' do
+      expect(User.new_with_session(@hash, nil).profile).to be == @profile
+      expect(User.new_with_session(@hash, nil).profile.first_name).to be == @hash[:profile_attributes][:first_name]
+      expect(User.new_with_session(@hash, nil).profile.last_name).to be == @hash[:profile_attributes][:last_name]
     end
   end
 

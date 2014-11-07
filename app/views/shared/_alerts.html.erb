@@ -1,0 +1,16 @@
+<% if notice || alert  %>
+<div class="alerts">
+  <% if notice %>
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= notice %>
+      </div>
+  <% end %>
+  <% if alert %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= alert %>
+      </div>
+  <% end %>
+</div>
+<% end %>

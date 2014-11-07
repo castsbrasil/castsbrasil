@@ -17,11 +17,11 @@ cp config/database.example.yml config/database.yml
 - Execute o comando `RAILS_ENV=test rake db:migrate` para criar todas as tabelas no seu banco de dados de teste.
 - Execute o comando `rails s` para subir o servidor [rails](https://github.com/rails/rails)
 
-## Testes [![Build Status](https://travis-ci.org/RubyCastsBrasil/RubyCastsBrasil.svg?branch=master)](https://travis-ci.org/RubyCastsBrasil/RubyCastsBrasil)
+## Testes [![Build Status](https://semaphoreapp.com/api/v1/projects/c89e95d8-895c-4956-be17-c29a01b7c281/271048/badge.png)](https://semaphoreapp.com/rubycastsbrasil/rubycastsbrasil)
 
 Esse projeto utiliza o [rspec](http://rspec.info/) como framework de testes principal.
 Todas as expectations estão de acordo com a nova forma da versão 3.0 do rspec.
-A suíte de testes é monitarada pelo [travis-ci](https://travis-ci.org)
+A suíte de testes é monitarada pelo [semaphore app](https://semaphoreapp.com/rubycastsbrasil/rubycastsbrasil).
  
 ## Dependências [![Dependency Status](https://gemnasium.com/RubyCastsBrasil/RubyCastsBrasil.svg)](https://gemnasium.com/RubyCastsBrasil/RubyCastsBrasil)
 
@@ -50,7 +50,8 @@ demasiada complicada.
 Para documentação é utilzado o [yardoc](http://yardoc.org/) que disponibiliza uma api flexível.
 Para monitoramento da documentação é utilizado o [inch-ci](http://inch-ci.org/).
 
-## Gerenciamento de Projeto [![Stories in Ready](https://badge.waffle.io/RubyCastsBrasil/RubyCastsBrasil.png?label=ready&title=Ready)](https://waffle.io/RubyCastsBrasil/RubyCastsBrasil)
+## Gerenciamento de Projeto [![Stories in Ready](https://badge.waffle.io/RubyCastsBrasil/RubyCastsBrasil.png?label=ready&title=Ready)](https://waffle.io/RubyCastsBrasil/RubyCastsBrasil) 
+[![Throughput Graph](https://graphs.waffle.io/rubycastsbrasil/rubycastsbrasil/throughput.svg)](https://waffle.io/rubycastsbrasil/rubycastsbrasil/metrics)
 
 Para controle das funcionalidades, bugs, revisão de código e afins é utilizado o [waffle](http://waffle.io)
 que trabalha em cima das issues do github, e disponibiliza um painel para um controle maior.
@@ -59,3 +60,7 @@ que trabalha em cima das issues do github, e disponibiliza um painel para um con
 
 Para discussões relacionadas ao projeto, é utilizado o [gitter](https://gitter.im) que disponibiliza
 um chat em tempo real. Para discussões a longo prazo (assíncronas) é utilizado o [google groups](https://groups.google.com/forum/#!forum/rubycastsbrasil).
+
+## Triagem de tarefas
+
+Você pode acompanhar o projeto utilizando [Codetriage](http://www.codetriage.com/rubycastsbrasil/rubycastsbrasil). Ao efetuar o cadastro na plataforma, todos os dias você poderá receber um newsletter com algumas tarefas que precisam de ajuda para serem solucionadas.

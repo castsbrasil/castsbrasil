@@ -1,0 +1,27 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dedication">
+          <%= image_tag 'logo-rubycasts-small.png' %>
+          <span class="rubycasts-with-love">
+            Ruby Casts Brasil | Feito com <3
+          </span>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <nav class="footer-menu">
+          <ul>
+            <li><%= link_to t('layouts.application.menu.about'), about_url  %></li>
+            <li><%= link_to t('layouts.application.menu.contributing'), contributing_url  %></li>
+            <li><a href="https://www.facebook.com/pages/Ruby-Casts-Brasil/324913441002225" class="social-bt"><%= image_tag "social-facebook-icon.png" %></a></li>
+            <li><a href="https://twitter.com/rubycastsbrasil"  class="social-bt"><%= image_tag "social-twitter-icon.png" %></a></li>
+            <li><a href="https://github.com/RubyCastsBrasil"  class="social-bt"><%= image_tag "social-github-icon.png" %></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /Footer -->

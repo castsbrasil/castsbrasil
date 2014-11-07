@@ -1,0 +1,21 @@
+<!-- Header -->
+<header class="header">
+  <div class="content_logo">
+    <%= link_to root_url, class: "logo" do %>
+      <%= image_tag "logo-rubycasts.png" %>
+    <% end %>
+  </div>
+
+  <%= render 'shared/user_header' %>
+
+  <% if true %>
+    <nav class="menu">
+      <ul>
+        <li><%= link_to t('layouts.application.menu.screencasts'), screencasts_url  %></li>
+        <li><%= link_to t('layouts.application.menu.about'), about_url %></li>
+        <li><%= link_to t('layouts.application.menu.contributing'), contributing_url  %></li>
+      </ul>
+    </nav>
+  <% end %>
+</header>
+<!-- / Header -->
