@@ -121,6 +121,9 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.6)
     formatador (0.2.5)
+    gravatar-ultimate (2.0.0)
+      activesupport (>= 2.3.14)
+      rack
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -351,6 +354,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  gravatar-ultimate
   guard-rspec
   jazz_hands!
   letter_opener

@@ -7,6 +7,10 @@ class Authorization < ActiveRecord::Base
           :secret => oauth.credentials.secret)
   end
 
+  def self.github
+    Authorization.where(provider: 'github').first
+  end
+
   def values
     @values ||= Attributes.new(self)
   end
