@@ -71,4 +71,17 @@ describe Authorization do
       expect(Authorization.find_or_initialize_by_oauth(@oauth, @user)).to be == authorization
     end
   end
+
+  describe '.github' do
+    let(:user) { create(:user, email: 'email@email.com') }
+    let(:authorization) { create(:authorization, :github) }
+
+    before :each do
+      user.authorizations << authorization
+    end
+
+    it 'should return a authorization' do
+      expect(user.authorizations.github).to eq(authorization)
+    end
+  end
 end
