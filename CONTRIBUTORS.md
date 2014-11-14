@@ -8,6 +8,7 @@
 * Brunno dos Santos <rubycastsbrasil@brunno.me>
 * Carlos Alexandro Becker <caarlos0@gmail.com>
 * Carlos Ribeiro <mail@carlosribeiro.me>
+* Eduardo Maia <eduvimaia@gmail.com>
 * Gabriel Caires <gabrielcairesmar@gmail.com>
 * Gustavo Araújo <gu.araujo25@gmail.com>
 * Hugo Dias <hugooodias@gmail.com>
