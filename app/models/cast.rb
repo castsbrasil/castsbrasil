@@ -5,6 +5,7 @@ class Cast < ActiveRecord::Base
   has_many :cast_transitions, dependent: :destroy
 
   scope :find_by_param, -> (param) { find(param) }
+  scope :most_recent, -> { order(created_at: :desc).limit(10) }
 
   validates_presence_of :name, :url
 

@@ -21,107 +21,18 @@
 </section>
 <!-- /Section Register -->
 
-
 <!-- Section Latest -->
 <section class="featured latest-home">
   <div class="container">
-    <div class="row">
-      <h2>Últimos screencasts publicados</h2>
-    </div>
-    <ul class="row video-items">
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-    </div>
-  </ul>
+    <%= render 'cast_list', screencasts: @most_recent, title: 'Últimos screencasts publicados' %>
+  </div>
 </section>
 <!-- /Section Latest -->
 
 <!-- Section Latest -->
 <section class="featured most-watched-home">
   <div class="container">
-    <div class="row">
-      <h2>Screencasts mais visualizados</h2>
-    </div>
-    <ul class="row video-items">
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-      <li class="col-md-6 video-item">
-        <div class="image-box">
-          <div class="image-hover"></div>
-          <a href="#"><%= image_tag 'trash-video.jpg' %></a>
-        </div>
-        <a href="#" class="video-description">
-          <h3>Título do Vídeo</h3>
-          <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita.</p>
-        </a>
-      </li>
-    </div>
-  </ul>
+    <%= render 'cast_list', screencasts: @most_viewed, title: 'Screencasts mais visualizados' %>
+  </div>
 </section>
 <!-- /Section Latest -->
