@@ -1,0 +1,17 @@
+<div class="row">
+  <h2><%= title %></h2>
+</div>
+<ul class="row video-items">
+  <%- screencasts.each do |cast| %>
+    <li class="col-md-6 video-item">
+      <div class="image-box">
+        <div class="image-hover"></div>
+        <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+      </div>
+      <a href="#" class="video-description">
+        <h3><%= cast.name %></h3>
+        <p><%= cast.description %></p>
+      </a>
+    </li>
+  <% end %>
+</ul>
