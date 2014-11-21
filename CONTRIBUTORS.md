@@ -19,6 +19,7 @@
 * Matheus Mósso <msmosso@gmail.com>
 * Paulo Henrique Lopes Ribeiro <plribeiro3000@gmail.com>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
+* Rodrigo Roberto Rieger Compagnoni <rrrcompagnoni@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
 * Victor Campos <victor.campos@visagio.com>
 * Wender Freese <wender.jean@gmail.com>
