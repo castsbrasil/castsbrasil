@@ -1,5 +1,5 @@
-class CategoriesController < ApplicationController
-  before_action :authenticate_user!, except: %i(index show)
+class CategoriesController < AuthorizedController
+  skip_before_action :authenticate_user!, only: %i(index show)
   before_action :set_category, only: %i(show edit update destroy)
 
   def index
