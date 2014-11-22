@@ -4,6 +4,6 @@ class OauthResponder < ApplicationResponder
   end
 
   def navigation_behavior(error)
-      redirect_to navigation_location
+    redirect_to navigation_location
   end
 end
