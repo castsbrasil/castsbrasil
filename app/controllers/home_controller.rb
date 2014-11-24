@@ -7,5 +7,7 @@ class HomeController < ApplicationController
 
   def about; end
 
-  def screencasts; end
+  def screencasts
+    @casts = CastRepository.new.get_screencasts_collections
+  end
 end
