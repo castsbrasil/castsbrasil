@@ -18,30 +18,28 @@
   </div>
 </div>
 
-
-
-
 <section class="screencasts-content-list clearfix">
   <div class="container">
-    <% 4.times do %>
-    <div class="row screencast-item">
-      <a href="#">
-        <div class="content-screencast-image">
-          <div class="image-hover"></div>
-          <%= image_tag 'trash-video.jpg' %>
-        </div>
-        <span class="screencast-date">
-          Adicionado em 23 de agosto de 2014
-        </span>
-        <h3>Título do Vídeo</h3>
-        <p>
-          Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
-          <span class="time-count">
-            Duração: 23 minutos
+
+    <%- @casts.screencasts_list.each do |cast| %>
+      <div class="row screencast-item">
+        <a href="#">
+          <div class="content-screencast-image">
+            <div class="image-hover"></div>
+            <%= image_tag 'trash-video.jpg' %>
+          </div>
+          <span class="screencast-date">
+            Adicionado em 23 de agosto de 2014
           </span>
-        </p>
-      </a>
-    </div>
+          <h3><%= cast.name %></h3>
+          <p>
+            <%= cast.description %>
+            <span class="time-count">
+              Duração: 23 minutos
+            </span>
+          </p>
+        </a>
+      </div>
     <% end %>
   </div>
 </section>
