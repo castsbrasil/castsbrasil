@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
   def index
-    @most_recent = Cast.most_recent
-    @most_viewed = Cast.none
+    @casts = CastRepository.new.get_home_collections
   end
 
   def contributing; end
 
   def about; end
 
-  def screencasts; end
+  def screencasts
+    @casts = CastRepository.new.get_screencasts_collections
+  end
 end
