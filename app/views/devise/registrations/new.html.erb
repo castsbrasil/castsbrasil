@@ -1,20 +1,44 @@
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h2><%= t('.sign_up', :default => "Sign up") %></h2>
+<div class="login-header">
+  <div class="header-cirle"></div>
+</div>
+
+<div class="container">
+  <div class="row login-form-container">
+    <div class="col-md-6 box-default-register">
+      <h3><%= t('.sign_up', :default => "Sign up") %></h3>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <% if resource.errors.full_messages.any? %>
+          <% resource.errors.full_messages.each do |error_message| %>
+            <% if resource.errors.full_messages.first == error_message %>
+              <div class="alert alert-danger">
+                <%= error_message %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <%= f.input_field :email, placeholder: 'Email' %>
+        <%= f.input_field :password, placeholder: 'Senha' %>
+        <%= f.input_field :password_confirmation, placeholder: 'Confirmação de Senha' %>
+        <%= f.simple_fields_for :profile do |fp| %>
+          <%= fp.input_field :first_name, placeholder: 'Nome*' %>
+          <%= fp.input_field :last_name, placeholder: 'Sobrenome' %>
+        <% end %>
+
+        <% if devise_mapping.rememberable? %>
+            <!-- <%= f.input :remember_me, as: :boolean %> -->
+        <% end %>
+
+        <%= f.button :submit, t('.sign_up', :default => "Sign up"), class: 'btn-primary login-submit pull-right' %>
+      <% end %>
+      <div class="shared-links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-6 box-social-register">
+      <h3>Inscreva-se com sua conta no Github</h3>
+       <%= link_to "Entrar com GitHub",user_omniauth_authorize_path("github"), class: "bt-github" %>
+    </div>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-    <%= f.simple_fields_for :profile do |fp| %>
-      <%= fp.input :first_name %>
-      <%= fp.input :last_name %>
-    <% end %>
-
-    <%= f.button :submit, t('.sign_up', :default => "Sign up"), class: 'btn-primary pull-right' %>
-  <% end %>
-  <br class="clearfix" />
-
-  <%= render "devise/shared/links" %>
 </div>

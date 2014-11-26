@@ -1,19 +1,39 @@
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h2><%= t('.sign_in', :default => "Sign in") %></h2>
-  </div>
+<div class="login-header">
+  <div class="header-cirle"></div>
+</div>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.input :email %>
-      <%= f.input :password %>
+<div class="container">
+  <div class="row login-form-container">
+    <div class="col-md-6 box-default-register">
+      <h3>Login</h3>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <% if devise_mapping.rememberable? %>
-          <%= f.input :remember_me, as: :boolean %>
+        <% if resource.errors.full_messages.any? %>
+          <% resource.errors.full_messages.each do |error_message| %>
+            <% if resource.errors.full_messages.first == error_message %>
+              <div class="alert alert-danger">
+                <%= error_message %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <%= f.input_field :email , placeholder: 'Email', label: false %>
+        <%= f.input_field :password, placeholder: 'Senha', label: false %>
+
+        <% if devise_mapping.rememberable? %>
+            <!-- <%= f.input :remember_me, as: :boolean %> -->
+        <% end %>
+
+        <%= f.button :submit, t('.sign_in', :default => "Sign in"), class: 'btn-primary login-submit pull-right' %>
       <% end %>
-
-      <%= f.button :submit, t('.sign_in', :default => "Sign in"), class: 'btn-primary pull-right' %>
-  <% end %>
-  <br class="clearfix" />
-
-  <%= render "devise/shared/links" %>
+      <div class="shared-links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-6 box-social-register">
+      <h3>Inscreva-se com sua conta no Github</h3>
+       <%= link_to "Entrar com GitHub",user_omniauth_authorize_path("github"), class: "bt-github" %>
+    </div>
+  </div>
 </div>

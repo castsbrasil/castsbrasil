@@ -7,7 +7,7 @@ feature 'Visitor should be able to signs up' do
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Senha', with: 'password'
       fill_in 'Confirmação de Senha', with: 'password'
-      fill_in 'Nome', with: 'User'
+      fill_in 'Nome*', with: 'User'
       fill_in 'Sobrenome', with: 'Sobrenome'
     end
     click_button 'Inscrever-se'
@@ -26,7 +26,7 @@ feature "Visitor shouldn't be able to sign up" do
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Senha', with: 'password'
       fill_in 'Confirmação de Senha', with: 'password'
-      fill_in 'Nome', with: 'User'
+      fill_in 'Nome*', with: 'User'
       fill_in 'Sobrenome', with: 'Sobrenome'
     end
     click_button 'Inscrever-se'
@@ -43,7 +43,7 @@ feature "Visitor shouldn't be able to sign up" do
       fill_in 'Email', with: 'user2@example.com'
       fill_in 'Senha', with: 'pass'
       fill_in 'Confirmação de Senha', with: 'pass'
-      fill_in 'Nome', with: 'User'
+      fill_in 'Nome*', with: 'User'
       fill_in 'Sobrenome', with: 'Sobrenome'
     end
     click_button 'Inscrever-se'
