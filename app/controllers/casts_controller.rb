@@ -1,7 +1,5 @@
-class CastsController < ApplicationController
-  before_action :authenticate_user!, except: %i(index show)
-  responders :location, :flash
-  respond_to :html
+class CastsController < AuthorizedController
+  skip_before_action :authenticate_user!, only: %i(index show)
 
   def index
     @casts = Cast.all

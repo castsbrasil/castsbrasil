@@ -4,8 +4,9 @@ class Cast < ActiveRecord::Base
   belongs_to :user
   has_many :cast_transitions, dependent: :destroy
 
+  scope :desc, -> { order(created_at: :desc) }
   scope :find_by_param, -> (param) { find(param) }
-  scope :most_recent, -> { order(created_at: :desc).limit(10) }
+  scope :most_recent, -> { desc.limit(10) }
 
   validates_presence_of :name, :url
 

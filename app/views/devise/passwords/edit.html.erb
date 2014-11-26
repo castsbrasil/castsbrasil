@@ -1,16 +1,33 @@
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h2><%= t('.change_your_password', :default => 'Change your password') %></h2>
+<div class="login-header">
+  <div class="header-cirle"></div>
+</div>
+
+<div class="container">
+  <div class="row login-form-container">
+    <div class="col-md-6 box-default-register">
+      <h3><%= t('.change_your_password', :default => 'Change your password') %></h3>
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), method: :post) do |f| %>
+
+        <% if resource.errors.full_messages.any? %>
+          <% resource.errors.full_messages.each do |error_message| %>
+            <% if resource.errors.full_messages.first == error_message %>
+              <div class="alert alert-danger">
+                <%= error_message %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <%= f.input :reset_password_token, as: :hidden %>
+        <%= f.input_field :password, placeholder: t('.new_password', :default => 'New password') %>
+        <%= f.input_field :password_confirmation, placeholder: t('.confirm_new_password', :default => 'Confirm new password') %>
+
+        <%= f.button :submit, t('.send_me_reset_password_instructions', :default => "Send me reset password instructions"), class: 'btn-primary login-submit pull-right' %>
+      <% end %>
+      <div class="shared-links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), method: :put) do |f| %>
-      <%= f.input :reset_password_token, as: :hidden %>
-      <%= f.input :password %> <%= t('.new_password', :default => 'New password') %>
-      <%= f.input :password_confirmation %> <%= t('.confirm_new_password', :default => 'Confirm new password') %>
-
-      <%= f.button :submit, t('.change_my_password', :default => "Change my password"), class: 'btn-primary pull-right' %>
-  <% end %>
-  <br class="clearfix" />
-
-  <%= render "devise/shared/links" %>
 </div>
