@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  namespace :dashboard do
+    root to: 'welcome#index'
+  end
+
   resources :casts
   resource :profiles, only: [:update]
   resources :categories
