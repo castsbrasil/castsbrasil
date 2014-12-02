@@ -1,0 +1,4 @@
+<%= simple_form_for [:dashboard, @cast] do |f| %>
+  <%= render 'form', f: f %>
+  <%= f.submit t('.create'), class: 'btn-primary pull-right' %>
+<% end %>
