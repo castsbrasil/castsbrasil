@@ -1,5 +1,5 @@
 class Dashboard::CastsController < Dashboard::ApplicationController
-  before_action :cast, only: [:edit, :update, :destroy]
+  before_action :cast, only: %i(edit update destroy)
 
   def new
     @cast = Cast.new
@@ -32,11 +32,12 @@ class Dashboard::CastsController < Dashboard::ApplicationController
   end
 
   private
-    def cast
-      @cast = Cast.find(params[:id])
-    end
 
-    def cast_params
-      params.require(:cast).permit(:name, :description, :url)
-    end
+  def cast
+    @cast = Cast.find(params[:id])
+  end
+
+  def cast_params
+    params.require(:cast).permit(:name, :description, :url)
+  end
 end
