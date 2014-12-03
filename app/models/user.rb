@@ -18,6 +18,15 @@ class User < ActiveRecord::Base
 
   rolify
 
+  def display_name
+    return email if profile_full_name.empty?
+    profile_full_name
+  end
+
+  def profile_full_name
+    "#{profile.first_name} #{profile.last_name}"
+  end
+
   def self.find_or_initialize_by_oauth(auth, user)
     Authorization.find_or_initialize_by_oauth(auth, user).user
   end
