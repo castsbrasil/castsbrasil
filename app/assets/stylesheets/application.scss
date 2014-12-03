@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree ../../../vendor/assets/stylesheets
+ *= require_tree ./dashboard
  *= require_self
  */
 
@@ -29,6 +30,11 @@ body {
 	@include font-size(16 , 16);
 	position: relative;
 
+}
+
+.row{
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .general-wrapper {
@@ -59,9 +65,6 @@ body {
 .header {
 	min-height: 100px;
 	background: $color-white;
-	position: absolute;
-	width: 100%;
-	top:0;
 	box-shadow: $color-black 1px 1px 10px;
 	.logo {
 		line-height: 90px;

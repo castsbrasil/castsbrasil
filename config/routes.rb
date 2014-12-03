@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :dashboard do
-    resources :casts, except: %i(index show)
+    resources :casts, except: %i(show)
     root to: 'welcome#index'
   end
 
