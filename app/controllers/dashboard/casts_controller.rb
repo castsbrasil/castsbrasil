@@ -1,5 +1,4 @@
 class Dashboard::CastsController < Dashboard::ApplicationController
-
   before_action :cast, only: %i(edit update destroy)
 
   def new
@@ -37,5 +36,4 @@ class Dashboard::CastsController < Dashboard::ApplicationController
   def cast_params
     params.require(:cast).permit(:name, :description, :url)
   end
-
 end
