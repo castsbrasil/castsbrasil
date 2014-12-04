@@ -1,4 +1,5 @@
 class Dashboard::CastsController < Dashboard::ApplicationController
+
   before_action :cast, only: %i(edit update destroy)
 
   def new
@@ -23,12 +24,8 @@ class Dashboard::CastsController < Dashboard::ApplicationController
   end
 
   def destroy
-    if @cast.destroy
-      # flash...
-    else
-      # flash...
-    end
-    redirect_to dashboard_root_path
+    @cast.destroy
+    redirect_to dashboard_casts_path
   end
 
   private
@@ -40,4 +37,5 @@ class Dashboard::CastsController < Dashboard::ApplicationController
   def cast_params
     params.require(:cast).permit(:name, :description, :url)
   end
+
 end

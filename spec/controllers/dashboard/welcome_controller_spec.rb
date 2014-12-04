@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Dashboard::WelcomeController, :type => :controller do
+RSpec.describe Dashboard::WelcomeController, type: :controller do
 
   describe "GET index" do
     it "returns http success" do
