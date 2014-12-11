@@ -23,7 +23,7 @@
 
     <%- @casts.screencasts_list.each do |cast| %>
       <div class="row screencast-item">
-        <a href="#">
+        <%= link_to screencast_path(cast) do %>
           <div class="content-screencast-image">
             <div class="image-hover"></div>
             <%= image_tag 'trash-video.jpg' %>
@@ -38,7 +38,7 @@
               Duração: 23 minutos
             </span>
           </p>
-        </a>
+        <% end %>
       </div>
     <% end %>
   </div>
