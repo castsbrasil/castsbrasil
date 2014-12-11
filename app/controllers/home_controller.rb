@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def screencasts
     @casts = CastRepository.new.get_screencasts_collections
   end
+
+  def screencast
+    @cast = Cast.find_by_param(params[:id])
+  end
 end
