@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :casts
+
+  namespace :dashboard do
+    resources :casts, except: %i(show)
+    root to: 'welcome#index'
+  end
+
+  resources :casts, only: %i(index show)
   resource :profiles, only: [:update]
   resources :categories
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: :registrations
