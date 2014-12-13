@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @casts = CastRepository.new.get_home_collections
+    @casts = CastCollection.filtered
   end
 
   def contributing; end
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def about; end
 
   def screencasts
-    @casts = CastRepository.new.get_screencasts_collections
+    @casts = CastCollection.all
   end
 
   def screencast

@@ -14,7 +14,7 @@ class CastsController < AuthorizedController
   end
 
   def create
-    @cast = current_user.casts.new(valid_params(params))
+    @cast = current_user.casts.new(cast_params)
     @cast.save
     respond_with @cast, location: -> { cast_path(@cast) }
   end
@@ -25,13 +25,13 @@ class CastsController < AuthorizedController
 
   def update
     @cast = current_user.casts.find_by_param(params[:id])
-    @cast.update(valid_params(params))
+    @cast.update(cast_params)
     respond_with @cast, location: -> { cast_path(@cast) }
   end
 
   protected
 
-  def valid_params(params)
+  def cast_params
     params.require(:cast).permit(:name, :description, :url)
   end
 end
