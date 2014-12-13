@@ -21,7 +21,7 @@
 <section class="screencasts-content-list clearfix">
   <div class="container">
 
-    <%- @casts.screencasts_list.each do |cast| %>
+    <%- @casts.all.each do |cast| %>
       <div class="row screencast-item">
         <%= link_to screencast_path(cast) do %>
           <div class="content-screencast-image">
