@@ -1,63 +1,6 @@
 require 'rails_helper'
 
 describe CategoriesController do
-  describe "GET index" do
-    it "returns http success" do
-      get :index
-      expect(response).to be_success
-    end
-
-    it "assigns all categories" do
-      create(:category)
-      create(:category)
-
-      get :index
-      expect(assigns(:categories)).to eq(Category.all)
-      expect(assigns(:categories).count).to eq(2)
-    end
-  end
-
-  describe "GET show" do
-    let(:category) { create(:category) }
-    before(:each) do
-      get :show, id: category
-    end
-
-    it "returns http success" do
-      expect(response).to be_success
-    end
-
-    it "assigns category" do
-      expect(assigns(:category)).to eq(category)
-    end
-  end
-
-  describe "GET new" do
-    context "unlogged user" do
-      it "redirects to login page" do
-        sign_in nil
-        get :new
-        expect(subject).to redirect_to(new_user_session_path)
-      end
-    end
-
-    context "logged user" do
-      before(:each) do
-        sign_in
-      end
-
-      it "returns http success" do
-        get :new
-        expect(response).to be_success
-      end
-
-      it "assigns new category" do
-        get :new
-        expect(assigns(:category)).to be_a_new(Category)
-      end
-    end
-  end
-
   describe "POST create" do
     context "unlogged user" do
       it "redirects to login page" do
@@ -95,36 +38,6 @@ describe CategoriesController do
         it "does not save category" do
           expect { post :create, category: category_attributes }.to_not change(Category, :count)
         end
-      end
-    end
-  end
-
-  describe "GET edit" do
-    context "unlogged user" do
-      let(:category) { create(:category) }
-
-      it "redirects to login page" do
-        sign_in nil
-        get :edit, id: category
-        expect(response).to redirect_to(new_user_session_path)
-      end
-    end
-
-    context "logged user" do
-      let(:category) { create(:category) }
-
-      before(:each) do
-        sign_in create(:user)
-      end
-
-      it "returns http success" do
-        get :edit, id: category
-        expect(response).to be_success
-      end
-
-      it "assigns existing category" do
-        get :edit, id: category
-        expect(assigns(:category)).to eq(category)
       end
     end
   end
@@ -197,8 +110,6 @@ describe CategoriesController do
         delete :destroy, id: category
         expect(response).to redirect_to(categories_path)
       end
-
     end
   end
-
 end

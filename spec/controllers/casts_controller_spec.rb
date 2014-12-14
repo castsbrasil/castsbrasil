@@ -1,62 +1,6 @@
 require 'rails_helper'
 
 describe CastsController do
-  describe "GET index" do
-    it "returns http success" do
-      get :index
-      expect(response).to be_success
-    end
-
-    it "assigns all casts" do
-      create(:cast)
-      create(:cast)
-
-      get :index
-      expect(assigns(:casts)).to eq(Cast.all)
-    end
-  end
-
-  describe "GET show" do
-    let(:cast) { create(:cast) }
-    before(:each) do
-      get :show, id: cast
-    end
-
-    it "returns http success" do
-      expect(response).to be_success
-    end
-
-    it "assigns cast by permalink" do
-      expect(assigns(:cast)).to eq(cast)
-    end
-  end
-
-  describe "GET new" do
-    context "unlogged user" do
-      it "redirects to login page" do
-        sign_in nil
-        get :new
-        expect(subject).to redirect_to(new_user_session_path)
-      end
-    end
-
-    context "logged user" do
-      before(:each) do
-        sign_in
-      end
-
-      it "returns http success" do
-        get :new
-        expect(response).to be_success
-      end
-
-      it "assigns new cast" do
-        get :new
-        expect(assigns(:cast)).to be_a_new(Cast)
-      end
-    end
-  end
-
   describe "POST create" do
     context "unlogged user" do
       it "redirects to login page" do
@@ -74,7 +18,7 @@ describe CastsController do
       context "cast with right params" do
         it "returns http success" do
           post :create, cast: attributes_for(:cast)
-          expect(response).to redirect_to(cast_path(assigns(:cast)))
+          expect(response).to redirect_to(casts_path)
         end
 
         it "saves the cast" do
@@ -144,7 +88,7 @@ describe CastsController do
       context "cast with right params" do
         it "returns http success" do
           put :update, id: cast, cast: attributes_for(:cast, name: 'new name')
-          expect(response).to redirect_to(cast_path(assigns(:cast)))
+          expect(response).to redirect_to(casts_path)
         end
 
         it "updates the cast" do
