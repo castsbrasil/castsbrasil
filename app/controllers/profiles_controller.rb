@@ -1,6 +1,10 @@
 class ProfilesController < AuthorizedController
   helper_method :resource, :resource_class, :resource_name
 
+  def show
+    @casts = CastCollection.filtered_by_user(params[:id])
+  end
+
   def update
     if current_user.profile.update_attributes(profile_params)
       redirect_to edit_user_registration_path

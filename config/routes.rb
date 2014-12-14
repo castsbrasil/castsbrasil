@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
   resources :casts
-  resource :profiles, only: [:update]
+  resource :profiles, only: %i(show update)
   resources :screencasts, only: %i(index show)
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: :registrations
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
              as: :user_registration
   end
 
-  get 'profile/:id' => 'home#profile', as: :profile
   get '/colabore', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki/Contribuindo'), as: :contributing
   get '/sobre', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki'), as: :about
 

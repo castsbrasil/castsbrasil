@@ -98,7 +98,7 @@
 <!-- Section Latest -->
 <section class="featured latest-home">
   <div class="container">
-    <%= render 'cast_list', screencasts: @casts.most_recent, title: 'Últimos screencasts publicados' %>
+    <%= render 'shared/cast_list', screencasts: @casts.most_recent, title: 'Últimos screencasts publicados' %>
   </div>
 </section>
 <!-- /Section Latest -->
@@ -106,7 +106,7 @@
 <!-- Section Latest -->
 <section class="featured most-watched-home">
   <div class="container">
-    <%= render 'cast_list', screencasts: @casts.most_viewed, title: 'Screencasts mais visualizados' %>
+    <%= render 'shared/cast_list', screencasts: @casts.most_viewed, title: 'Screencasts mais visualizados' %>
   </div>
 </section>
 <!-- /Section Latest -->

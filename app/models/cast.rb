@@ -7,6 +7,7 @@ class Cast < ActiveRecord::Base
   scope :desc, -> { order(created_at: :desc) }
   scope :find_by_param, -> (param) { find(param) }
   scope :most_recent, -> { desc.limit(10) }
+  scope :by_user, -> (user_id) { where(user_id: user_id) }
 
   validates_presence_of :name, :url
 
