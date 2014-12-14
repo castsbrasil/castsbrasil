@@ -1,0 +1,43 @@
+.screencast-header {
+	padding: 30px 14px;
+	.show-all {
+		font-size: 15px;
+		color: $color-red;
+		font-weight: bold;
+	}
+}
+
+.video-description {
+	.title {
+		font-weight: bold;
+		font-size: 28px;
+		color: $color-red;
+	}
+	.time-info {
+		font-size: 16px;
+		color: $color-grey;
+		a {
+			color: $color-red;
+		}
+	}
+	.tags{
+		margin: 0;
+		padding: 20px 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				font-size: 14px;
+				color: #3ec745;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.video-text {
+	line-height: 20px;
+	color: $color-black;
+	font-size: 16px;
+	padding: 10px 0;
+}

@@ -1,28 +1,30 @@
 {
-    "name": "RubyCastsBrasil",
-    "version": "0.1.0",
-    "install": {
-        "path": {
-            "css": "vendor/assets/stylesheets",
-            "js": "vendor/assets/javascripts",
-            "png": "vendor/assets/images",
-            "jpg": "vendor/assets/images",
-            "gif": "vendor/assets/images",
-            "eot": "vendor/assets/fonts",
-            "svg": "vendor/assets/fonts",
-            "ttf": "vendor/assets/fonts",
-            "woff": "vendor/assets/fonts"
-        },
-        "sources": {
-            "module": [
-                "bower_components/module/module.js"
-            ]
-        }
+  "name": "RubyCastsBrasil",
+  "version": "0.1.0",
+  "install": {
+    "path": {
+      "css": "vendor/assets/stylesheets",
+      "sass": "vendor/assets/stylesheets",
+      "scss": "vendor/assets/stylesheets",
+      "js": "vendor/assets/javascripts",
+      "png": "vendor/assets/images",
+      "jpg": "vendor/assets/images",
+      "gif": "vendor/assets/images",
+      "eot": "vendor/assets/fonts",
+      "svg": "vendor/assets/fonts",
+      "ttf": "vendor/assets/fonts",
+      "woff": "vendor/assets/fonts"
     },
-    "dependencies": {
-        "jquery": "~1.11.0",
-        "jquery-ujs": "*",
-        "bootstrap": "~3.2.0",
-        "module": "~1.0.2"
+    "sources": {
+      "module": [
+        "bower_components/module/module.js"
+      ]
     }
+  },
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "jquery-ujs": "*",
+    "module": "~1.0.2",
+    "bootstrap-sass-official": "~3.3.1"
+  }
 }

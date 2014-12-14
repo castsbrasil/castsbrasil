@@ -1,0 +1,227 @@
+/*********************************************************************
+*  Home Signed In
+*********************************************************************/
+
+.home-signed-in {
+	&.welcome {
+		padding-top: 78px;
+		text-align: center;
+		color: $color-white;
+
+		h3 {
+			font-size: 48px;
+			font-weight: 300;
+			padding: 0;
+			margin: 0 0 20px 0;
+		}
+		span {
+			font-size: 30px;
+			font-weight: 300;
+		}
+	}
+	&.choose-box-home {
+		padding-top: 94px;
+
+		.base-content-box-option {
+			background: rgba(255,255,255,0.4) ;
+			position: relative;
+			height: 352px;
+			a {
+				color: $color-black;
+			}
+		}
+		.content-box-option {
+			background: $color-white;
+			position: absolute;
+			width: 92%;
+			left: 4%;
+			top: -20px;
+
+		}
+
+		.header-box-option {
+			text-align: center;
+			font-weight: bold;
+			font-size: 30px;
+			height: 156px;
+			padding-top: 42px;
+			position: relative;
+			color: #fff;
+		}
+		.description-box-option {
+			height: 230px;
+			padding-top: 96px;
+			padding: 96px 20px 0 20px;
+			text-align: center;
+			font-size: 20px;
+			line-height: 28px;
+			font-weight: 300;
+
+		}
+		.circle {
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			margin-left: -70px;
+			top: 90px;
+		}
+
+		.show-screencast {
+			.header-box-option {
+				background: #fecd56;
+			}
+			.circle {
+				background: #fbe9bf url(image_path('home-icon-show-screencast.png')) center no-repeat;
+			}
+		}
+
+		.submit-screencast {
+			.header-box-option {
+				background: #a967aa;
+			}
+			.circle {
+				background: #debdde url(image_path('home-icon-tv.png')) center no-repeat;
+			}
+		}
+
+		.starter {
+			.header-box-option {
+				background: #6dc065;
+			}
+			.circle {
+				background: #a3d99d url(image_path('home-icon-light.png')) center no-repeat;
+			}
+		}
+
+
+
+	}
+}
+
+
+
+/*********************************************************************
+*  Register Section
+*********************************************************************/
+
+.register-home {
+	background: url(image_path('bg-home-register.jpg')) center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	min-height: 706px;
+	h2 {
+		text-align: center;
+		color: $color-white;
+		@include font-size(90, 100);
+		font-family: 'Helvetica Neue';
+		font-weight: bold;
+		padding: 0 20px;
+		margin: 76px 0 60px 0;
+		text-shadow: #000 1px 1px 8px;
+	}
+	p {
+		@include font-size(30, 50);
+		text-align: center;
+		color: $color-white;
+	}
+}
+
+.content-buttons {
+	text-align: center;
+	padding-top: 80px;
+}
+
+@mixin btn-home {
+	display: inline-block;
+	width: 520px;
+	height: 118px;
+	text-align: right;
+	font-size: 30px;
+	line-height: 118px;
+	border-radius: 10px;
+	font-weight: 800;
+	&:hover {
+		opacity: 0.97;
+	}
+}
+
+.bt-github {
+	&:hover {
+		color: $color-white;
+		text-decoration: none;
+	}
+	background: $color-light-grey url(image_path('github-icon.png')) no-repeat center left;
+	background-position: 40px 22px;
+	color: $color-white;
+	box-shadow: #7f7f7f 0px 5px 4px, #8a8a8a 0px 10px 1px;
+	margin-right: 90px;
+	padding-right: 60px;
+	float: left;
+	@include btn-home;
+
+}
+
+.bt-screencasts-list {
+	&:hover {
+		color: $color-white;
+		text-decoration: none;
+	}
+	background: $color-light-grey url(image_path('movies-icon.png')) no-repeat center left;
+	background-position: 40px 12px;
+	color: $color-white;
+	padding-right: 140px;
+	box-shadow: #7f7f7f 0px 5px 4px, #8a8a8a 0px 10px 1px;
+	@include btn-home;
+}
+
+.bt-register {
+	&:hover {
+		color: $color-white;
+		text-decoration: none;
+	}
+	background: $color-green url(image_path('baby-icon.png')) no-repeat center left;
+	background-position: 40px 22px;
+	color: $color-white;
+	padding-right: 40px;
+	box-shadow: #00954a 0px 5px 4px, #00a250 0px 10px 1px;
+	float: left;
+	@include btn-home;
+}
+
+
+
+/*********************************************************************
+*  Latests
+*********************************************************************/
+
+.featured {
+	padding: 30px 0 75px 0;
+	h2 {
+		padding-left: 38px;
+		margin-left: 30px;
+		margin-bottom: 80px;
+		font-weight: 300;
+		font-size: 45px;
+		color: $color-dark-red;
+	}
+}
+
+.latest-home {
+	background: url(image_path('cronometer-bg.png')) no-repeat left bottom;
+	h2 {
+		background: url(image_path('clock-icon.png')) no-repeat center left;
+	}
+}
+.most-watched-home {
+	background: #e5e3d3 url(image_path('most-watched-bg.png')) no-repeat right center;
+
+	h2 {
+		background: url(image_path('clock-icon.png')) no-repeat center left;
+	}
+}
+

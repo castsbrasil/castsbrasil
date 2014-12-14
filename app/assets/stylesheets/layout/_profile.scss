@@ -1,0 +1,63 @@
+.profile-header {
+	background: #fdcc55;
+	min-height: 248px;
+	border-bottom: 20px $color-white solid;
+}
+.profile-wrapper {
+	@include make-row();
+	color: $color-red;
+
+	.image-profile {
+		@include make-lg-column(3);
+		position: relative;
+		img {
+			border: 10px solid $color-white;
+			position: absolute;
+			top: 58px;
+			left: 20px;
+			width: 260px;
+			height: 260px;
+			box-shadow: #000 3px 3px 23px;
+		}
+	}
+	.profile-infos {
+		@include make-lg-column(9);
+		padding-top: 48px;
+		.profile-name {
+			padding: 0;
+			margin: 0;
+			font-size: 56px;
+			color: $color-red;
+			font-weight: bold;
+			float: left;
+		}
+		.edit-profile {
+			float: right;
+			color: $color-black;
+			text-decoration: underline;
+			font-size: 14px;
+			margin-top: 20px;
+		}
+		.profile-description {
+			display: block;
+			float: left;
+			color: $color-black;
+			font-size: 15px;
+			line-height: 19px;
+			padding-top: 10px;
+		}
+	}
+}
+
+
+.profile-screencast-list {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	h2 {
+		font-size: 30px;
+		color: $color-red;
+		font-weight: bold;
+		margin: 10px 0 20px 20px;
+		padding: 0;
+	}
+}
