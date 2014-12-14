@@ -83,7 +83,7 @@ Rails.application.configure do
 
   config.assets.js_compressor = :uglifier
 
-  config.action_mailer.default_url_options = { host: 'http://rubycastsbrasil.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'http://www.rubycastsbrasil.com.br/' }
 
   ActionMailer::Base.smtp_settings = {
       address:              'smtp.sendgrid.net',
