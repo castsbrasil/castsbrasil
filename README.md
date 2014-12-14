@@ -1,7 +1,7 @@
 # RubyCastsBrasil
 
-Esse é o código fonte do [RubyCastsBrasil site](http://rubycastsbrasil.herokuapp.com/). 
-RubyCasts Brasil tem como objetivo apresentar screencasts colaborativos de qualidade, sem nenhuma forma de cobrança, apenas com o intuito de difundir a linguagem na comunidade brasileira e facilitar o estudo de iniciantes, intermediários e até mesmo profissionais com casts totalmente em Português.
+Esse é o código fonte do site [RubyCastsBrasil](http://www.rubycastsbrasil.com.br/).
+RubyCastsBrasil tem como objetivo apresentar screencasts colaborativos de qualidade, sem nenhuma forma de cobrança, apenas com o intuito de difundir a linguagem na comunidade brasileira e facilitar o estudo de iniciantes, intermediários e até mesmo profissionais com casts totalmente em Português.
 
 ## Configuração Inicial
 
