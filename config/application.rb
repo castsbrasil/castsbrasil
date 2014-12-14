@@ -20,6 +20,8 @@ module RubyCastsBrasil
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'br'
 
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
     config.generators do |g|
       g.test_framework  :rspec, fixture: false
       g.view_specs      false

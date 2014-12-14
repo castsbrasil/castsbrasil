@@ -1,0 +1,19 @@
+<div class="profile-header">
+  <div class="container">
+    <div class="profile-wrapper">
+      <div class="image-profile">
+        <img src="http://lorempixel.com/260/260/people/" alt="">
+      </div>
+      <div class="profile-infos">
+        <h3 class="profile-name">Ivan Santos</h3>
+        <a href="#" class="edit-profile">Editar Perfil</a>
+        <p class="profile-description">
+          Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="profile-screencast-list container">
+  <%= render 'cast_list', screencasts: @casts.most_recent, title: 'Screencasts' %>
+</div>

@@ -1,0 +1,53 @@
+.header {
+	min-height: 100px;
+	background: $color-white;
+	position: absolute;
+	width: 100%;
+	top:0;
+	box-shadow: $color-black 1px 1px 10px;
+	.logo {
+		line-height: 90px;
+	}
+}
+
+.menu {
+		float: right;
+		padding-left: 30px;
+		height: 100px;
+		margin-right: 60px;
+	ul {
+		list-style: none;
+		padding: 0; margin: 0;
+		float: right;
+		li {
+			display: inline-block;
+			a {
+				color: $color-red;
+				@include font-size(22, 14);
+				display: block;
+				padding: 0 26px;
+				height: 100%;
+				line-height: 100px;
+				&:hover {
+					color: $color-dark-red;
+					text-decoration: none;
+				}
+			}
+			a:hover {
+				background: $color-light-red;
+
+				color: $color-white;
+			}
+		}
+	}
+}
+
+.content_logo {
+	float: left;
+	padding-left: 30px;
+}
+
+.sign-in-box-header {
+	float: right;
+	// background: red;
+}

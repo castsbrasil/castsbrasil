@@ -1,0 +1,27 @@
+body {
+	background: $color-yellow;
+	font-family: $base-font-family;
+	@include font-size(16 , 16);
+	position: relative;
+
+}
+
+.general-wrapper {
+	padding-top: 100px;
+}
+
+.alerts {
+	position: absolute;
+	color: black;
+	z-index: 99999;
+	width: 500px;
+	left: 50%;
+	margin-left: -250px;
+}
+.alert {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	.close {
+		top: -5px;
+	}
+}

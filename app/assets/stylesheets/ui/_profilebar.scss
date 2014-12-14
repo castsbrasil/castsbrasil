@@ -1,0 +1,51 @@
+.content-profile-login-box {
+	padding-top: 37px;
+		padding-right: 160px;
+	img {
+		float: right;
+		border-radius: 4px;
+		margin-right: 10px;
+	}
+	.account-config {
+		background: url(image_path('settings-icon.png')) no-repeat;
+		width: 20px;
+		height: 20px;
+		float: right;
+		text-indent: -9999px;
+		margin-right: 10px;
+	}
+	.bt-logout {
+		background: url(image_path('logout-icon.png')) no-repeat;
+		width: 22px;
+		height: 22px;
+		float: right;
+		text-indent: -9999px;
+	}
+		.bt-default {
+			font-size: 12px;
+			color: $color-white;
+			float: right;
+			padding: 6px 18px;
+			line-height: 14px;
+			background: $color-light-grey;
+			border-radius: 6px;
+			margin-right: 6px;
+			text-decoration: none;
+		}
+		.bt-signup {
+			background: $color-green;
+		}
+	.user-profile-name {
+		font-size: 12px;
+		color: #602728;
+		float: right;
+		padding-top: 4px;
+		padding-right: 10px;
+		line-height: 14px;
+	}
+
+    .avatar {
+        width: 26px;
+        height: 26px;
+    }
+}

@@ -14,6 +14,7 @@
 //= require cocoon
 //= require_tree ./modules
 
+
 $(window).bind("load", function() {
     Module.run('Application');
 });

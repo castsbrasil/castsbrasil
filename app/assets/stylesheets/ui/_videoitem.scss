@@ -1,0 +1,44 @@
+.video-items {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.video-item {
+	padding: 0 15px;
+	margin: 0 0 20px 0;
+
+	.image-box {
+		border-radius: 2px;
+		width: 255px;
+		height: 150px;
+		float: left;
+		background: $color-red url(image_path('play-icon.png')) center no-repeat;
+		margin-right: 14px;
+		position: relative;
+	}
+	.image-hover {
+		display: block;
+		background: rgba(0, 0, 0, 0.2) url(image_path('play-icon.png')) center no-repeat;
+		position: absolute;
+		width: 255px;
+		height: 150px;
+	}
+	.image-box:hover .image-hover {
+		display: none;
+	}
+	.video-description {
+		color: $color-dark-red;
+		text-decoration: none;
+	}
+	h3 {
+		margin: 0 0 8px 0;
+		font-weight: bold;
+		color: $color-dark-red;
+		font-size: 22px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 17px;
+		color: #000000;
+	}
+}
