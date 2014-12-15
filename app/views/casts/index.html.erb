@@ -1,25 +1,45 @@
-<h1>Casts#index</h1>
+<div class="sub-header">
+  <div class="container">
+    <div class="row">
 
-<div class="table-responsive">
-  <table class="table">
-  	<thead>
-      <tr>
-        <th>Nome</th>
-        <th>Url</th>
-        <th>#</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @casts.each do |cast| %>
-		<tr>
-			<td><%= cast.name %></td>
-			<td><%= cast.url %></td>
-      <td>
-        <%= link_to t('.edit'), edit_cast_path(cast) %>
-      </td>
-		</tr>
-	<% end %>
-	</tbody>
-  </table>
+      <h2 class="featured-page-title"><span>Screencasts</span> publicados</h2>
+<!--       <div class="sub-menu">
+        <a href="#">Mais curtidos</a>
+        <a href="#">Data</a>
+      </div>
+      <div class="content-search">
+        <form>
+          <input type="text" placeholder="Buscar casts">
+          <input type="submit">
+        </form>
+      </div> -->
+
+    </div>
+  </div>
 </div>
 
+<section class="screencasts-content-list clearfix">
+  <div class="container">
+
+    <%- @casts.all.each do |cast| %>
+      <div class="row screencast-item">
+        <%= link_to cast_path(cast) do %>
+          <div class="content-screencast-image">
+            <div class="image-hover"></div>
+            <%= image_tag 'trash-video.jpg' %>
+          </div>
+          <span class="screencast-date">
+            Adicionado em 23 de agosto de 2014
+          </span>
+          <h3><%= cast.name %></h3>
+          <p>
+            <%= cast.description %>
+            <span class="time-count">
+              Duração: 23 minutos
+            </span>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
