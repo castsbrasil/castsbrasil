@@ -11,7 +11,7 @@
       <div class="row choose-box-home home-signed-in">
         <div class="col-md-4">
           <div class="base-content-box-option">
-            <%= link_to screencasts_path do %>
+            <%= link_to casts_path do %>
               <div class="content-box-option show-screencast">
                 <div class="header-box-option">
                   Ver screencasts
@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-4">
           <div class="base-content-box-option">
-            <%= link_to 'javascript::void(0)' do %>
+            <%= link_to new_cast_path do %>
               <div class="content-box-option submit-screencast">
                 <div class="header-box-option">
                   Submeter um Cast
@@ -97,7 +97,7 @@
 <!-- Section Latest -->
 <section class="featured latest-home">
   <div class="container">
-    <%= render 'shared/cast_list', screencasts: @casts.most_recent, title: 'Últimos screencasts publicados' %>
+    <%= render 'shared/cast_list', casts: @casts.most_recent, title: 'Últimos screencasts publicados' %>
   </div>
 </section>
 <!-- /Section Latest -->
@@ -105,7 +105,7 @@
 <!-- Section Latest -->
 <section class="featured most-watched-home">
   <div class="container">
-    <%= render 'shared/cast_list', screencasts: @casts.most_viewed, title: 'Screencasts mais visualizados' %>
+    <%= render 'shared/cast_list', casts: @casts.most_viewed, title: 'Screencasts mais visualizados' %>
   </div>
 </section>
 <!-- /Section Latest -->

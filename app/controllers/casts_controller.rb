@@ -1,14 +1,18 @@
 class CastsController < AuthorizedController
-  skip_before_action :authenticate_user!, only: %i(index show)
+  def index
+    @casts = CastCollection.all
+    respond_with(@casts)
+  end
 
   def create
     @cast = current_user.casts.new(cast_params)
     @cast.save
-    respond_with @cast
+    respond_with(@cast)
   end
 
   def edit
-    @cast = current_user.casts.find_by_param(params[:id])
+    @cast = current_user.casts.find(params[:id])
+    respond_with(@cast)
   end
 
   def update

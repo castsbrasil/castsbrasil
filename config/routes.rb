@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :casts
   resource :profiles, only: %i(show update)
-  resources :screencasts, only: %i(index show)
+  resources :casts
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: :registrations
   devise_scope :user do
