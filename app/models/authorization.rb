@@ -8,7 +8,7 @@ class Authorization < ActiveRecord::Base
   end
 
   def self.github
-    Authorization.where(provider: 'github').first
+    where(provider: 'github').first
   end
 
   def values

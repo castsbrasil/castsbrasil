@@ -18,7 +18,7 @@ class CastsController < AuthorizedController
   def update
     @cast = current_user.casts.find_by_param(params[:id])
     @cast.update(cast_params)
-    respond_with @cast
+    respond_with(@cast)
   end
 
   protected

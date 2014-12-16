@@ -13,6 +13,10 @@ Rails.application.routes.draw do
              as: :user_registration
   end
 
+  constraints(host: /herokuapp.com/) do
+    match "/(*path)" => redirect { |params, _req| "http://rubycastsbrasil.com.br/#{params[:path]}" }, via: %i(get post)
+  end
+
   get '/colabore', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki/Contribuindo'), as: :contributing
   get '/sobre', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki'), as: :about
 
