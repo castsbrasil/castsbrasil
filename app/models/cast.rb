@@ -1,7 +1,6 @@
 class Cast < ActiveRecord::Base
-  include Taggable
-
   belongs_to :user
+  has_and_belongs_to_many :tags
   has_many :cast_transitions, dependent: :destroy
 
   scope :desc, -> { order(created_at: :desc) }
