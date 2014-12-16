@@ -1,11 +1,8 @@
 require 'rails_helper'
 
 describe Level do
-
-  context '.validates' do
-    it { should validate_numericality_of(:required_score).only_integer }
-    it { should validate_uniqueness_of(:name) }
-  end
+  it { expect(subject).to validate_numericality_of(:required_score).only_integer }
+  it { expect(subject).to validate_uniqueness_of(:name) }
 
   describe '.by_score(score)' do
     before { create(:level) }
@@ -37,5 +34,4 @@ describe Level do
       expect(Level.first_by_score(70)).to eq(level)
     end
   end
-
 end
