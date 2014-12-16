@@ -2,8 +2,9 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_many :links, dependent: :destroy
 
+  validates :first_name, presence: true
+
   accepts_nested_attributes_for :links, allow_destroy: true, reject_if: :all_blank
-  validates_presence_of :first_name
 
   def values
     @values ||= Attributes.new(self)
