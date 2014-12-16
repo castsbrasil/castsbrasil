@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe Cast do
   let(:cast) { create(:cast) }
+
   it { expect(subject).to belong_to(:user) }
-  it { expect(subject).to have_many(:tag_relationships) }
-  it { expect(subject).to have_many(:tags).through(:tag_relationships) }
+  it { expect(subject).to have_and_belong_to_many(:tags) }
   it { expect(subject).to have_many(:cast_transitions) }
 
   before(:each) do

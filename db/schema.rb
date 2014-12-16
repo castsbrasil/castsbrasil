@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106115946) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20141216012446) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -38,8 +35,8 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "cast_transitions", ["cast_id"], name: "index_cast_transitions_on_cast_id", using: :btree
-  add_index "cast_transitions", ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true, using: :btree
+  add_index "cast_transitions", ["cast_id"], name: "index_cast_transitions_on_cast_id"
+  add_index "cast_transitions", ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true
 
   create_table "casts", force: true do |t|
     t.string   "name"
@@ -50,7 +47,14 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "casts", ["user_id"], name: "index_casts_on_user_id", using: :btree
+  add_index "casts", ["user_id"], name: "index_casts_on_user_id"
+
+  create_table "casts_tags", id: false, force: true do |t|
+    t.integer "cast_id"
+    t.integer "tag_id"
+  end
+
+  add_index "casts_tags", ["cast_id", "tag_id"], name: "index_casts_tags_on_cast_id_and_tag_id", unique: true
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -74,7 +78,7 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.integer  "profile_id"
   end
 
-  add_index "links", ["profile_id"], name: "index_links_on_profile_id", using: :btree
+  add_index "links", ["profile_id"], name: "index_links_on_profile_id"
 
   create_table "points", force: true do |t|
     t.integer  "user_id"
@@ -84,7 +88,7 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "points", ["user_id"], name: "index_points_on_user_id", using: :btree
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -94,7 +98,7 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -104,8 +108,8 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
-  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "scores", force: true do |t|
     t.integer  "user_id"
@@ -115,18 +119,7 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.datetime "updated_at"
   end
 
-  add_index "scores", ["user_id"], name: "index_scores_on_user_id", using: :btree
-
-  create_table "tag_relationships", force: true do |t|
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tag_relationships", ["tag_id"], name: "index_tag_relationships_on_tag_id", using: :btree
-  add_index "tag_relationships", ["taggable_id", "taggable_type"], name: "index_tag_relationships_on_taggable_id_and_taggable_type", using: :btree
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -155,15 +148,15 @@ ActiveRecord::Schema.define(version: 20141106115946) do
     t.integer  "level_id"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
 
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
 end
