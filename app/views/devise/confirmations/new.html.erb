@@ -4,9 +4,9 @@
   </div>
 
   <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), method: :post) do |f| %>
-      <%= f.input :email %>
+    <%= f.input :email %>
 
-      <%= f.button :submit, t('.resend_confirmation_instructions', :default => "Resend confirmation instructions"), class: 'btn-primary pull-right' %>
+    <%= f.button :submit, t('.resend_confirmation_instructions', :default => "Resend confirmation instructions"), class: 'btn-primary pull-right' %>
   <% end %>
   <br class="clearfix" />
 

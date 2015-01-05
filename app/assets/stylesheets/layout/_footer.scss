@@ -1,6 +1,6 @@
 .footer {
 	height: 62px;
-	overflow: hidden;
+	//overflow: hidden;
 	.dedication {
 		line-height: 62px;
 		.rubycasts-with-love {
@@ -15,7 +15,7 @@
 
 
 .footer-menu {
-	text-align: right;
+	text-align: center;
 	ul {
 		line-height: 62px;
 		list-style: none;
@@ -35,5 +35,11 @@
 				margin: 0 4px;
 			}
 		}
+	}
+}
+
+@media(min-width:768px) {
+	.footer-menu {
+		text-align: right;
 	}
 }

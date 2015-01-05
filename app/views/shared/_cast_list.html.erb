@@ -3,15 +3,18 @@
 </div>
 <ul class="row video-items">
   <%- casts.each do |cast| %>
+  <% p cast %>
     <li class="col-md-6 video-item">
       <div class="image-box">
         <div class="image-hover"></div>
-        <a href="#"><%= image_tag 'trash-video.jpg' %></a>
+        <%= link_to cast_path(cast) do %>
+          <%= image_tag 'trash-video.jpg' %>
+        <% end %>
       </div>
-      <a href="#" class="video-description">
+      <%= link_to cast_path(cast), class: 'video-description' do %>
         <h3><%= cast.name %></h3>
         <p><%= cast.description %></p>
-      </a>
+      <% end %>
     </li>
   <% end %>
 </ul>

@@ -1,0 +1,26 @@
+.new-cast {
+  min-height: 1024px;
+  padding-top: 35px;
+  background: #e5e3d3;
+  label {
+    font-size: 20px;
+    font-weight: normal;
+    color: #6c6c6c;
+  }
+  .form-control {
+    padding: 20px 26px;
+    font-size: 14px;
+    height: auto;
+    color: #7e7e7d;
+    background-color: #f4f4f1;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+  }
+  .form-control:hover {
+    box-shadow: none;
+    transition: none;
+  }
+}
