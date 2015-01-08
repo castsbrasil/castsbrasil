@@ -256,6 +256,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redcarpet (3.2.2)
     ref (1.0.5)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -385,6 +386,7 @@ DEPENDENCIES
   poltergeist
   rails (= 4.1.8)
   rails_12factor
+  redcarpet
   responders
   rolify
   rspec-rails

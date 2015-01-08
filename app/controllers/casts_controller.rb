@@ -24,6 +24,6 @@ class CastsController < AuthorizedController
   protected
 
   def cast_params
-    params.require(:cast).permit(:name, :description, :url)
+    params.require(:cast).permit(:name, :description, :notes, :url)
   end
 end

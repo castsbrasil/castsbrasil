@@ -1,12 +1,59 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-@import "base/variables";
-@import "base/mixins";
-@import "base/helpers";
-@import "base/media-queries";
-@import "ui/icons";
-
+.profile {
+	padding-top: 35px;
+	background: #e5e3d3;
+	label {
+		font-size: 20px;
+		font-weight: normal;
+		color: #6c6c6c;
+	}
+	.form-control {
+		padding: 20px 26px;
+		font-size: 14px;
+		height: auto;
+		color: #7e7e7d;
+		background-color: #f4f4f1;
+		background-image: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		transition: none;
+	}
+	.form-control:hover {
+		box-shadow: none;
+		transition: none;
+	}
+}
+.panel-heading {
+	padding: 0;
+	border: none;
+	margin: 0;
+	h3 {
+		background: #efeddf;
+		margin: 0;
+		padding: 22px 20px;
+		font-size: 20px;
+		color: #952c2c;
+		font-weight: bold;
+	}
+}
+.personal-data {
+	background: #efeddf;
+}
+.panel-footer {
+	padding: 24px;
+	background: #fff;
+}
+.profile-avatar {
+	background: #fff;
+	padding: 20px;
+	p {
+		padding-left: 30px;
+		font-size: 26px;
+	}
+}
+.personal-footer {
+	background: #fff;
+}
 .profile-header {
 	background: #fdcc55;
 	min-height: 248px;

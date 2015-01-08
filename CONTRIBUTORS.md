@@ -14,6 +14,7 @@
 * Hugo Dias <hugooodias@gmail.com>
 * Ivan Santos <pragmaticivan@gmail.com>
 * Jean Matheus Souto <jeanmatheussouto@gmail.com>
+* Jonatan Ribeiro dos Santos <joridoss@gmail.com>
 * Luiz Augusto Crisostomo <luiz66@gmail.com>
 * Luiz Cezer <lccezinha@gmail.com>
 * Matheus Mina <mfbmina@gmail.com>

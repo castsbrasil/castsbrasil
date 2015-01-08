@@ -1,15 +1,46 @@
-<div class="col-sm-6 col-md-offset-3">
-	<div class="page-header">
-    	<h2><%= t('.title') %></h2>
-  	</div>
+<section class="new-cast">
+  <div class="container">
+  
+  	<% if flash[:notice] %>
+		  <div class="col-md-12">
+		  		<%= flash[:notice] %>
+		  </div>
+	  <% end %>
+  
+    <div class="col-md-12">
+      <%= form_for @cast do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t('.title') %></h3>
+          </div>
+          <div class="panel-body personal-data">
+              <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, placeholder: 'Nome da Screencast', class: 'form-control' %>
+              </div>
 
-	<%= simple_form_for @cast do |f| %>
-		<%= f.input :name %>
-		<%= f.input :url %>
-		<%= f.input :description, as: :text%>
+              <div class="form-group">
+                <%= f.label :url %>
+                <%= f.text_field :url, placeholder: 'URL da Screencast', class: 'form-control' %>
+              </div>
 
-		<%= f.button :submit, t('.create'), class: 'btn-primary pull-right' %>
-	<% end %>
+              <div class="form-group">
+                <%= f.label :description %>
+                <%= f.text_area :description, placeholder: 'Descreva sobre o que se trata o screencast', class: 'form-control' %>
+              </div>
 
-	<%= flash[:notice] %>
-</div>
+              <div class="form-group">
+                <%= f.label :notes %>
+                <%= f.text_area :notes, placeholder: 'Notas do screencast, você pode usar Mardown aqui!!', class: 'form-control' %>
+              </div>
+
+          </div>
+          <div class="panel-footer text-right">
+              <%= f.submit t('.create'), class: 'btn btn-success' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+	</div>
+</section>

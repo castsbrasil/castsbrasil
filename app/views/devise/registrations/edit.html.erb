@@ -1,53 +1,91 @@
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h2><%= t('.title', resource: resource_class.model_name.human ) %></h2>
+<section class="profile">
+  <div class="container">
+
+    <div class="col-md-12">
+      <%= form_for(resource.profile, url: profiles_path, method: :put) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Dados Pessoais</h3>
+            <div class="profile-avatar">
+              <div class="row">
+                <div class="col-md-1">
+                  <%= show_avatar %>
+                </div>
+                <div class="col-md-11">
+                 <p>Para alterar sua imagem de exibição é necessário fazer o upload de sua foto no Gravatar e usar o mesmo email em configurações da conta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-body personal-data">
+            <div class="form-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, placeholder: 'Seu nome', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, placeholder: 'Seu sobrenome', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <label for="about">Fale um pouco sobre você</label>
+              <textarea id="about" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+              <h3><%= t('.social_networks', default: 'Social Networks') %></h3>
+              <% resource.authorizations.each do |authorization| %>
+                <p>
+                  <%= authorization.provider %>:
+                  <%= link_to authorization.nick_name, authorization.profile_page %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="panel-footer text-right">
+              <%= f.submit 'Atualizar dados', class: 'btn btn-success' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configurações da conta</h3>
+          </div>
+
+          <div class="panel-body personal-data">
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, placeholder: 'Seu email', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, placeholder: 'Sua senha', class: 'form-control', id: 'password', title: t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")  %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, placeholder: 'Confirme sua senha', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :current_password %>
+              <%= f.password_field :current_password, placeholder: 'Confirme sua senha', class: 'form-control', id: 'current_password', title: t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>
+            </div>
+          </div>
+
+          <div class="panel-footer text-right">
+              <%= f.submit 'Atualizar dados', class: 'btn btn-success' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put) do |f| %>
-      <%= f.input :email %>
-      <%= f.input :password, input_html: { id: 'password', title: t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it") } %>
-      <%= f.input :password_confirmation %>
-      <%= f.input :current_password, input_html: { id: 'current_password', title: t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') } %>
-
-      <%= f.button :submit, t('.update', :default => "Update"), class: 'btn-primary pull-right' %>
-  <% end %>
-</div>
-<br class="clearfix" />
-
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h3><%= t('.my_profile', default: 'My profile') %></h3>
-  </div>
-
-  <%= simple_form_for(resource.profile, url: profiles_path, method: :put) do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-
-      <div class="page-header">
-        <h4><%= t('.links', default: 'My links') %></h3>
-      </div>
-
-      <div id='links'>
-        <%= f.simple_fields_for :links do |fl| %>
-          <%= render 'link_fields', f: fl %>
-        <% end %>
-        <%= link_to_add_association 'add links', f, :links %>
-      </div>
-
-      <%= f.button :submit, t('.update', default: "Update"), class: 'btn-primary pull-right' %>
-  <% end %>
-</div>
-<br class="clearfix" />
-
-<div class="col-sm-6 col-md-offset-3">
-  <div class="page-header">
-    <h3><%= t('.social_networks', default: 'Social Networks') %></h3>
-  </div>
-
-  <% resource.authorizations.each do |authorization| %>
-      <p>
-          <%= authorization.provider %>:
-          <%= link_to authorization.nick_name, authorization.profile_page %>
-      </p>
-  <% end %>
-</div>
+</section>

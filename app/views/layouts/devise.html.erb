@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><%= t('.title') %></title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="Assista, aprenda e curta de montão os melhores screencasts da internet!">
   <%= csrf_meta_tags %>
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800' rel='stylesheet' type='text/css'>
+  <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
-<body controller_name="<%= params[:controller].gsub('/', ' ').titleize.gsub(' ', '.') %>" action_name="<%= action_name.capitalize %>">
-
-<a href="https://github.com/RubyCastsBrasil/RubyCastsBrasil"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:800" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-
-<%= render 'shared/alerts' %>
-
-<div class="general-wrapper">
+  <%= body do %>
+  <%= render 'shared/alerts' %>
   <%= render 'shared/header' %>
 
-  <div class="devise-content">
+  <main class="main devise-content" role="main">
     <%= yield %>
-  </div>
+  </main>
 
   <%= render 'shared/footer' %>
-</div>
-
-<%= javascript_include_tag 'application' %>
-</body>
+  <%= javascript_include_tag 'application' %>
+  <% end %>
 </html>

@@ -1,33 +1,38 @@
-@import "base/variables";
-@import "base/mixins";
-@import "base/helpers";
-@import "base/media-queries";
-@import "ui/icons";
-
 body {
-	background: $color-yellow;
-	font-family: $base-font-family;
-	@include font-size(16 , 16);
-	position: relative;
-
+  background: $color-yellow;
+  font-family: $base-font-family;
+  @include font-size(16 , 16);
+  position: relative;
+  line-height: 1.42857;
 }
 
-.general-wrapper {
-	padding-top: 100px;
+span {
+  line-height: 40px;
+}
+
+.main {
+  min-height: 1024px;
+  background-color: $color-white;
 }
 
 .alerts {
-	position: absolute;
-	color: black;
-	z-index: 99999;
-	width: 500px;
-	left: 50%;
-	margin-left: -250px;
+  position: absolute;
+  color: black;
+  z-index: 99999;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
 }
+
 .alert {
-	padding-top: 7px;
-	padding-bottom: 7px;
-	.close {
-		top: -5px;
-	}
+  padding-top: 7px;
+  padding-bottom: 7px;
+  .close {
+    top: -5px;
+  }
+}
+
+.btn-success {
+  padding: 26px;
+  font-size: 20px;
 }

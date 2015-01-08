@@ -1,23 +1,21 @@
 <!-- Section Register -->
-<section class="register-home">
+<section class="board-home">
   <div class="container">
     <% if user_signed_in? %>
       <div class="row">
         <div class="col-md-12 welcome home-signed-in">
-            <h3>Bem vindo, seu lindo!</h3>
-            <span>O que você deseja fazer?</span>
+          <h3>Bem vindo, seu lindo!</h3>
+          <span>O que você deseja fazer?</span>
          </div>
       </div>
       <div class="row choose-box-home home-signed-in">
-        <div class="col-md-4">
+        <div class="col-md-4 box">
           <div class="base-content-box-option">
             <%= link_to casts_path do %>
               <div class="content-box-option show-screencast">
                 <div class="header-box-option">
                   Ver screencasts
-                  <div class="circle">
-
-                  </div>
+                  <div class="circle"></div>
                 </div>
                 <div class="description-box-option">
                   Assista, aprenda e
@@ -29,15 +27,13 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 box">
           <div class="base-content-box-option">
             <%= link_to new_cast_path do %>
               <div class="content-box-option submit-screencast">
                 <div class="header-box-option">
                   Submeter um Cast
-                  <div class="circle">
-
-                  </div>
+                  <div class="circle"></div>
                 </div>
                 <div class="description-box-option">
                   Quem ensina aprende
@@ -49,15 +45,13 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 box">
           <div class="base-content-box-option">
             <%= link_to 'javascript::void(0)' do %>
               <div class="content-box-option starter">
                 <div class="header-box-option">
                   Ser iniciado (hue)
-                  <div class="circle">
-
-                  </div>
+                  <div class="circle"></div>
                 </div>
                 <div class="description-box-option">
                   Aqui a gente vai
@@ -84,12 +78,6 @@
         </div>
       </div>
     <% end %>
-
-
-
-
-
-
   </div>
 </section>
 <!-- /Section Register -->

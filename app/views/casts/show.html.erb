@@ -1,7 +1,7 @@
 <div class="screencast-header container">
   <div class="row">
     <div class="col-md-12">
-      <%= link_to("Ver todos os screencasts", "#", class: "show-all") %>
+      <%= link_to("Ver todos os screencasts", casts_path, class: "show-all") %>
     </div>
   </div>
 </div>
@@ -10,16 +10,17 @@
   <div class="row featured-video-player">
     <div class="col-md-12">
       <iframe id="ytplayer" type="text/html" width="100%" height="550"
-  src="http://www.youtube.com/embed/phT5ogtA1QU?autoplay=0&origin=http://example.com"
+  src="//<%= @cast.url %>?autoplay=0"
   frameborder="0"/></iframe>
     </div>
   </div>
 
   <div class="video-description row">
     <div class="col-md-12">
-      <h2 class="title">Entendendo os tipos de variáveis em ruby</h2>
+      <h2 class="title"><%= @cast.name %></h2>
       <span class="time-info">Jun 16, 2014 | 12 minutes | Autor: <a href="#">Ivan Santos</a></span>
       <ul class="tags">
+        <li><span class="glyphicon glyphicon-tag" aria-hidden="true"> </span></li>
         <li><a href="#">Ruby</a>,</li>
         <li><a href="#">Iniciante</a>,</li>
         <li><a href="#">Básico</a></li>
@@ -28,9 +29,48 @@
   </div>
   <div class="video-text row">
     <div class="col-md-12">
-      <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
-      <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
-      <p>Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul id="myTab" class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#notas" aria-controls="notas" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Notas do Autor</a>
+            </li>
+          <li role="presentation">
+            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comentários (12)</a>
+          </li>
+          <li role="presentation" class="pull-right">
+            <a href="#others-screencasts" aria-controls="others-screencasts" role="tab" data-toggle="tab">Screencasts Similares</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="notas">
+            <p><% p @cast %></p>
+            <p><%= markdown(@cast.notes) %></p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'rubycastsbrasil'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+                  
+          </div>
+          <div role="tabpanel" class="tab-pane" id="others-screencasts">
+            <p>others screencasts here</p>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>

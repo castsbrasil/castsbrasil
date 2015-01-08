@@ -1,59 +1,66 @@
-@import "base/variables";
-@import "base/mixins";
-@import "base/helpers";
-@import "base/media-queries";
-@import "ui/icons";
-
-.header {
-	min-height: 100px;
-	background: $color-white;
-	position: absolute;
-	width: 100%;
-	top:0;
-	box-shadow: $color-black 1px 1px 10px;
-	.logo {
-		line-height: 90px;
-	}
+#forkme {
+	display: none;
 }
 
-.menu {
-		float: right;
-		padding-left: 30px;
-		height: 100px;
-		margin-right: 60px;
-	ul {
-		list-style: none;
-		padding: 0; margin: 0;
-		float: right;
-		li {
-			display: inline-block;
-			a {
-				color: $color-red;
-				@include font-size(22, 14);
-				display: block;
-				padding: 0 26px;
-				height: 100%;
-				line-height: 100px;
-				&:hover {
-					color: $color-dark-red;
-					text-decoration: none;
-				}
-			}
-			a:hover {
-				background: $color-light-red;
-
-				color: $color-white;
-			}
-		}
-	}
+.navbar {
+	margin-bottom: 0;
+	box-shadow: 1px 1px 10px #000;
+	border: none;
 }
 
-.content_logo {
+.navbar-brand {
 	float: left;
-	padding-left: 30px;
+	padding: 0;
+	font-size: 18px;
+	line-height: 0;
+	height: 0;
 }
 
-.sign-in-box-header {
-	float: right;
-	// background: red;
+.logo img{
+	width: 150px;
+	padding: 10px;
+}
+
+.navbar-default
+.navbar-nav > li > a {
+	color: $color-red;
+}
+
+.navbar-nav > li > a {
+	padding: 0 26px;
+	line-height: 100px;
+	@include font-size(22, 14);
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background: $color-light-red;
+	color: $color-white;
+}
+
+.user-options {
+	margin-left: 15px;
+}
+
+@media(min-width:768px) {
+	#forkme {
+		display: inline;
+	}
+
+	.navbar-brand {
+		float: left;
+		padding: 15px;
+		font-size: 18px;
+		line-height: 20px;
+		height: 50px;
+	}
+
+	.logo {
+		padding: 0px 15px;
+		line-height: 59px;
+	}
+
+	.logo img {
+		width: inherit;
+	}
 }

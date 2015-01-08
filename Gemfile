@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'statesman', '~> 0.8.3'
 gem 'validates_host'
 gem 'zertico', '>= 2.0.0.beta.1'
+gem 'redcarpet'
 
 group :test do
   gem 'capybara'

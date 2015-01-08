@@ -1,15 +1,15 @@
-<ul class="nav nav-pills pull-right sign-in-box-header">
+<ul class="nav navbar-nav user-options">
   <% if user_signed_in? %>
-      <div class="content-profile-login-box">
-        <%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, method: :delete, class: 'bt-logout' %>
-        <%= link_to t('devise.registrations.edit.update'), edit_user_registration_path, class: 'account-config' %>
-        <a href="#" class="user-profile-name"><%= current_user.profile.full_name %></a>
-        <%= show_avatar %>
-      </div>
+    <div class="content-profile-login-box">
+      <%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, method: :delete, class: 'bt-logout' %>
+      <%= link_to t('devise.registrations.edit.update'), edit_user_registration_path, class: 'account-config' %>
+      <a href="#" class="user-profile-name"><%= current_user.profile.full_name %></a>
+      <%= show_avatar %>
+    </div>
   <% else %>
-      <div class="content-profile-login-box">
-        <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: 'bt-default' %>
-        <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path, class: 'bt-default bt-signup ' %>
-      </div>
+    <div class="content-profile-login-box">
+      <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: 'bt-default' %>
+      <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path, class: 'bt-default bt-signup ' %>
+    </div>
   <% end %>
 </ul>
