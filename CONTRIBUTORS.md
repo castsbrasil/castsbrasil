@@ -14,6 +14,7 @@
 * Gustavo Araújo <gu.araujo25@gmail.com>
 * Hugo Dias <hugooodias@gmail.com>
 * Ivan Santos <pragmaticivan@gmail.com>
+* Jader Correa <jadercorrea.hv@gmail.com>
 * Jean Matheus Souto <jeanmatheussouto@gmail.com>
 * Jonatan Ribeiro dos Santos <joridoss@gmail.com>
 * Luiz Augusto Crisostomo <luiz66@gmail.com>
