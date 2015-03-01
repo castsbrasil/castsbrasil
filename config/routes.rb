@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/colabore', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki/Contribuindo'), as: :contributing
-  get '/sobre', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki'), as: :about
+  get '/sobre', to: redirect('https://github.com/RubyCastsBrasil/RubyCastsBrasil/wiki/Sobre-o-projeto'), as: :about
 
   get '/' => 'home#index', as: :users
   root to: 'home#index'
