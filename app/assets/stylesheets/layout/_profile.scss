@@ -1,122 +1,128 @@
-@import "bootstrap";
+// @import "bootstrap";
 @import "../base/*";
 
 .profile {
-	padding-top: 35px;
-	background: #e5e3d3;
-	label {
-		font-size: 20px;
-		font-weight: normal;
-		color: #6c6c6c;
-	}
-	.form-control {
-		padding: 20px 26px;
-		font-size: 14px;
-		height: auto;
-		color: #7e7e7d;
-		background-color: #f4f4f1;
-		background-image: none;
-		border: none;
-		border-radius: 0;
-		box-shadow: none;
-		transition: none;
-	}
-	.form-control:hover {
-		box-shadow: none;
-		transition: none;
-	}
+  background: $color-ice-white;
+  padding-top: 35px;
+  label {
+    font-size: 20px;
+    font-weight: normal;
+    color: $color-dark-grey;
+  }
+  .form-control {
+    padding: 20px 26px;
+    font-size: 14px;
+    height: auto;
+    color: $color-dark-grey;
+    background-color: $color-ice-white;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+  }
+  .form-control:hover {
+    box-shadow: none;
+    transition: none;
+  }
 }
+
 .panel-heading {
-	padding: 0;
-	border: none;
-	margin: 0;
-	h3 {
-		background: #efeddf;
-		margin: 0;
-		padding: 22px 20px;
-		font-size: 20px;
-		color: #952c2c;
-		font-weight: bold;
-	}
+  padding: 0;
+  border: none;
+  margin: 0;
+  h3 {
+    background: $color-yellow;
+    margin: 0;
+    padding: 22px 20px;
+    font-size: 20px;
+    color: $color-dark-red-next;
+    font-weight: bold;
+  }
 }
 .personal-data {
-	background: #efeddf;
+  background: $color-yellow;
 }
 .panel-footer {
-	padding: 24px;
-	background: #fff;
+  padding: 24px;
+  background: $color-white;
 }
 .profile-avatar {
-	background: #fff;
-	padding: 20px;
-	p {
-		padding-left: 30px;
-		font-size: 26px;
-	}
-}
-.personal-footer {
-	background: #fff;
-}
-.profile-header {
-	background: #fdcc55;
-	min-height: 248px;
-	border-bottom: 20px $color-white solid;
-}
-.profile-wrapper {
-	@include make-row();
-	color: $color-red;
-
-	.image-profile {
-		@include make-lg-column(3);
-		position: relative;
-		img {
-			border: 10px solid $color-white;
-			position: absolute;
-			top: 58px;
-			left: 20px;
-			width: 260px;
-			height: 260px;
-			box-shadow: #000 3px 3px 23px;
-		}
-	}
-	.profile-infos {
-		@include make-lg-column(9);
-		padding-top: 48px;
-		.profile-name {
-			padding: 0;
-			margin: 0;
-			font-size: 56px;
-			color: $color-red;
-			font-weight: bold;
-			float: left;
-		}
-		.edit-profile {
-			float: right;
-			color: $color-black;
-			text-decoration: underline;
-			font-size: 14px;
-			margin-top: 20px;
-		}
-		.profile-description {
-			display: block;
-			float: left;
-			color: $color-black;
-			font-size: 15px;
-			line-height: 19px;
-			padding-top: 10px;
-		}
-	}
+  background: $color-white;
+  padding: 20px;
+  p {
+    padding-left: 30px;
+    font-size: 26px;
+  }
+  img {
+    border-radius: 4px;
+    width: 100%;
+  }
 }
 
+// .personal-footer {
+//  background: #fff;
+// }
+// .profile-header {
+//  background: #fdcc55;
+//  min-height: 248px;
+//  border-bottom: 20px $color-white solid;
+// }
+// .profile-wrapper {
+//  // @include make-row();
+//  color: $color-red;
 
-.profile-screencast-list {
-	padding-top: 100px;
-	padding-bottom: 100px;
-	h2 {
-		font-size: 30px;
-		color: $color-red;
-		font-weight: bold;
-		margin: 10px 0 20px 20px;
-		padding: 0;
-	}
-}
+//  .image-profile {
+//    // @include make-lg-column(3);
+//    position: relative;
+//    img {
+//      border: 10px solid $color-white;
+//      position: absolute;
+//      top: 58px;
+//      left: 20px;
+//      width: 260px;
+//      height: 260px;
+//      box-shadow: #000 3px 3px 23px;
+//    }
+//  }
+//  .profile-infos {
+//    // @include make-lg-column(9);
+//    padding-top: 48px;
+//    .profile-name {
+//      padding: 0;
+//      margin: 0;
+//      font-size: 56px;
+//      color: $color-red;
+//      font-weight: bold;
+//      float: left;
+//    }
+//    .edit-profile {
+//      float: right;
+//      color: $color-black;
+//      text-decoration: underline;
+//      font-size: 14px;
+//      margin-top: 20px;
+//    }
+//    .profile-description {
+//      display: block;
+//      float: left;
+//      color: $color-black;
+//      font-size: 15px;
+//      line-height: 19px;
+//      padding-top: 10px;
+//    }
+//  }
+// }
+
+
+// .profile-screencast-list {
+//  padding-top: 100px;
+//  padding-bottom: 100px;
+//  h2 {
+//    font-size: 30px;
+//    color: $color-red;
+//    font-weight: bold;
+//    margin: 10px 0 20px 20px;
+//    padding: 0;
+//  }
+// }

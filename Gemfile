@@ -22,6 +22,7 @@ gem 'statesman', '~> 0.8.3'
 gem 'validates_host'
 gem 'zertico', '>= 2.0.0.beta.1'
 gem 'redcarpet'
+gem 'auto_html'
 
 group :test do
   gem 'capybara'

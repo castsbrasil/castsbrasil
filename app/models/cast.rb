@@ -10,6 +10,10 @@ class Cast < ActiveRecord::Base
 
   validates_presence_of :name, :url
 
+  auto_html_for :url do
+    youtube(width: "100%", height: 550, autoplay: true)
+  end
+
   def state_machine
     @state_machine ||= CastStateMachine.new(self, transition_class: CastTransition)
   end
