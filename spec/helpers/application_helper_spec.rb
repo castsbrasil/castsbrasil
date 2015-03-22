@@ -21,7 +21,7 @@ describe ApplicationHelper do
       end
 
       it 'should receive an empty image' do
-        expect(show_avatar).to match(/lorempixel.com/)
+        expect(show_avatar).to match(/github.com/)
       end
     end
   end

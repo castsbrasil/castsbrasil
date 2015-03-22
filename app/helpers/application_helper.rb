@@ -2,7 +2,7 @@ require 'uri'
 
 module ApplicationHelper
   def show_avatar
-    avatar = current_user.profile.avatar.present? ? current_user.profile.avatar : "http://lorempixel.com/26/26/"
+    avatar = current_user.profile.avatar.present? ? current_user.profile.avatar : "https://assets.github.com/images/gravatars/gravatar-140.png"
     image_tag(avatar, class: 'avatar')
   end
 
