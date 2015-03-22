@@ -8,7 +8,7 @@
       <div class="image-box">
         <div class="image-hover"></div>
         <%= link_to cast_path(cast) do %>
-          <%= image_tag 'trash-video.jpg' %>
+          <%= image_tag youtube_image_preview(cast.url), width: "255px", height: "150px" %>
         <% end %>
       </div>
       <%= link_to cast_path(cast), class: 'video-description' do %>

@@ -3,7 +3,7 @@
     <div class="content-profile-login-box">
       <%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, method: :delete, class: 'bt-logout' %>
       <%= link_to t('devise.registrations.edit.update'), edit_user_registration_path, class: 'account-config' %>
-      <a href="#" class="user-profile-name"><%= current_user.profile.full_name %></a>
+      <a href="javascript:void(0)" class="user-profile-name"><%= current_user.profile.full_name %></a>
       <%= show_avatar %>
     </div>
   <% else %>

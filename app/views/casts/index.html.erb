@@ -26,7 +26,7 @@
         <%= link_to cast_path(cast) do %>
           <div class="content-screencast-image">
             <div class="image-hover"></div>
-            <%= image_tag 'trash-video.jpg' %>
+            <%= image_tag youtube_image_preview(cast.url), width: "255px", height: "150px" %>
           </div>
           <span class="screencast-date">
             Adicionado em 23 de agosto de 2014
