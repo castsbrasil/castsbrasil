@@ -10,7 +10,8 @@ end
   Cast.create(
     user: user,
     name: "Cast: #{id}",
-    url: "http://screenca.st/#{id}",
+    url: "http://screenca.st/watch?v=#{id} ",
     description: "Screencast #{id}, recorded at #{DateTime.current}"
   )
 end
+
