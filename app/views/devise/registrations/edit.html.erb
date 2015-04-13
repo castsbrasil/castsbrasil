@@ -8,10 +8,10 @@
             <h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Dados Pessoais</h3>
             <div class="profile-avatar">
               <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1">
                   <%= show_avatar %>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-11">
                  <p>Para alterar sua imagem de exibição é necessário fazer o upload de sua foto no Gravatar e usar o mesmo email em configurações da conta</p>
                 </div>
               </div>
@@ -33,16 +33,6 @@
               <label for="about">Fale um pouco sobre você</label>
               <textarea id="about" class="form-control" rows="3"></textarea>
             </div>
-
-            <div class="form-group">
-              <h3><%= t('.social_networks', default: 'Social Networks') %></h3>
-              <% resource.authorizations.each do |authorization| %>
-                <p>
-                  <%= authorization.provider %>:
-                  <%= link_to authorization.nick_name, authorization.profile_page %>
-                </p>
-              <% end %>
-            </div>
           </div>
 
           <div class="panel-footer text-right">
@@ -59,26 +49,32 @@
             <h3 class="panel-title"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configurações da conta</h3>
           </div>
 
-          <div class="panel-body personal-data">
-            <div class="form-group">
-              <%= f.label :email %>
-              <%= f.text_field :email, placeholder: 'Seu email', class: 'form-control' %>
+          <div class="panel-body personal-data account-data">
+            <div class="row panel-featured-block">
+              <div class="col-md-12">
+                <div class="form-group col-md-6">
+                  <%= f.label :email %>
+                  <%= f.text_field :email, placeholder: 'Seu email', class: 'form-control' %>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <%= f.label :password %>
+                  <%= f.password_field :password, placeholder: 'Sua senha', class: 'form-control', id: 'password', title: t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")  %>
+                </div>  
+              </div>
+
             </div>
 
-            <div class="form-group">
-              <%= f.label :password %>
-              <%= f.password_field :password, placeholder: 'Sua senha', class: 'form-control', id: 'password', title: t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")  %>
+            <div class="form-group col-md-6">
+              <%= f.label :current_password %>
+              <%= f.password_field :current_password, placeholder: 'Confirme sua senha', class: 'form-control', id: 'current_password', title: t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
               <%= f.label :password_confirmation %>
               <%= f.password_field :password_confirmation, placeholder: 'Confirme sua senha', class: 'form-control' %>
             </div>
 
-            <div class="form-group">
-              <%= f.label :current_password %>
-              <%= f.password_field :current_password, placeholder: 'Confirme sua senha', class: 'form-control', id: 'current_password', title: t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>
-            </div>
           </div>
 
           <div class="panel-footer text-right">
