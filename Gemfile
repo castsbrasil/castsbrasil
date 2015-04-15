@@ -26,7 +26,7 @@ gem 'auto_html'
 
 group :test do
   gem 'capybara'
-  gem 'coveralls', require: false
+  gem 'coveralls', '>=0.8.0', require: false
   gem 'database_cleaner'
   gem 'nyan-cat-formatter'
   gem 'rspec-rails'
