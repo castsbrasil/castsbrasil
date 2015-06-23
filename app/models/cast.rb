@@ -3,6 +3,9 @@ class Cast < ActiveRecord::Base
   has_and_belongs_to_many :tags
   has_many :cast_transitions, dependent: :destroy
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   scope :desc, -> { order(created_at: :desc) }
   scope :find_by_param, -> (param) { find(param) }
   scope :most_recent, -> { desc.limit(10) }
