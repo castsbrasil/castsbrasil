@@ -4,6 +4,10 @@ class CastsController < AuthorizedController
     respond_with(@casts)
   end
 
+  def show
+    @cast = Cast.friendly.find(params[:id])
+    respond_with(@cast)
+  end
   def create
     @cast = current_user.casts.new(cast_params)
     @cast.save

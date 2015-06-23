@@ -138,6 +138,8 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.6)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     gravatar-ultimate (2.0.0)
       activesupport (>= 2.3.14)
       rack
@@ -389,6 +391,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  friendly_id (~> 5.1.0)
   gravatar-ultimate
   guard-rspec
   jazz_hands!
