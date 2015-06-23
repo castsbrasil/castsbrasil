@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104150328) do
+ActiveRecord::Schema.define(version: 20150623025512) do
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150104150328) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "notes"
+    t.string   "slug"
   end
 
   add_index "casts", ["user_id"], name: "index_casts_on_user_id"
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150104150328) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

@@ -23,6 +23,7 @@ gem 'validates_host'
 gem 'zertico', '>= 2.0.0.beta.1'
 gem 'redcarpet', '>=3.2.3'
 gem 'auto_html'
+gem 'friendly_id', '~> 5.1.0'
 
 group :test do
   gem 'capybara'

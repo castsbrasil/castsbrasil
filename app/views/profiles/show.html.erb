@@ -1,14 +1,17 @@
 <div class="profile-header">
   <div class="container">
-    <div class="profile-wrapper">
-      <div class="image-profile">
-        <img src="http://lorempixel.com/260/260/people/" alt="">
+    <div class="profile-wrapper row">
+      <div class="image-profile col-md-2">
+        <%= show_avatar %>
       </div>
-      <div class="profile-infos">
-        <h3 class="profile-name">Ivan Santos</h3>
-        <a href="#" class="edit-profile">Editar Perfil</a>
+      <div class="profile-infos col-md-10">
+        <h3 class="profile-name"><%= @user.profile.full_name %></h3>
+
+        <% if user_signed_in? && @user.id == current_user.id %>
+          <%= link_to "Editar Perfil", edit_user_registration_path, class: 'edit-profile'%>
+        <% end %>
         <p class="profile-description">
-          Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!!
+          <%= current_user.profile.description %>
         </p>
       </div>
     </div>

@@ -16,13 +16,13 @@
   <div class="video-description row">
     <div class="col-md-12">
       <h2 class="title"><%= @cast.name %></h2>
-      <span class="time-info">Jun 16, 2014 | 12 minutes | Autor: <a href="#">Ivan Santos</a></span>
-      <ul class="tags">
+      <span class="time-info"> <%= @cast.created_at.strftime("%d/%m/%Y")%>| Autor: <%= link_to @cast.user.profile.full_name, profile_path(@cast.user)%>
+<!--       <ul class="tags">
         <li><span class="glyphicon glyphicon-tag" aria-hidden="true"> </span></li>
         <li><a href="#">Ruby</a>,</li>
         <li><a href="#">Iniciante</a>,</li>
         <li><a href="#">Básico</a></li>
-      </ul>
+      </ul> -->
     </div>
   </div>
   <div class="video-text row">
@@ -35,11 +35,11 @@
             <a href="#notas" aria-controls="notas" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Notas do Autor</a>
             </li>
           <li role="presentation">
-            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comentários (12)</a>
+            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comentários</a>
           </li>
-          <li role="presentation" class="pull-right">
+<!--           <li role="presentation" class="pull-right">
             <a href="#others-screencasts" aria-controls="others-screencasts" role="tab" data-toggle="tab">Screencasts Similares</a>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Tab panes -->

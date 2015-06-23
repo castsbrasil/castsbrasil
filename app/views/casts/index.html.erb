@@ -29,14 +29,14 @@
             <%= image_tag youtube_image_preview(cast.url), width: "255px", height: "150px" %>
           </div>
           <span class="screencast-date">
-            Adicionado em 23 de agosto de 2014
+            Adicionado em <%= cast.created_at.strftime("%d/%m/%Y")%>
           </span>
           <h3><%= cast.name %></h3>
           <p>
             <%= cast.description %>
-            <span class="time-count">
+            <!-- <span class="time-count">
               Duração: 23 minutos
-            </span>
+            </span> -->
           </p>
         <% end %>
       </div>
