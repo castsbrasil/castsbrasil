@@ -25,15 +25,15 @@ class Cast < ActiveRecord::Base
   delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, to: :state_machine
 
   private
-    def regular_url
-      errors.add(:url, :bad_url) unless is_valid_url?
-    end
 
-    def is_valid_url?
-      uri = URI.parse(url)
-      uri.kind_of?(URI::HTTP)
-      rescue URI::InvalidURIError
-        false
-    end
+  def regular_url
+    errors.add(:url, :bad_url) unless valid_url?
+  end
 
+  def valid_url?
+    uri = URI.parse(url)
+    uri.is_a?(URI::HTTP)
+    rescue URI::InvalidURIError
+      false
+  end
 end

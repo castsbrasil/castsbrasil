@@ -75,12 +75,11 @@ describe Cast do
 
   describe 'valid urls' do
     it "it's a url" do
-      expect(cast.send(:is_valid_url?)).to eq(true)
+      expect(cast.send(:valid_url?)).to eq(true)
     end
 
     it "should be a regular url" do
       expect(cast.errors[:url]).to be_empty
     end
-
   end
 end
