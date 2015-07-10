@@ -12,6 +12,7 @@ class Cast < ActiveRecord::Base
   scope :by_user, -> (user_id) { where(user_id: user_id) }
 
   validates_presence_of :name, :url
+  validate :regular_url
 
   auto_html_for :url do
     youtube(width: "100%", height: 550, autoplay: true)
@@ -22,4 +23,17 @@ class Cast < ActiveRecord::Base
   end
 
   delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, to: :state_machine
+
+  private
+    def regular_url
+      errors.add(:url, :bad_url) unless is_valid_url?
+    end
+
+    def is_valid_url?
+      uri = URI.parse(url)
+      uri.kind_of?(URI::HTTP)
+      rescue URI::InvalidURIError
+        false
+    end
+
 end

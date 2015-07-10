@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :cast do
-    name "MyString"
-    description "MyText"
-    url "MyString"
+    name "Cast 1"
+    description "some description"
+    url "https://foo.com"
     user nil
   end
 end

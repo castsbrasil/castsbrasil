@@ -8,3 +8,9 @@ br:
         name: 'Nome'
         url: 'Url'
         description: 'Descrição'
+    errors:
+      models:
+        cast:
+          attributes:
+            url:
+              bad_url: "Url inválida"

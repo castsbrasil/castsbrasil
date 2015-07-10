@@ -1,12 +1,12 @@
 <section class="new-cast">
   <div class="container">
-  
+
   	<% if flash[:notice] %>
 		  <div class="col-md-12">
 		  		<%= flash[:notice] %>
 		  </div>
 	  <% end %>
-  
+
     <div class="col-md-12">
       <%= form_for @cast do |f| %>
         <div class="panel panel-default">
@@ -21,7 +21,7 @@
 
               <div class="form-group">
                 <%= f.label :url %>
-                <%= f.text_field :url, placeholder: 'URL da Screencast', class: 'form-control' %>
+                <%= f.url_field :url, placeholder: 'URL da Screencast', class: 'form-control' %>
               </div>
 
               <div class="form-group">
