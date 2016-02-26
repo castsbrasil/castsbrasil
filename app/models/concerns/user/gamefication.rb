@@ -20,7 +20,7 @@ module User::Gamefication
     if level_id != new_level.id
       assing_level
       if new_level.role
-        add_role Role.find(new_level.role).name
+        add_role Role.find(new_level.role.id).name
       end
     end
   end

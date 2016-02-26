@@ -2,27 +2,26 @@ source 'http://rubygems.org'
 
 ruby "2.1.2"
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.5'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'cancancan'
 gem 'cocoon'
 gem 'compass'
 gem 'devise'
 gem 'gravatar-ultimate'
 gem 'omniauth-github'
-gem 'responders'
+gem 'responders', '~> 2.1.0'
 gem 'rolify'
-gem 'sass-rails', '5.0.0'
+gem 'sass-rails', '5.0.4'
 gem 'simple_form', '>= 3.1.0.rc1'
 gem 'therubyracer'
-gem 'uglifier', '>= 1.3.0'
-gem 'statesman', '~> 0.8.3'
+gem 'uglifier', '>= 2.7.2'
+gem 'statesman', '~> 1.3.1'
 gem 'validates_host'
-gem 'zertico', '>= 2.0.0.beta.1'
 gem 'redcarpet', '>=3.3.2'
-gem 'auto_html'
+gem 'auto_html', '1.6.4'
 gem 'friendly_id', '~> 5.1.0'
 
 group :test do
@@ -32,7 +31,7 @@ group :test do
   gem 'nyan-cat-formatter'
   gem 'rspec-rails'
   gem 'poltergeist'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '2.8.0', require: false
   gem 'spring-commands-rspec'
 end
 
