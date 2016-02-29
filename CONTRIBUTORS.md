@@ -1,7 +1,3 @@
-# Idealizador:
-
-* Osvaldo Carlos <ocsjwolf@gmail.com>
-
 # Colaboradores:
 
 * Abilio Bittencourt Junior <abilioxd@gmail.com>
@@ -21,6 +17,7 @@
 * Luiz Cezer <lccezinha@gmail.com>
 * Matheus Mina <mfbmina@gmail.com>
 * Matheus Mósso <msmosso@gmail.com>
+* Osvaldo Carlos <ocsjwolf@gmail.com>
 * Paulo Henrique Lopes Ribeiro <plribeiro3000@gmail.com>
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Rodrigo Roberto Rieger Compagnoni <rrrcompagnoni@gmail.com>
