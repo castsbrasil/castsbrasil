@@ -68,7 +68,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
+    bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     brakeman (3.2.1)
@@ -85,7 +85,7 @@ GEM
     bullet (5.0.0)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
-    cancancan (1.13.1)
+    cancancan (1.15.0)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -95,7 +95,7 @@ GEM
       xpath (~> 2.0)
     chunky_png (1.3.5)
     cliver (0.3.2)
-    cocoon (1.2.8)
+    cocoon (1.2.9)
     coderay (1.1.1)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -193,14 +193,15 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    mini_portile2 (2.1.0)
+    minitest (5.9.0)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -223,6 +224,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pkg-config (1.1.7)
     poltergeist (1.9.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -280,13 +282,13 @@ GEM
       activesupport (= 4.2.5)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.5.0)
+    rake (11.2.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
     ref (2.0.0)
-    responders (2.1.1)
+    responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rinku (1.5.1)
     rolify (5.0.0)
@@ -351,7 +353,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    statesman (1.3.1)
+    statesman (2.0.1)
     temple (0.7.6)
     term-ansicolor (1.3.2)
       tins (~> 1.0)
@@ -365,9 +367,8 @@ GEM
     tins (1.6.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
+    uglifier (3.0.1)
+      execjs (>= 0.3.0, < 3)
     unicode_utils (1.4.0)
     uniform_notifier (1.9.0)
     validates_host (1.0.0)
@@ -388,7 +389,7 @@ DEPENDENCIES
   auto_html (= 1.6.4)
   autoprefixer-rails
   better_errors
-  bootstrap-sass (~> 3.3.6)
+  bootstrap-sass (~> 3.3.7)
   brakeman
   bullet
   cancancan
@@ -412,7 +413,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails_12factor
   redcarpet (>= 3.3.2)
-  responders (~> 2.1.0)
+  responders (~> 2.3.0)
   rolify
   rspec-rails
   sass-rails (= 5.0.4)
@@ -420,13 +421,13 @@ DEPENDENCIES
   simple_form (>= 3.1.0.rc1)
   spring-commands-rspec
   sqlite3
-  statesman (~> 1.3.1)
+  statesman (~> 2.0.1)
   therubyracer
-  uglifier (>= 2.7.2)
+  uglifier (>= 3.0.1)
   validates_host
 
 RUBY VERSION
    ruby 2.1.2p95
 
 BUNDLED WITH
-   1.12.0.pre.1
+   1.12.5
