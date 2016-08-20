@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623025512) do
+ActiveRecord::Schema.define(version: 20160819194330) do
 
-  create_table "authorizations", force: true do |t|
+  create_table "authorizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "nick_name"
     t.string   "provider"
@@ -26,19 +26,21 @@ ActiveRecord::Schema.define(version: 20150623025512) do
     t.string   "avatar_url"
   end
 
-  create_table "cast_transitions", force: true do |t|
+  create_table "cast_transitions", force: :cascade do |t|
     t.string   "to_state"
-    t.text     "metadata",   default: "{}"
+    t.text     "metadata",    default: "{}"
     t.integer  "sort_key"
     t.integer  "cast_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "most_recent"
   end
 
+  add_index "cast_transitions", ["cast_id", "most_recent"], name: "index_order_transitions_parent_most_recent", unique: true, where: "most_recent"
   add_index "cast_transitions", ["cast_id"], name: "index_cast_transitions_on_cast_id"
   add_index "cast_transitions", ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true
 
-  create_table "casts", force: true do |t|
+  create_table "casts", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "url"
@@ -51,20 +53,20 @@ ActiveRecord::Schema.define(version: 20150623025512) do
 
   add_index "casts", ["user_id"], name: "index_casts_on_user_id"
 
-  create_table "casts_tags", id: false, force: true do |t|
+  create_table "casts_tags", id: false, force: :cascade do |t|
     t.integer "cast_id"
     t.integer "tag_id"
   end
 
   add_index "casts_tags", ["cast_id", "tag_id"], name: "index_casts_tags_on_cast_id_and_tag_id", unique: true
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "levels", force: true do |t|
+  create_table "levels", force: :cascade do |t|
     t.string   "name"
     t.integer  "required_score"
     t.datetime "created_at"
@@ -72,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
     t.integer  "role_id"
   end
 
-  create_table "links", force: true do |t|
+  create_table "links", force: :cascade do |t|
     t.string   "url"
     t.string   "name"
     t.datetime "created_at"
@@ -82,7 +84,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
 
   add_index "links", ["profile_id"], name: "index_links_on_profile_id"
 
-  create_table "points", force: true do |t|
+  create_table "points", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "value",       null: false
     t.string   "description"
@@ -92,7 +94,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
 
   add_index "points", ["user_id"], name: "index_points_on_user_id"
 
-  create_table "profiles", force: true do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "user_id"
@@ -103,7 +105,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "resource_id"
     t.string   "resource_type"
@@ -114,7 +116,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
 
-  create_table "scores", force: true do |t|
+  create_table "scores", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "value",       null: false
     t.string   "description"
@@ -124,14 +126,14 @@ ActiveRecord::Schema.define(version: 20150623025512) do
 
   add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.integer  "taggables_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -155,7 +157,7 @@ ActiveRecord::Schema.define(version: 20150623025512) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "users_roles", id: false, force: true do |t|
+  create_table "users_roles", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
