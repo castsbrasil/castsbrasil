@@ -5,7 +5,7 @@ CastsBrasil tem como objetivo apresentar screencasts colaborativos de qualidade,
 
 ## Configuração Inicial
 
-Esse projeto está sendo desenvolvido usando Ruby 2.2.3. Se você estiver utilizando [rvm](http://rvm.beginrescueend.com/)
+Esse projeto está sendo desenvolvido usando Ruby 2.3.1. Se você estiver utilizando [rvm](http://rvm.beginrescueend.com/)
 ou [rbenv](https://github.com/sstephenson/rbenv) ele vai selecionar a versão exata em desenvolvimento
 especificada no arquivo [.ruby-version](https://github.com/RubyCastsBrasil/RubyCastsBrasil/blob/master/.ruby-version).
 
