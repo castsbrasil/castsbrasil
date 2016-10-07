@@ -1,0 +1,7 @@
+{
+	"id": "castsbrasil",
+	"type": "wedeploy/ruby",
+	"hooks": {
+		"build": "bundle install"
+	}
+}
