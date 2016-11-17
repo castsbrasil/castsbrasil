@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #!/usr/bin/env ruby
 
 # This file loads spring without using Bundler, in order to be fast
