@@ -1,0 +1,12 @@
+---
+buildName: "castsbrasil"
+links:
+  Git: "git@github.com:castsbrasil/castsbrasil.git"
+  Job: "http://192.168.64.2:30298/job/castsbrasil"
+  Production: "http://10.0.0.180:80/kubernetes/pods?namespace=default-prod"
+  Staging: "http://10.0.0.180:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://10.0.0.180:80/kubernetes/pods?namespace=default-testing"
+environments:
+  Testing: "default-testing"
+  Staging: "default-staging"
+  Production: "default-prod"
