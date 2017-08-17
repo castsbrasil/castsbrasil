@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |params|
+    devise_parameter_sanitizer.permit(:sign_up) do |params|
       params.permit(:email,
                     :password,
                     :password_confirmation,
