@@ -12,6 +12,7 @@ class Cast < ActiveRecord::Base
   scope :by_user, -> (user_id) { where(user_id: user_id) }
 
   validates_presence_of :name, :url
+  validates :url, domain_name: true
 
   auto_html_for :url do
     youtube(width: "100%", height: 550, autoplay: true)
