@@ -1,6 +1,6 @@
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip_before_filter :authenticate_user!
+    skip_before_action :authenticate_user!, raise: false
 
     def create
       @user = User.find_or_initialize_by_oauth(env["omniauth.auth"], current_user)

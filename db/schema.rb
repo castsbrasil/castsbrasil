@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -34,11 +33,10 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "most_recent"
+    t.index ["cast_id", "most_recent"], name: "index_order_transitions_parent_most_recent", unique: true, where: "most_recent"
+    t.index ["cast_id"], name: "index_cast_transitions_on_cast_id"
+    t.index ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true
   end
-
-  add_index "cast_transitions", ["cast_id", "most_recent"], name: "index_order_transitions_parent_most_recent", unique: true, where: "most_recent"
-  add_index "cast_transitions", ["cast_id"], name: "index_cast_transitions_on_cast_id"
-  add_index "cast_transitions", ["sort_key", "cast_id"], name: "index_cast_transitions_on_sort_key_and_cast_id", unique: true
 
   create_table "casts", force: :cascade do |t|
     t.string   "name"
@@ -49,16 +47,14 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.datetime "updated_at"
     t.text     "notes"
     t.string   "slug"
+    t.index ["user_id"], name: "index_casts_on_user_id"
   end
-
-  add_index "casts", ["user_id"], name: "index_casts_on_user_id"
 
   create_table "casts_tags", id: false, force: :cascade do |t|
     t.integer "cast_id"
     t.integer "tag_id"
+    t.index ["cast_id", "tag_id"], name: "index_casts_tags_on_cast_id_and_tag_id", unique: true
   end
-
-  add_index "casts_tags", ["cast_id", "tag_id"], name: "index_casts_tags_on_cast_id_and_tag_id", unique: true
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -80,9 +76,8 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "profile_id"
+    t.index ["profile_id"], name: "index_links_on_profile_id"
   end
-
-  add_index "links", ["profile_id"], name: "index_links_on_profile_id"
 
   create_table "points", force: :cascade do |t|
     t.integer  "user_id"
@@ -90,9 +85,8 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["user_id"], name: "index_points_on_user_id"
   end
-
-  add_index "points", ["user_id"], name: "index_points_on_user_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -101,20 +95,18 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
-
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.integer  "resource_id"
     t.string   "resource_type"
+    t.integer  "resource_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
   end
-
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "scores", force: :cascade do |t|
     t.integer  "user_id"
@@ -122,9 +114,8 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
-
-  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -151,17 +142,15 @@ ActiveRecord::Schema.define(version: 20160819194330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "level_id"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "users_roles", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
   end
-
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
 end
