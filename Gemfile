@@ -48,6 +48,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'sqlite3'
   gem 'dotenv-rails'
+  gem 'ffaker'
 end
 
 group :production do

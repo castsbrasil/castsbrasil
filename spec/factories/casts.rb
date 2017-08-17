@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :cast do
     name "MyString"
     description "MyText"
-    url "MyString"
+    url FFaker::Youtube.url
     user nil
   end
 end
