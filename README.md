@@ -17,6 +17,42 @@ cp config/database.example.yml config/database.yml
 - Execute o comando `RAILS_ENV=test rake db:migrate` para criar todas as tabelas no seu banco de dados de teste.
 - Execute o comando `rails s` para subir o servidor [rails](https://github.com/rails/rails)
 
+## Configuração inicial com Docker
+
+Você utilizar o Docker para desenvolver e colaborar com o projeto, para isso siga os passos abaixo:
+
+*Requerimentos*
+
+- Docker 1.12+
+- Docker Compose
+
+*Setup*
+
+- Build:
+```shell
+docker-compose build
+```
+-Crie um arquivo de configuração do banco de dados:
+```shell
+cp config/database.example.yml config/database.yml
+```
+
+*Desenvolvimento*
+
+- Acesso ao container para desenvolvimento
+```shell
+docker-compose run --rm web bash
+```
+
+*Servidor*
+
+- Execute o comando abaixo para subir o servidor
+```shell
+docker-compose up
+```
+
+O projeto está disponível em `http://localhost:3000`
+
 ## Testes [![Build Status](https://semaphoreapp.com/api/v1/projects/c89e95d8-895c-4956-be17-c29a01b7c281/271048/badge.png)](https://semaphoreapp.com/rubycastsbrasil/rubycastsbrasil)
 
 Esse projeto utiliza o [rspec](http://rspec.info/) como framework de testes principal.
