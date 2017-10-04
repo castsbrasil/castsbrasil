@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Level < ApplicationRecord
   belongs_to :role
   validates :name, presence: true, uniqueness: { case_sensitive: false }
