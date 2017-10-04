@@ -1,4 +1,4 @@
-class Authorization < ActiveRecord::Base
+class Authorization < ApplicationRecord
   belongs_to :user
 
   scope :find_from_oauth, -> (oauth) do
