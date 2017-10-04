@@ -1,4 +1,4 @@
-class Score < ActiveRecord::Base
+class Score < ApplicationRecord
   belongs_to :user
   validates :user, presence: true
   validates :value, numericality: { only_integer: true }, presence: true

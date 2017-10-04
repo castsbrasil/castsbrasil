@@ -1,4 +1,4 @@
-class Level < ActiveRecord::Base
+class Level < ApplicationRecord
   belongs_to :role
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

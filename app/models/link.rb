@@ -1,4 +1,4 @@
-class Link < ActiveRecord::Base
+class Link < ApplicationRecord
   belongs_to :profile
 
   validates :name, :url, presence: true
