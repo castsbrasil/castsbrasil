@@ -1,4 +1,6 @@
-class Link < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Link < ApplicationRecord
   belongs_to :profile
 
   validates :name, :url, presence: true

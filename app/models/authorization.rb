@@ -1,4 +1,6 @@
-class Authorization < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Authorization < ApplicationRecord
   belongs_to :user
 
   scope :find_from_oauth, -> (oauth) do
