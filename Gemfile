@@ -16,7 +16,7 @@ gem 'responders'
 gem 'rolify'
 gem 'sass-rails'
 gem 'simple_form', '>= 3.1.0.rc1'
-gem 'therubyracer'
+gem 'mini_racer'
 gem 'uglifier', '>= 3.0.1'
 gem 'statesman', '~> 2.0.1'
 gem 'validates_host'
@@ -46,7 +46,7 @@ end
 
 group :development, :test do
   gem 'jazz_fingers'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'guard-rspec'
   gem 'sqlite3'
   gem 'dotenv-rails'
