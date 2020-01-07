@@ -5,7 +5,7 @@ ruby "2.3.1"
 gem 'rails', '5.0.0.1'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'cancancan'
 gem 'cocoon'
 gem 'compass'

@@ -51,9 +51,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     brakeman (3.4.0)
     builder (3.2.2)
     bullet (5.4.2)
@@ -283,13 +283,15 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby_dep (1.5.0)
-    sass (3.4.22)
+    sass (3.4.25)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
     shellany (0.0.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
@@ -348,7 +350,7 @@ DEPENDENCIES
   auto_html (= 1.6.4)
   autoprefixer-rails
   better_errors
-  bootstrap-sass (~> 3.3.7)
+  bootstrap-sass (~> 3.4.1)
   brakeman
   bullet
   cancancan
