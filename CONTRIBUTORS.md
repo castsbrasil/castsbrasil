@@ -22,5 +22,5 @@
 * Rafael Fragoso <rafaelfragosom@gmail.com>
 * Rodrigo Roberto Rieger Compagnoni <rrrcompagnoni@gmail.com>
 * Thiago Ramos <thiagoramos.al@gmail.com>
-* Victor Campos <victor.campos@visagio.com>
+* Victor Campos <victorcamposmail@gmail.com>
 * Wender Freese <wender.jean@gmail.com>
