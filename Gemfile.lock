@@ -220,7 +220,7 @@ GEM
       pry (~> 0.9)
       yard (~> 0.8)
     puma (3.12.6)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
