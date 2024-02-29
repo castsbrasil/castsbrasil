@@ -223,7 +223,7 @@ GEM
       yard (~> 0.8)
     public_suffix (4.0.6)
     puma (3.12.6)
-    rack (2.2.8)
+    rack (2.2.8.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
